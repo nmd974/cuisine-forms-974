@@ -1,0 +1,17 @@
+[
+    {
+        "id":1,
+        "titre":"Atelier cuisine du monde",
+        "description":"Dans cette formation vous allez voir comment faire au plus simple de la cuisine internationale",
+        "date_debut":"date",
+        "heure_debut":"heure",
+        "duree":3,
+        "date_ajout":1600000,
+        "place_disponible" : 8,
+        "nombre_participants_max" : 10,
+        "participants": ["id user1", "id user 2"],
+        "prix":120,
+        "image":"atelier en md5 image",
+        "etat_atelier":"desactive"
+    }
+]
