@@ -8,6 +8,8 @@
     <!--fichier style-->
     <link rel="stylesheet" href="styles/style.css">
 
+
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -18,7 +20,7 @@
     <main>
 
         <!--Début Navbar-->
-        <nav class="navbar navbar-expand-sm navbar-light bg-white">
+        <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-white">
             <a class="navbar-brand" href="#">
                 <img src="src/img/logo.png" width="30" height="30" alt="">
               </a>
@@ -44,11 +46,86 @@
           </nav>
           <!--Fin navbar-->
 
+          <!--Début Jumbotron-->
+          <div class="jumbotron">
+            <h1>Hello wolrd</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </div>
+          <!--fin Jumbotron-->
+
     </main>
     <!--Fin page présenttion-->
 
     <!-- début section des Ateliers-->
-    <section>
+    <section class="container
+    ">
+
+        <!--Exemple une card Atelier 1-->
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="..." class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!--Fin exemple 1-->
+
+        <!--séparation-->
+        <div class="row separated">
+            <hr class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        </div>
+        <!--fin séparation-->
+
+        <!--Exemple une card Atelier 2-->
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="..." class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!--Fin exemple 2-->
+
+        <!--séparation-->
+        <div class="row separated">
+            <hr class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        </div>
+        <!--fin séparation-->
+
+        <!--Exemple une card Atelier 3-->
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="..." class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!--Fin exemple 3-->
+
 
     </section>
     <!--Fin section Atlier-->
@@ -64,5 +141,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!--script JS-->
+    <script type="text/javascript" src="src/script/jumbotron.js"></script>
+
   </body>
 </html>
