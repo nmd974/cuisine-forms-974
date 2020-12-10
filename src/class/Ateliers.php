@@ -26,8 +26,7 @@ class Ateliers {
     //     $atelier['prix'],
     //     $atelier['image']
     //   );
-    // ?>
-    // <?= $atelier_obj->toHTML(); ?>
+    //
     public function __construct(int $id, string $titre, string $description, string $date_debut, int $duree, int $place_disponible, int $place_max, string $etat_ajout, string $date_ajout, int $prix, string $image)
     {
         $this->id = $id;
