@@ -1,7 +1,7 @@
 <?php 
     define('__ROOT__', dirname(dirname(__DIR__)));  
     require_once(__ROOT__.'/src/class/AccesBDD.php');
-
+        
     AccesBDD::userData();
     //On lance la session
     // session_start();
