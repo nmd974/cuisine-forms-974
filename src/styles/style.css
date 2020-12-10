@@ -1,23 +1,29 @@
-
-html, body {
+body {
     margin: 0;
     padding: 0;
+    width: 100%;
     height: 100%;
+    box-sizing: border-box;
     font-family: Verdana, Geneva, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Light', 'Roboto Medium', 'Roboto';
 }
+.imageprincipale{
+  background-size: cover;
+  background:linear-gradient(to bottom, rgba(83, 83, 83, 0.8) 0%, rgba(83, 83, 83, 0.8) 100%), url(../../images/main.jpeg);
+  height: 98vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
+}
 /*section jumbotron*/
 .jumbotron {
-    color: white;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 98vh;
-    background:linear-gradient(to bottom, rgba(83, 83, 83, 0.8) 0%, rgba(83, 83, 83, 0.8) 100%), url(../../images/main.jpeg);
+  background-color:transparent;
+  color: white;
+
 }
 
  /*séparateur card Atelier*/ 
@@ -140,7 +146,7 @@ footer {
     -ms-transition: all 0.8s;
     transition: all 0.8s;
   }
-  
+
   .social-network a {
     background-color: #F9F9F9;
   }
@@ -149,10 +155,12 @@ footer {
 /*responisve pour tablette (vérifier ipad et ipad pro*/
 @media (max-width: 1024px) {
 
+
 }
 
 
 /*responisve pour mobile*/
 @media (max-width: 375px) {
+
 
 }
