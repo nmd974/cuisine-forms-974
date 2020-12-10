@@ -148,6 +148,9 @@ footer {
     background-color: #F9F9F9;
   }
   
+  .backgroundJumbotron{
+    background-image: url(../../images/main.jpeg);
+  }
 
 /*responisve pour tablette (vérifier ipad et ipad pro*/
 @media (max-width: 1024px) {
