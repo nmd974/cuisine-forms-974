@@ -9,15 +9,20 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Light', 'Roboto Medium', 'Roboto';
 }
+.imageprincipale{
+  background-size: cover;
+  background:linear-gradient(to bottom, rgba(83, 83, 83, 0.8) 0%, rgba(83, 83, 83, 0.8) 100%), url(../../images/main.jpeg);
+  height: 98vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
+}
 /*section jumbotron*/
 .jumbotron {
-    color: white;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 98vh;
-    background:linear-gradient(to bottom, rgba(83, 83, 83, 0.8) 0%, rgba(83, 83, 83, 0.8) 100%), url(../../images/main.jpeg);
+  background-color:transparent;
+  color: white;
+
 }
 
  /*séparateur card Atelier*/ 
