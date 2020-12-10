@@ -24,6 +24,9 @@
                         <button type="submit" class="btn btn-primary">Se conneter</button>
                     </div>
                     
+                    <?php if(isset($_POST['signUp'])):?>
+                    <?php formSignUp()?>
+                    <?php endif ?>    
                  </form>
             </div>
             <div class="col-lg col-md-12 col-sm-12">
@@ -34,26 +37,26 @@
                 <form class="row g-3">
                     <div class="col-md-12">
                         <label for="name" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="#" value="" required>
+                        <input type="text" class="form-control" id="#" name="nomUser" value="" required>
                     </div>
                     <div class="col-md-12">
                         <label for="prenom" class="form-label">Prénoms</label>
-                        <input type="text" class="form-control" id="#" value="" required>
+                        <input type="text" class="form-control" id="#" value="" required name="prenomUser">
                     </div>
                     <div class="col-md-12">
                       <label for="inputEmail4" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="inputEmail4">
+                      <input type="email" class="form-control" id="inputEmail4" name="emailUser">
                     </div>
                     <div class="col-md-12">
                         <label for="telephone" class="form-label">Telephone</label>
-                        <input type="number" class="form-control" id="#" value="" required>
+                        <input type="number" class="form-control" id="#" value="" required name="telUser">
                     </div>
                     <div class="col-md-12">
                       <label for="inputPassword4" class="form-label">Mot de passe</label>
-                      <input type="password" class="form-control" id="inputPassword4">
+                      <input type="password" class="form-control" id="inputPassword4" name="passwordUser">
                     </div>
            <div class="col-12 text-end">
-                      <button type="submit" class="btn btn-primary">M'inscrire</button>
+                      <button type="submit" class="btn btn-primary" name="signUp">M'inscrire</button>
                     </div>
                   </form>
             </div>
