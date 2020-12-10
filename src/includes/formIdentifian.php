@@ -12,7 +12,7 @@
     </div>
     <section class="container mt-5 pt-5">
         <div class="row d-flex">
-            <div class="col">
+            <div class=" col-lg col-md-12 col-sm-12">
                 <div class="col-12">
                     <h6 class="text-center"> Déjà membre?</h6>
                     <h6 class="text-center"> Se conneter</h6>
@@ -33,7 +33,7 @@
                     
                  </form>
             </div>
-            <div class="col">
+            <div class="col-lg col-md-12 col-sm-12">
                 <div class="col-12">
                     <h6 class="text-center"> Pas encore membre ?</h6>
                     <h6 class="text-center"> Créez vite votre compte</h6>
@@ -59,11 +59,7 @@
                       <label for="inputPassword4" class="form-label">Password</label>
                       <input type="password" class="form-control" id="inputPassword4">
                     </div>
-                    
-                   
-                   
-                    
-                    <div class="col-12 text-end">
+           <div class="col-12 text-end">
                       <button type="submit" class="btn btn-primary">Sign in</button>
                     </div>
                   </form>
