@@ -10,7 +10,7 @@
             
             <!--Column1-->
             <div class="footer-pad">
-              <h4>Heading 3</h4>
+              <h4>CONTACT</h4>
               <ul class="list-unstyled">
                 <li>Nom du centre </li>
                 <li>Adresse: <br> 21, rue des vavangues, <br> Zac Finette 97490 Saint-Clotilde</li>
