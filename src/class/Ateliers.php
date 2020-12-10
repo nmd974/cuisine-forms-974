@@ -13,21 +13,7 @@ class Ateliers {
     public $prix;
     public $image;
     public $etat_ajout;
-    // <?php $atelier_obj = new Ateliers(
-    //     $atelier['id'],
-    //     $atelier['titre'],
-    //     $atelier['description'],
-    //     $atelier['date_debut'],
-    //     $atelier['duree'],
-    //     $atelier['place_disponible'],
-    //     $atelier['place_max'],
-    //     $atelier['etat_ajout'],
-    //     $atelier['date_ajout'],
-    //     $atelier['prix'],
-    //     $atelier['image']
-    //   );
-    // ?>
-    // <?= $atelier_obj->toHTML(); ?>
+
     public function __construct(int $id, string $titre, string $description, string $date_debut, int $duree, int $place_disponible, int $place_max, string $etat_ajout, string $date_ajout, int $prix, string $image)
     {
         $this->id = $id;
