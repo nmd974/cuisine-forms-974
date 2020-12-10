@@ -20,7 +20,9 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
+    background-image: url(../../images/main.jpeg);
+    filter: blur(10);
 }
 
  /*séparateur card Atelier*/ 
@@ -147,7 +149,7 @@ footer {
   .social-network a {
     background-color: #F9F9F9;
   }
-  
+
 
 /*responisve pour tablette (vérifier ipad et ipad pro*/
 @media (max-width: 1024px) {
