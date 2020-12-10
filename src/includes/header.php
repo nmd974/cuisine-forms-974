@@ -42,7 +42,7 @@
 <header>
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="../pages/homes.php">
     <img src="../../images/logo.png" width="30" height="30" alt="">
   Application</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,21 +55,10 @@
 
     <ul class="navbar-nav my-2 my-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="#">Accueil</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="../pages/">Ateliers</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+        <a class="nav-link" href="../pages/homes.php">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link" href="../pages/ajoutAtelier.php">Mon compte</a>
       </li>
     </ul>
     </div>
