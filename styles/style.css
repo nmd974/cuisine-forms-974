@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+html,body{
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.row{
+    margin: 0 !important;
+}
+
 body {
     margin: 0;
     padding: 0;
