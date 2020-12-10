@@ -5,14 +5,28 @@
    <!-- début section des Ateliers-->
     <section class="container">
       <?php $ateliers = AccesBDD::ateliersData();?>
-      <?php var_dump(__ROOT__);?>
+      <?php var_dump(__DIR__);?>
       <?php if($ateliers !== ""):?>
       <?php foreach ($ateliers as $key => $atelier):?>
+        <?php $atelier_obj = new Ateliers(
+            $atelier['id'],
+            $atelier['titre'],
+            $atelier['description'],
+            $atelier['date_debut'],
+            $atelier['duree'],
+            $atelier['place_disponible'],
+            $atelier['place_max'],
+            $atelier['etat_ajout'],
+            $atelier['date_ajout'],
+            $atelier['prix']
+          );
+        ?>
+        <?php $atelier->toHTML(); ?>
         <!--Atelier-->
         <div class="card my-3" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="<?= __ROOT__ ?>/images/<?=$atelier['image']?>" class="card-img" alt="Nos cours de cuisine">
+                <img src="../../images/<?= $atelier['image']?>" class="card-img" alt="Nos cours de cuisine">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
