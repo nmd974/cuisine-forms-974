@@ -93,15 +93,19 @@ Chaque atelier possède les champs suivants :
 
 Ces champs sont tous obligatoires.
 ## User story
-En tant que|Je veux|Afin de|Critères d'acceptation
-:---|:---:|:---:|---:
-Cuisinier|désactiver/activer|Rendre visible ou invisible pour les particuliers|**Désactiver** l’atelier ne rend plus visible sur la liste des ateliers. **Activer** l’atelier le rend visible sur la liste des ateliers
-Cuisinier|modifier un atelier|changer les informations rentrées précédemment|Les modifications apparaissent dans la liste des ateliers
-Cuisinier|créer un atelier|proposer à des particuliers|L’atelier nouvellement créé apparaît dans la liste des ateliers
-Cuisinier|avoir une interface d’administration sécurisée|d’être le seul à pouvoir modifier mes ateliers|Le cuisinier accède aux pages sécurisées grâce à un login et mot de passe. Le cuisinier ne voit que les ateliers qu’il a créé
-Particulier|voir la liste des ateliers|s'inscrire à un atelier|Une page qui affiche la liste des ateliers disponibles
-Particulier|m'inscrire à un atelier|de réserver ma place|Lorsqu'un particulier s'inscrit à un atelier le nombre de place réservées de celui-ci augmente
+N°|En tant que|Je veux|Afin de|Critères d'acceptation
+:---|:---|:---:|:---:|---:
+1|Cuisinier|désactiver/activer|Rendre visible ou invisible pour les particuliers|**Désactiver** l’atelier ne rend plus visible sur la liste des ateliers. **Activer** l’atelier le rend visible sur la liste des ateliers
+2|Cuisinier|modifier un atelier|changer les informations rentrées précédemment|Les modifications apparaissent dans la liste des ateliers
+3|Cuisinier|créer un atelier|proposer à des particuliers|L’atelier nouvellement créé apparaît dans la liste des ateliers
+4|Cuisinier|avoir une interface d’administration sécurisée|d’être le seul à pouvoir modifier mes ateliers|Le cuisinier accède aux pages sécurisées grâce à un login et mot de passe. Le cuisinier ne voit que les ateliers qu’il a créé
+5|Particulier|voir la liste des ateliers|s'inscrire à un atelier|Une page qui affiche la liste des ateliers disponibles
+6|Particulier|m'inscrire à un atelier|de réserver ma place|Lorsqu'un particulier s'inscrit à un atelier le nombre de place réservées de celui-ci augmente
 
+## Bakclog 
+N°|Tâches|Priorisation|Fin
+:---|:---|:---:|---:
+1|
 ## Interpretations
 - [ ] 2 fichiers json : users + ateliers
 - [ ] Accueil = slider des 3 derniers ajouts + fleche vers les autres ateliers
@@ -129,4 +133,4 @@ Le client souhaite obtenir ses logs de serveur afin d'en assurer la maintenance.
 - Bibliothèque d'animation (data-aos)
 
 ## Gestion des tâches
-[KANBAN Gestion du projet](https://trello.com/invite/b/X1LdLKrI/503f48ef1be16ae8a02913f2a5aaac49/cuisineforms974)
+[KANBAN Gestion du projet](https://trello.com/b/X1LdLKrI/cuisineforms974)
