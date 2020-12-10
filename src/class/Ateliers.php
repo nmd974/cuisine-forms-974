@@ -12,8 +12,9 @@ class Ateliers {
     public $place_max;
     public $prix;
     public $image;
+    public $etat_ajout;
 
-    public function __construct(string $id, string $titre, string $description, string $date_debut, int $duree, int $place_disponible, int $place_max, string $etat_ajout, string $date_ajout, int $prix)
+    public function __construct(string $id, string $titre, string $description, string $date_debut, int $duree, int $place_disponible, int $place_max, string $etat_ajout, string $date_ajout, int $prix, string $image)
     {
         $this->id = $id;
         $this->titre = $titre;
@@ -25,6 +26,7 @@ class Ateliers {
         $this->place_max = $place_max;
         $this->prix = $prix;
         $this->image = $image;
+        $this->etat_ajout = $etat_ajout;
     }
 
     public function toHTML()

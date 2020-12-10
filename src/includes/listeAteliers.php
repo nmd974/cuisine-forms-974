@@ -5,7 +5,6 @@
    <!-- début section des Ateliers-->
     <section class="container">
       <?php $ateliers = AccesBDD::ateliersData();?>
-      <?php var_dump(__DIR__);?>
       <?php if($ateliers !== ""):?>
       <?php foreach ($ateliers as $key => $atelier):?>
         <?php $atelier_obj = new Ateliers(
@@ -18,10 +17,11 @@
             $atelier['place_max'],
             $atelier['etat_ajout'],
             $atelier['date_ajout'],
-            $atelier['prix']
+            $atelier['prix'],
+            $atelier['image']
           );
         ?>
-        <?php $atelier->toHTML(); ?>
+        <?= $atelier_obj->toHTML(); ?>
         <!--Atelier-->
         <div class="card my-3" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
             <div class="row no-gutters">
