@@ -1,6 +1,3 @@
-   <?php 
-        require_once(__ROOT__.'/src/includes/header.php');
-   ?>
    <!-- début section des Ateliers-->
     <section class="container
     ">
