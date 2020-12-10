@@ -1,5 +1,5 @@
 <div class="container-fluid mt-5">
-    <h2 class="text-center align-middle mb-5 font-weight-bold">Liste des ateliers</h2>
+    <h2 class="text-center align-middle mb-5 font-weight-bold mt-5">Liste des ateliers</h2>
     <div class="table-responsive">
     <table class="table">
         <thead>
@@ -51,5 +51,4 @@
         </tbody>
     </table>
     </div>
-        <p class="text-center align-middle mb-5 font-weight-bold"> Vous n'avez pas d'enchères enregistrées</p>
 </div>

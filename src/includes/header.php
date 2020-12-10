@@ -35,15 +35,21 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../styles/style.css">
     <script src="https://use.fontawesome.com/c18e5332f2.js"></script>
-
+    <title>
+        <?php if($title){
+            echo $title;
+        }else{
+            echo "Ateliers cuisine";
+        }?>
+    </title>
 
   </head>
 
     
 <header>
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <a class="navbar-brand" href="../pages/homes.php">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-5">
+  <a class="navbar-brand" href="../pages/home.php">
     <img src="../../images/logo.png" width="30" height="30" alt="">
   Application</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,10 +62,16 @@
 
     <ul class="navbar-nav my-2 my-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="../pages/homes.php">Accueil</a>
+        <a class="nav-link" href="../pages/home.php">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../pages/ajoutAtelier.php">Mon compte</a>
+        <a class="nav-link" href="../pages/ajoutAtelier.php">Ajout atelier</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../pages/cuistoManager.php">Cuisto manager</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../pages/authentification.php">Se connecter</a>
       </li>
     </ul>
     </div>
