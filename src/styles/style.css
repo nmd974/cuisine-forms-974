@@ -145,7 +145,7 @@ footer {
     -ms-transition: all 0.8s;
     transition: all 0.8s;
   }
-  
+
   .social-network a {
     background-color: #F9F9F9;
   }
@@ -154,10 +154,12 @@ footer {
 /*responisve pour tablette (vérifier ipad et ipad pro*/
 @media (max-width: 1024px) {
 
+
 }
 
 
 /*responisve pour mobile*/
 @media (max-width: 375px) {
+
 
 }
