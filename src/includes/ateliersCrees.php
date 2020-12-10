@@ -1,54 +1,50 @@
-<div class="container-fluid mt-5">
-    <h2 class="text-center align-middle mb-5 font-weight-bold mt-5">Liste des ateliers</h2>
+<div class="container mt-5 pt-5">
+    <h2 class="text-center align-middle font-weight-bold">Liste des ateliers</h2>
     <div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col" class="text-center align-middle">Image</th>
-                <th scope="col" class="text-center align-middle">Titre atelier</th>
-                <th scope="col" class="text-center align-middle">Date</th>
-                <th scope="col" class="text-center align-middle">Prix</th>
-                <th scope="col" class="text-center align-middle">Etat</th>
-                <th scope="col" class="text-center align-middle">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-                    <tr>
-                        <td class="text-center align-middle">
-                            <img src="" alt="image enchere" class="img-thumbail" style="width:120px; height:120px; border: none;">
-                            <div class="d-flex justify-content-center align-items-center" style="height:120px;width:120px">
-                                <i class="fa fa-file-image-o fa-4x" aria-hidden="true"></i>
-                            </div>
-                        </td>
-                        <td class="text-center align-middle">Titre</td>
-                        <td class="text-center align-middle">Date</td>
-                        <td class="text-center align-middle">Prix</td>
-                        <td class="text-center align-middle">Etat</td>
-                        <!--Bouton pour se désinscrire-->
-                            <a 
-                                href="#" 
-                                class="btn btn-primary"  
-                                role="button" 
-                                aria-pressed="true"
-                            >Activer
-                            </a>
-                            <a 
-                                href="#" 
-                                class="btn btn-primary"  
-                                role="button" 
-                                aria-pressed="true"
-                            >Désactiver
-                            </a>
-                            <a 
-                                href="#" 
-                                class="btn btn-primary"  
-                                role="button" 
-                                aria-pressed="true"
-                            >Modifier
-                            </a>
-                        </td>
-                    </tr>
-        </tbody>
-    </table>
+    <div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Collapsible Group Item #2
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
     </div>
 </div>
