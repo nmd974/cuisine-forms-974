@@ -56,11 +56,11 @@
                         <input type="number" class="form-control" id="#" value="" required>
                     </div>
                     <div class="col-md-12">
-                      <label for="inputPassword4" class="form-label">Password</label>
+                      <label for="inputPassword4" class="form-label">Mot de passe</label>
                       <input type="password" class="form-control" id="inputPassword4">
                     </div>
            <div class="col-12 text-end">
-                      <button type="submit" class="btn btn-primary">Sign in</button>
+                      <button type="submit" class="btn btn-primary">Inscrire</button>
                     </div>
                   </form>
             </div>
