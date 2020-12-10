@@ -7,21 +7,7 @@
       <?php $ateliers = AccesBDD::ateliersData();?>
       <?php if($ateliers !== ""):?>
       <?php foreach ($ateliers as $key => $atelier):?>
-        <?php $atelier_obj = new Ateliers(
-            $atelier['id'],
-            $atelier['titre'],
-            $atelier['description'],
-            $atelier['date_debut'],
-            $atelier['duree'],
-            $atelier['place_disponible'],
-            $atelier['place_max'],
-            $atelier['etat_ajout'],
-            $atelier['date_ajout'],
-            $atelier['prix'],
-            $atelier['image']
-          );
-        ?>
-        <?= $atelier_obj->toHTML(); ?>
+
         <!--Atelier-->
         <div class="card my-3" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
             <div class="row no-gutters">
