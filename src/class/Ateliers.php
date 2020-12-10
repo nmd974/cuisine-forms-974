@@ -14,7 +14,7 @@ class Ateliers {
     public $image;
     public $etat_ajout;
 
-    public function __construct(string $id, string $titre, string $description, string $date_debut, int $duree, int $place_disponible, int $place_max, string $etat_ajout, string $date_ajout, int $prix, string $image)
+    public function __construct(int $id, string $titre, string $description, string $date_debut, int $duree, int $place_disponible, int $place_max, string $etat_ajout, string $date_ajout, int $prix, string $image)
     {
         $this->id = $id;
         $this->titre = $titre;
