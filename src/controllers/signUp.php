@@ -1,9 +1,5 @@
 <?php
 
-function formSignUp() {
-
-
-
     //envoi données vers json
     //condition clic input signUp
     if (isset($_POST['signUp'])) {
@@ -13,15 +9,9 @@ function formSignUp() {
         $_POST['id'] = $idUser;
         //affectation rôle:
         $_POST['role'] = "particulier";
-        //attribution des valeurs aux éléments:
-        $_POST['nomUser'] = htmlspecialchars($_POST['nomUser']);
-        $_POST['prenomUser'] = htmlspecialchars($_POST['prenomUser']);
-        $_POST['mailUser'] = $_POST['mailUser'];
-        $_POST['telUser'] = $_POST['tellUser'];
-        $_POST['passwordUser'] = $_POST['passwordUser'];
-
+        $_POST['signUp'] = "ok";
         //attribution destination json dans variable
-        $filename = __ROOT__.'/data/users.json';
+        $filename = '../../data/users.json';
 
         //condition pour envoyer les data dans le fichier user.json
         if (isset($filename)) {
@@ -32,10 +22,17 @@ function formSignUp() {
             $jsonArray = json_decode($jsonString, true);
             //$jsonArray = []; // si pas de tableau on crée un tableau
             array_unshift($jsonArray,$_POST);
+            //en rencode le fichier en json aprés avoir reçu données
             file_put_contents($filename,json_encode($jsonArray));
-
-        }
+            //message confirmation
+            echo '<div class="col-md-12 d-flex justify-content-center">
+                  <div class="alert alert-success">Inscription OK !</div></div>';
+        }else {
+            
+            echo '<div class="col-md-12 d-flex justify-content-center">
+            <div class="alert alert-danger">Erreur survenue lors saisie données !</div></div>';
+          }
 
     }
 
-}
+?>

@@ -4,12 +4,17 @@
         <h1> Connexion au compte</h1>
     </div>
     <section class="container mt-5 pt-5">
+
         <div class="row d-flex">
+
             <div class=" col-lg col-md-12 col-sm-12">
+
                 <div class="col-12">
                     <h6 class="text-center"> Déjà membre?</h6>
                     <h6 class="text-center"> Se conneter</h6>
                 </div>
+
+                <!--Début identification-->
                 <form> 
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Identifiant</label>
@@ -20,21 +25,25 @@
                       <label for="exampleInputPassword1" class="form-label">Password</label>
                       <input type="password" class="form-control" id="exampleInputPassword1">
                     </div>
-                    <div class="col-12 text-end">
+                    <div class="col-12 text-end mb-5">
                         <button type="submit" class="btn btn-primary">Se conneter</button>
                     </div>
-                    
-                    <?php if(isset($_POST['signUp'])):?>
-                    <?php formSignUp()?>
-                    <?php endif ?>    
-                 </form>
+                </form>
+                <!--Fin identification-->
+
             </div>
+
+
             <div class="col-lg col-md-12 col-sm-12">
+
+                <!--Titre section Inscription-->
                 <div class="col-12">
                     <h6 class="text-center"> Pas encore membre ?</h6>
                     <h6 class="text-center"> Créez vite votre compte</h6>
                 </div>
-                <form class="row g-3">
+
+                <!--Début Formulaire inscription-->
+                <form class="row g-3" method="POST" action="" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <label for="name" class="form-label">Nom</label>
                         <input type="text" class="form-control" id="#" name="nomUser" value="" required>
@@ -44,21 +53,31 @@
                         <input type="text" class="form-control" id="#" value="" required name="prenomUser">
                     </div>
                     <div class="col-md-12">
-                      <label for="inputEmail4" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="inputEmail4" name="emailUser">
+                        <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" name="emailUser" required>
                     </div>
                     <div class="col-md-12">
                         <label for="telephone" class="form-label">Telephone</label>
-                        <input type="number" class="form-control" id="#" value="" required name="telUser">
+                        <input type="number" class="form-control" id="#" value="" name="telUser">
                     </div>
                     <div class="col-md-12">
-                      <label for="inputPassword4" class="form-label">Mot de passe</label>
-                      <input type="password" class="form-control" id="inputPassword4" name="passwordUser">
+                        <label for="inputPassword4" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="inputPassword4" name="passwordUser" required>
                     </div>
-           <div class="col-12 text-end">
-                      <button type="submit" class="btn btn-primary" name="signUp">M'inscrire</button>
+
+                    <!--button validation inscription-->
+                    <div class="col-12 text-end">
+                        
+                        <button type="submit" class="btn btn-primary" name="signUp" formmethod="post">M'inscrire</button>
+                                
                     </div>
-                  </form>
+
+                    <!--appel controller SignUp positionner ici de manière à rester dans la colonne inscription-->
+                     <?php include("../controllers/signUp.php"); ?>
+
+                </form>
+                <!--Fin Formulaire-->
+
             </div>
     
         </div>
