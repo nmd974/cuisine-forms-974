@@ -9,7 +9,8 @@
         $_POST['id'] = $idUser;
         //affectation rôle:
         $_POST['role'] = "particulier";
-        $_POST['signUp'] = "ok";
+        //supression post[signUp]
+        unset($_POST['signUp']);
         //attribution destination json dans variable
         $filename = '../../data/users.json';
 
