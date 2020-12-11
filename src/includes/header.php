@@ -48,7 +48,7 @@
 
 <body id="body">
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="../pages/home.php">
     <img src="../../images/logo.png" width="30" height="30" alt="">
   Application</a>
