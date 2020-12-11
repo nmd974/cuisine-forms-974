@@ -1,4 +1,4 @@
-<?php var_dump($_POST);?>
+
 
     <div class="text-center mt-5 pt-5">
         <h2>
@@ -61,6 +61,6 @@
                 <button type="submit"  class="btn btn-secondary">Ajouter</button>
             </div>
         </form>
-        
+       
     </section>
 
