@@ -19,16 +19,16 @@ if (isset($_POST['modifier'])) {
 
         if ($atelier['id'] == $_GET["id"]) {
 
-            $data[$key]['titre']=$_POST["titre"];
-            $data[$key]['description']=$_POST["description"];
-            $data[$key]['date_ajout']=$_POST["date_ajout"];
-            $data[$key]['place_disponible']=$_POST["place_disponible"];
-            $data[$key]['date_debut']=$_POST["date__debut"];
-            $data[$key]['date_debut']=$_POST["date__debut"];
-            $data[$key]['prix']=$_POST["prix"];
+            $data[$key]['titre'] = $_POST["titre"];
+            $data[$key]['description'] = $_POST["description"];
+            $data[$key]['date_ajout'] = $_POST["date_ajout"];
+            $data[$key]['place_disponible'] = $_POST["place_disponible"];
+            $data[$key]['date_debut'] = $_POST["date__debut"];
+            $data[$key]['date_debut'] = $_POST["date__debut"];
+            $data[$key]['prix'] = $_POST["prix"];
 
-            file_put_contents($fichierDonneesAtelier,json_encode($data)); // ici j'encode les données $data et je les mets dans la variable $fichierDonnéeAtelier
-     
+            file_put_contents($fichierDonneesAtelier, json_encode($data)); // ici j'encode les données $data et je les mets dans la variable $fichierDonnéeAtelier
+
         }
     }
 }
