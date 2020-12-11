@@ -1,1 +1,21 @@
-[{"id":1,"titre":"Atelier cuisine du monde","description":"Dans cette formation vous allez voir comment faire au plus simple de la cuisine internationale","date_debut":"date","duree":3,"date_ajout":"10\/08\/2020","place_disponible":8,"place_max":10,"participants":["id user1","id user 2"],"prix":120,"image":"gateau1.jpeg","proprietaire":2,"etat_ajout":"Modifi\u00e9 le : ","etat_atelier":"Activ\u00e9"},{"id":2,"titre":"Atelier cuisine du monde","description":"Dans cette formation vous allez voir comment faire au plus simple de la cuisine internationale","date_debut":"date","duree":3,"date_ajout":"10\/08\/2020","place_disponible":8,"place_max":10,"participants":["id user1","id user 2"],"prix":120,"etat_ajout":"Ajout\u00e9 le :","image":"gateau1.jpeg","etat_atelier":"desactive"}]
+[
+    {
+        "titre": "wsfwsfgwfsg",
+        "description": "wsfdwsfgwsfg",
+        "date_debut": "2020-12-16",
+        "heure_debut": "15:52",
+        "nombre_places": "1",
+        "duree": "1",
+        "prix": "1",
+        "image": "",
+        "id": "484ed9bf0e0f304ef80bce7b47d3ee15",
+        "proprietaire": 1,
+        "date_ajout": [
+            1607680368,
+            "2020-12-11"
+        ],
+        "etat_atelier": "D\u00e9sactiv\u00e9",
+        "participants": [],
+        "modifie": false
+    }
+]

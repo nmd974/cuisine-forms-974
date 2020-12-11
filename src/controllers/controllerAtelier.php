@@ -1,6 +1,5 @@
 
 
-
 <!-- Créaction d'une fonction permettant de validé l'ajout d'un atelier -->
 
 <?php

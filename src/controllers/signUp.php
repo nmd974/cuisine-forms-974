@@ -7,12 +7,15 @@
         //générateur aléatoire id pour la card créer
         $idUser = md5(uniqid(rand(), true)); //On attribue un id unique à l'image via la fonction md5 uniqid et random
         $_POST['id'] = $idUser;
+        //variable pour le mailUser
+        $emailUser = $_POST['emailUser'];
         //affectation rôle:
-        $_POST['role'] = "particulier";
-        //supression post[signUp]
+        $_POST['role'] = "user";
+        //surppression $post signUp
         unset($_POST['signUp']);
         //attribution destination json dans variable
         $filename = '../../data/users.json';
+       
 
         //condition pour envoyer les data dans le fichier user.json
         if (isset($filename)) {
@@ -32,8 +35,34 @@
             
             echo '<div class="col-md-12 d-flex justify-content-center">
             <div class="alert alert-danger">Erreur survenue lors saisie données !</div></div>';
-          }
-
+        }
     }
+
+/* essai pour vérification email !!!!!
+//condition pour envoyer les data dans le fichier user.json
+        if (isset($filename)) {
+            //ouvre le fichier json
+            $datajson = file_get_contents("$filename");
+            //on decode le fichier json en php
+            $data = json_decode($datajson, true);
+            //recherche dans le tableau
+            foreach ($data as $valeur) {
+                //si email dans data existe oui ou non 
+                if ($valeur['emailUser'] != $emailUser) {
+                    array_unshift($data,$_POST);
+                    //en rencode le fichier en json aprés avoir reçu données
+                    file_put_contents($filename,json_encode($data));
+                    //message confirmation
+                    echo '<div class="col-md-12 d-flex justify-content-center">
+                    <div class="alert alert-success">Inscription OK !</div></div>';
+                }else {
+                    echo '<div class="col-md-12 d-flex justify-content-center">
+                    <div class="alert alert-danger">Erreur survenue lors saisie données !</div></div>';
+                }
+            } 
+        } 
+
+*/
+        
 
 ?>

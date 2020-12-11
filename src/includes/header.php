@@ -48,7 +48,7 @@
 
 <body id="body">
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="../pages/home.php">
     <img src="../../images/logo.png" width="30" height="30" alt="">
   Application</a>
@@ -73,6 +73,7 @@
     </ul>
     <!--Ici on gere l'affichage du bouton se connecter si personne est connecte-->
     <?php if(!$_SESSION['adminLoggedIn'] && !$_SESSION['cuisinierLoggedIn'] && !$_SESSION['particulierLoggedIn'] ):?> 
+        
                     <div class="d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex">
                             <span class="text-dark effect-underline font-weight-bold">Non connecté</pspan>

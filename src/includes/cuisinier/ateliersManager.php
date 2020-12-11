@@ -57,12 +57,12 @@ if(isset($_GET['action'])){
                                 <li class="list-group-item"><strong>Nombre de réservations :
                                     </strong><?= count($atelier['participants'])?></li>
                                 <li class="list-group-item"><strong>Nombre de places :
-                                    </strong><?= $atelier['place_max']?></li>
-                                <li class="list-group-item"><strong>Prix : </strong><?= $atelier['id']?> €</li>
+                                    </strong><?= $atelier['nombre_places']?></li>
+                                <li class="list-group-item"><strong>Prix : </strong><?= $atelier['prix']?> €</li>
                             </ul>
                             <div class="d-flex w-100 justify-content-between align-items-center mt-5">
                                 <p class="card-text"><small
-                                        class="text-muted"><?= $atelier['etat_ajout']?><?= $atelier['date_ajout']?></small>
+                                        class="text-muted"><?php !$atelier['modifie'] ? "Ajouté le :" : "Modifié le :"?><?= $atelier['date_ajout']?></small>
                                 </p>
                                 <a href="../pages/pageAtelier.php?id=<?= $atelier['id']?>"
                                     class="btn btn-primary">Modifier</a>
