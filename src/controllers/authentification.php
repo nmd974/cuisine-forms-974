@@ -12,16 +12,16 @@
         $data = recupererUser();
         foreach ($data as $key => $value) {
             if ($value['pseudo'] == $pseudo && $value['password'] == $password){
-                if($value['role'] == "admin"){
-                    $role = 'admin';
+                if($value['role'] == "cuisinier"){
+                    $role = 'cuisinier';
                     $verificationStatus = true;
-                    $_SESSION['adminLogged'] = true;
+                    $_SESSION['cuisinierLoggedIn'] = true;
                 }else{
                     $role = 'user';
                     $verificationStatus = true;
-                    $_SESSION['userLogged'] = true;
+                    $_SESSION['particulierLoggedIn'] = true;
                     $_SESSION['id'] = $value['id'];
-                    $_SESSION['solde'] = $value['solde'];
+                    //$_SESSION['solde'] = $value['solde'];
                 }
             }
         }
@@ -33,20 +33,21 @@
 
 
      //Fonction qui va recuperer le contenu du fichier data.json
-     function recupererData()
+     /*function recupererData()
      {
-         $data = json_decode(file_get_contents(__ROOT__.'/src/data/data.json'), true);
+         $data = json_decode(file_get_contents(__ROOT__.'data/data.json'), true);
          if($data){
              return $data;
          }else{
              return null;
          }
  
-     }
+     }*/
+
          //Fonction qui va recuperer le contenu du fichier user.json
      function recupererUser()
      {
-         $data = json_decode(file_get_contents(__ROOT__.'/src/data/users.json'), true);
+         $data = json_decode(file_get_contents(__ROOT__.'data/users.json'), true);
          if($data){
              return $data;
          }else{
