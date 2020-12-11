@@ -9,6 +9,7 @@ if(isset($_GET['action'])){
         Ateliers::activerAtelier($_GET['id']);
     }
     if($action == "desactiver"){
+        var_dump($_GET['id']);
         Ateliers::activerAtelier($_GET['id']);
     }
 }
