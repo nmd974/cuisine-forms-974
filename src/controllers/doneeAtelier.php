@@ -1,6 +1,6 @@
 
 <?php
-  require_once('../class/Ateliers.php');
+ 
 
   $fichierDonneesAtelier = "../../data/ateliers.json";
 
