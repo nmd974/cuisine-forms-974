@@ -15,7 +15,7 @@
   $_POST["id"] = md5(uniqid(rand(), true));
   $_POST["proprietaire"] = 1;
   $_POST["date_ajout"] = [ $t=time(), date("Y-m-d")];
-  $_POST["etat_atelier"] = "Désactivé;
+  $_POST["etat_atelier"] = "Désactivé";
     
   
 

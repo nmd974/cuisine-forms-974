@@ -1,5 +1,14 @@
 [
     {
+        "nomUser": "Payet",
+        "prenomUser": "Jordan",
+        "emailUser": "jha.payet@gmail.com",
+        "telUser": "",
+        "passwordUser": "1234",
+        "id": "e4ee56d7a383984c435e49df03b97bf1",
+        "role": "user"
+    },
+    {
         "nomUser": "Lebon",
         "prenomUser": "Olivier",
         "emailUser": "Olivier@lebon.dev",
