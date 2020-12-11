@@ -28,6 +28,5 @@
   header("Location:..\pages\cuistoManager.php");
  
 
-  
 
 ?>
