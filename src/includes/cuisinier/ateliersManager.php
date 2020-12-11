@@ -64,7 +64,7 @@ if(isset($_GET['action'])){
                                 <p class="card-text"><small
                                         class="text-muted"><?= $atelier['etat_ajout']?><?= $atelier['date_ajout']?></small>
                                 </p>
-                                <a href="<?= __ROOT__.'src/pages/modificationAtelier.php?id='.$atelier['id']?>"
+                                <a href="../pages/pageAtelier.php?id=<?= $atelier['id']?>"
                                     class="btn btn-primary">Modifier</a>
                             </div>
                         </div>
