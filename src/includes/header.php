@@ -2,21 +2,21 @@
     define('__ROOT__', dirname(dirname(__DIR__))); 
     require_once(__ROOT__.'/src/class/AccesBDD.php');
 
-    AccesBDD::userData();
-    //On lance la session
-    // session_start();
-    // //On vérifie si l'admin est connecte
-    // if(!isset($_SESSION['adminLoggedIn'])){
-    //     $_SESSION['adminLoggedIn'] = false;
-    // }
-    // //On verifie si un cuisinier est connecte
-    // if(!isset($_SESSION['cuisinierLoggedIn'])){
-    //     $_SESSION['cuisinierLoggedIn'] = false;
-    // }
-    // //On verifie si un utilisateur est connecte
-    // if(!isset($_SESSION['userLoggedIn'])){
-    //     $_SESSION['userLoggedIn'] = false;
-    // }
+    
+    // On lance la session
+    session_start();
+    //On vérifie si l'admin est connecte
+    if(!isset($_SESSION['adminLoggedIn'])){
+        $_SESSION['adminLoggedIn'] = false;
+    }
+    //On verifie si un cuisinier est connecte
+    if(!isset($_SESSION['cuisinierLoggedIn'])){
+        $_SESSION['cuisinierLoggedIn'] = false;
+    }
+    //On verifie si un utilisateur est connecte
+    if(!isset($_SESSION['particulierLoggedIn'])){
+        $_SESSION['particulierLoggedIn'] = false;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,6 +34,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/loader.css">
     <script src="https://use.fontawesome.com/c18e5332f2.js"></script>
     <title>
         <?php if($title){
@@ -45,10 +46,9 @@
 
   </head>
 
-  <body>
-<header>
+<body id="body">
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <a class="navbar-brand" href="../pages/home.php">
     <img src="../../images/logo.png" width="30" height="30" alt="">
   Application</a>
@@ -57,7 +57,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="d-flex justify-content-end w-100">
+    <div class="d-flex justify-content-between align-items-center w-100">
 
 
     <ul class="navbar-nav my-2 my-lg-0">
@@ -70,12 +70,53 @@
       <li class="nav-item">
         <a class="nav-link" href="../pages/cuistoManager.php">Cuisto manager</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../pages/authentification.php">Se connecter</a>
-      </li>
     </ul>
+    <!--Ici on gere l'affichage du bouton se connecter si personne est connecte-->
+    <?php if(!$_SESSION['adminLogged'] && !$_SESSION['cuisinierLoggedIn'] && !$_SESSION['particulierLoggedIn'] ):?> 
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="d-flex">
+                            <span class="text-dark effect-underline font-weight-bold">Non connecté</pspan>
+                        </div>
+                        <div>
+                            <a href="../pages/authentification.php" class="text-white effect-underline font-weight-bold">
+                            <button class="btn btn-primary">Se connecter <i class="fa fa-sign-out" aria-hidden="true"></i></button></a>
+                        </div>
+                        
+                    </div>
+                <?php endif ?>
+                <?php if($_SESSION['particulierLoggedIn']):?> 
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="d-flex">
+                            <span class="text-dark effect-underline font-weight-bold">Votre solde :</pspan>
+                            <?php $data_user = recupererUser();?>
+                            <?php if($data_user):?>
+                                <?php foreach($data_user as $key => $user):?>
+                                    <?php if($_SESSION['id'] == $user['id']):?>
+                                        <span class="text-dark effect-underline font-weight-bold text-center ml-2"><?= $user['solde'] ?> €</span>
+                                    <?php endif?>
+                                <?php endforeach?>
+                            <?php endif?>
+                        </div>
+                        <div>
+                            <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold">
+                            <button class="btn btn-primary">Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                        </div>
+                        
+                    </div>
+                <?php endif ?>
+                <?php if($_SESSION['adminLogged']):?> 
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="d-flex">
+                            <span class="text-dark effect-underline font-weight-bold">Mode admin active</pspan>
+                        </div>
+                        <div>
+                            <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold">
+                            <button class="btn btn-primary">Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                        </div>
+                        
+                    </div>
+                <?php endif ?>
     </div>
   </div>
 </nav>
 
-</header>

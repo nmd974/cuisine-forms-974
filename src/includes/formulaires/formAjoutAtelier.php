@@ -1,4 +1,4 @@
-
+<?php var_dump($_POST);?>
 
     <div class="text-center mt-5 pt-5">
         <h2>
@@ -6,7 +6,7 @@
         </h2>
     </div>
     <section class="container mt-5 pt-5">
-        <form >
+        <form method="POST" action="ajoutAtelier.php">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nom de l'atelier</label>
                 <input type="text" class="form-control" id="#" aria-describedby="#">
@@ -21,7 +21,7 @@
                 <div class="col d-flex flex-column ">
                     <div class="form-group col-lg-12 px-0 mb-0 ">
                         <label for="formGroupExampleInput2">Date de l'atelier</label>
-                        <input type="datetime-local" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" name="duree" >
+                        <input type="datetime-local" name="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" name="duree" >
                         
                     </div>
                     <div class="form-group mt-3">
@@ -52,7 +52,7 @@
                 <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
             </div>
             <div class="text-center">
-                <button type="button" class="btn btn-secondary">Ajouter</button>
+                <button type="submit" class="btn btn-secondary">Ajouter</button>
             </div>
         </form>
         

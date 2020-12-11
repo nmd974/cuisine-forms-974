@@ -43,8 +43,6 @@
     </footer>
 
     <!--Fin footer-->
-
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- jQuery and JS bundle w/ Popper.js -->
@@ -55,7 +53,8 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <!--script JS-->
-    <!-- <script type="text/javascript" src="src/script/jumbotron.js"></script> -->
-
-  </body>
+    <script type="text/javascript" src="../script/jumbotron.js"></script>
+    <script type="text/javascript" src="./cuisinier/script.js"></script>
+    </body>
 </html>
+

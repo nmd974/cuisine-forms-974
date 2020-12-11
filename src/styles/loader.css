@@ -1,0 +1,76 @@
+.wrapper{
+    width: 200px;
+    height: 200px;
+    margin: 15% auto;
+
+}
+.box-area{
+    animation: animate 15s ease-in-out infinite;
+    transform-style: preserve-3d;
+    transform-origin: 100px 100px 0;
+    
+}
+.box-area div{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    line-height: 200;
+}
+.box-area .box1{
+    background-image: url(https://picsum.photos/200/200);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    transform: translateZ(100px);
+}
+.box-area .box2{
+    background-image: url(https://picsum.photos/200/200);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    transform: rotateY(90deg) translateZ(100px);
+}
+/* .box-area .box3{
+    background-image:url(./images/icones/3.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    transform: rotateY(90deg) rotateX(-90deg) translateZ(100px);
+} */
+.box-area .box4{
+    background-image: url(https://picsum.photos/200/200);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    transform: rotateY(180deg) translateZ(100px);
+}
+/* .box-area .box5{
+    background-image:url(./images/icones/5.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    transform: rotateY(-90deg) rotateX(90deg) translateZ(100px);
+} */
+.box-area .box6{
+    background-image: url(https://picsum.photos/200/200);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+@keyframes animate{
+    from,to{
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16%{transform: rotateY(-90deg);
+    }
+    33%{transform: rotateY(-90deg);
+    }
+    50%{transform: rotateY(-180deg);
+    }
+    66%{transform: rotateY(-270deg);
+    }
+    83%{transform: rotateY(-360deg);
+    }
+}
