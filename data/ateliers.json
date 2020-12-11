@@ -1,19 +1,20 @@
 [
     {
-        "titre": "massotay",
-        "description": "dlkmfmhf",
-        "date_debut": "2020-12-12",
-        "heure_debut": "13:33",
-        "nombre_places": "2",
-        "duree": "3",
-        "prix": "2",
+        "titre": "wsfwsfgwfsg",
+        "description": "wsfdwsfgwsfg",
+        "date_debut": "2020-12-16",
+        "heure_debut": "15:52",
+        "nombre_places": "1",
+        "duree": "1",
+        "prix": "1",
         "image": "",
-        "id": "29a81e4f49919108c8659c42b52ab9c1",
+        "id": "484ed9bf0e0f304ef80bce7b47d3ee15",
         "proprietaire": 1,
         "date_ajout": [
-            1607679171,
+            1607680368,
             "2020-12-11"
         ],
+        "etat_atelier": "D\u00e9sactiv\u00e9",
         "participants": [],
         "modifie": false
     }

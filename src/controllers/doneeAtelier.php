@@ -20,7 +20,7 @@
   $_POST["proprietaire"] = 1;
 
   $_POST["date_ajout"] = [ $t=time(), date("Y-m-d")];
-  $_POST["etat_atelier"] = "desactie";
+  $_POST["etat_atelier"] = "Désactivé;
     
   
 
