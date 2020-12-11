@@ -1,5 +1,4 @@
 
-
     <div class="text-center mt-5 pt-5">
         <h1> Connexion au compte</h1>
     </div>
@@ -46,11 +45,11 @@
                 <form class="row g-3" method="POST" action="" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <label for="name" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="#" name="nomUser" value="" required>
+                        <input type="text" class="form-control" name="nomUser" value="" required>
                     </div>
                     <div class="col-md-12">
                         <label for="prenom" class="form-label">Prénoms</label>
-                        <input type="text" class="form-control" id="#" value="" required name="prenomUser">
+                        <input type="text" class="form-control" value="" required name="prenomUser">
                     </div>
                     <div class="col-md-12">
                         <label for="inputEmail4" class="form-label">Email</label>
@@ -58,7 +57,7 @@
                     </div>
                     <div class="col-md-12">
                         <label for="telephone" class="form-label">Telephone</label>
-                        <input type="number" class="form-control" id="#" value="" name="telUser">
+                        <input type="number" class="form-control" value="" name="telUser">
                     </div>
                     <div class="col-md-12">
                         <label for="inputPassword4" class="form-label">Mot de passe</label>
