@@ -47,7 +47,8 @@
                             </ul>
                             <div class="d-flex w-100 justify-content-between align-items-center mt-5">
                               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              <a href="#" class="btn btn-primary">Modifier</a>
+                              <!-- Quand je clique sur le bouton modifier, il exécute le fichier 'formModifAtelier.php' -->
+                              <a href="../formulaires/formModifAtelier.php?=id=2" class="btn btn-primary">Modifier</a>
                             </div>
                         </div>
                     </div>
