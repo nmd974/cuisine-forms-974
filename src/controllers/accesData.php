@@ -16,7 +16,7 @@
         file_put_contents(__ROOT__.'/data/users.json', json_encode($data_receive));
         return 
         '<div class="col-12 d-flex justify-content-center">
-        <div class="alert alert-success">L\'atelier a bien été modifié !</div>
+        <div class="alert alert-success">L\'utilisateur a bien été modifié !</div>
         </div>';
     }
 

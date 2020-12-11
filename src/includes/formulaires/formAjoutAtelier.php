@@ -6,10 +6,10 @@
         </h2>
     </div>
     <section class="container mt-5 pt-5">
-        <form action="..\..\controllers\doneeAtelier.php" method="post" >
+        <form action="..\controllers\doneeAtelier.php" method="post" >
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nom de l'atelier</label>
-                <input type="text" class="form-control" id="#" aria-describedby="#" name="titreAtelier">
+                <input type="text" class="form-control" id="#" aria-describedby="#" name="titre">
                 
             </div>
             <div class="mb-3">
@@ -21,23 +21,23 @@
                 <div class="col d-flex flex-column ">
                     <div class="form-group col-lg-12 px-0 mb-0 ">
                         <label for="formGroupExampleInput2">Date de l'atelier</label>
-                        <input type="datetime-local" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" name="dateAtelier" >
+                        <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" name="date_debut" >
                         
                     </div>
                     <div class="form-group mt-3">
                         <label for="formGroupExampleInput">Place disponibe</label>
-                        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="placeDisponible" >
+                        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="nombre_places" >
                     </div>
                     
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label for="formGroupExampleInput">Heur d'ouverture</label>
-                        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="selection l'heure" name="time" >
+                        <label for="formGroupExampleInput">Durée</label>
+                        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="selection l'heure" name="duree" >
                     </div>
                     <div class="form-group mt-3">
                         <label for="formGroupExampleInput">Prix de l'atelier</label>
-                        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="selection coût" name="prixAtelier" >
+                        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="selection coût" name="prix" >
                     </div>
                    
                 </div>
@@ -49,7 +49,7 @@
             </div>
             <div class="input-group mb-3 ">
                
-                <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
+                <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload" name="image">
             </div>
             <div class="text-center">
                 <button type="submit"  class="btn btn-secondary">Ajouter</button>

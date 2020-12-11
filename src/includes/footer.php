@@ -54,7 +54,7 @@
         crossorigin="anonymous"></script>
     <!--script JS-->
     <script type="text/javascript" src="../script/jumbotron.js"></script>
-    <script type="text/javascript" src="./cuisinier/script.js"></script>
+    <script type="text/javascript" src="../includes/cuisinier/script.js"></script>
     </body>
 </html>
 
