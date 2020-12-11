@@ -5,12 +5,12 @@
     if(isset($_POST['submit'])){ //Ici on va contrôler le mot de passe saisi
         $auth = validationConnexion($_POST);
         if($auth[0] && $auth[1] == "admin"){
-            $_SESSION['adminLogged'] = true;
+            $_SESSION['cuisinierLoggedIn'] = true;
             //on envoi vers le lien management
             header('Location: ../../pages/cuistoManager.php?page=1');
         };
         if($auth[0] && $auth[1] == "user"){
-            $_SESSION['userLogged'] = true;
+            $_SESSION['particulierLoggedIn'] = true;
             //on envoir user vers index
             header('Location: ../../pages/home.php?page=1');
         }
@@ -44,7 +44,7 @@
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Identifiant</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required id="username" name="username">
-                      <div id="emailHelp" class="form-text">Pseudo ou votre adresse email.</div>
+                      <div id="emailHelp" class="form-text">votre adresse email.</div>
                     </div>
 
                     <div class="mb-3">
@@ -55,7 +55,6 @@
                         <button type="submit" class="btn btn-primary">Se conneter</button>
                     </div>
                     
-                    <?php include("../controllers/authetification.php"); ?>
 
                 </form>
                 <!--Fin identification-->
