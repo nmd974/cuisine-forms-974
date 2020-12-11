@@ -1,4 +1,24 @@
+  
+<?php  
+    //appel du controllers authetification
+    require_once(__ROOT__.'/src/controllers/authentification.php');
+    if(isset($_POST['submit'])){ //Ici on va contrôler le mot de passe saisi
+        $auth = validationConnexion($_POST);
+        if($auth[0] && $auth[1] == "admin"){
+            $_SESSION['adminLogged'] = true;
+            //on envoi vers le lien management
+            header('Location: ../../pages/cuistoManager.php?page=1');
+        };
+        if($auth[0] && $auth[1] == "user"){
+            $_SESSION['userLogged'] = true;
+            //on envoir user vers index
+            header('Location: ../../pages/home.php?page=1');
+        }
+    }
 
+?>
+    
+    
     <div class="text-center mt-5 pt-5">
         <h1> Connexion au compte</h1>
     </div>
@@ -14,19 +34,29 @@
                 </div>
 
                 <!--Début identification-->
-                <form> 
+                <form method="POST"
+                enctype="multipart/form-data" action="<?php htmlentities($_SERVER["PHP_SELF"], ENT_QUOTES)?>"> 
+
+                <?php if(isset($_POST['submit'])){
+                    echo $auth[2];
+                }?>
+
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Identifiant</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required id="username" name="username">
                       <div id="emailHelp" class="form-text">Pseudo ou votre adresse email.</div>
                     </div>
+
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <input type="password" class="form-control" id="passord" required name="password">
                     </div>
                     <div class="col-12 text-end mb-5">
                         <button type="submit" class="btn btn-primary">Se conneter</button>
                     </div>
+                    
+                    <?php include("../controllers/authetification.php"); ?>
+
                 </form>
                 <!--Fin identification-->
 

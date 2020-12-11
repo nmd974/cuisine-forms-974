@@ -10,7 +10,7 @@
         //variable pour le mailUser
         $emailUser = $_POST['emailUser'];
         //affectation rôle:
-        $_POST['role'] = "particulier";
+        $_POST['role'] = "user";
         //surppression $post signUp
         unset($_POST['signUp']);
         //attribution destination json dans variable

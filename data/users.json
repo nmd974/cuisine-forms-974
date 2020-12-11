@@ -4,35 +4,8 @@
         "prenomUser": "Olivier",
         "emailUser": "Olivier@lebon.dev",
         "telUser": "0692451594",
-        "passwordUser": "vfvfvfvfv",
-        "id": "98187be7d078cd053cee84cf8118d77e",
-        "role": "particulier"
-    },
-    {
-        "nomUser": "Lebon",
-        "prenomUser": "Olivier",
-        "emailUser": "Olivier@lebon.dev",
-        "telUser": "0692451594",
-        "passwordUser": "vfvfvfv",
-        "id": "6bffb0abe2fe0ffc2900e5e647aef833",
-        "role": "particulier"
-    },
-    {
-        "nomUser": "Lebon",
-        "prenomUser": "Olivier",
-        "emailUser": "Olivier@lebon.dev",
-        "telUser": "0692451594",
-        "passwordUser": "vfvfvfv",
-        "id": "12cf00b724462d161e5dea1918ddba58",
-        "role": "particulier"
-    },
-    {
-        "nomUser": "Lebon",
-        "prenomUser": "Olivier",
-        "emailUser": "Olivier@lebodddeded",
-        "telUser": "0692451594",
-        "passwordUser": "vfvfvfvfv",
-        "id": "03b597ddab72c75bdf070a8fbc9fd4b6",
-        "role": "particulier"
+        "passwordUser": "teste",
+        "id": "53d76686b5ad4c04e63460b7bb02ec85",
+        "role": "user"
     }
 ]
