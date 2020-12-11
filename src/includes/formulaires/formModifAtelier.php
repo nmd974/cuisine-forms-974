@@ -17,7 +17,7 @@
 <?php // Passe en revue le tableau $data 
 foreach ($data as $atelier) :
 ?>
-<?php var_dump($atelier)?>
+
     <?php
     if ($atelier['id'] == $_GET["id"]) : // Si 
     ?>
@@ -80,5 +80,5 @@ foreach ($data as $atelier) :
             </form>
 
         </section>
-    <?php endif ?>
-<?php endforeach ?>
+    <?php endif // Termine la fonction  ?> 
+<?php endforeach // Termine la boucle foreach?>
