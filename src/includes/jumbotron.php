@@ -1,7 +1,7 @@
  <div class="imageprincipale d-flex align-items-center justify-content-center">
 
    <!--Début Jumbotron-->
-   <div class="jumbotron col-4 mt-5 backgroundJumbotron text-center">
+   <div class="jumbotron col-lg-5 col-md-8 col-9  mt-5 backgroundJumbotron text-center">
      <h1>Hello wolrd</h1>
      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
      <hr class="my-4">
