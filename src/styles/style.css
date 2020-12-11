@@ -5,7 +5,7 @@ html,body {
     flex-direction: column;
     justify-content: space-between;
     min-height: 1024px;
-background-color: rgb(235, 235, 235);
+    background-color: rgb(235, 235, 235);
     
 
     font-family: Verdana, Geneva, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;
@@ -29,9 +29,11 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 
 }
+
 .card{
   
 }
+
 .btn-primary{
   background-color: #f3671f !important;
   border-color: #f3671f !important;
