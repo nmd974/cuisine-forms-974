@@ -17,7 +17,7 @@
         var_dump($data_receive);
         return 
         '<div class="col-12 d-flex justify-content-center">
-        <div class="alert alert-success">Opération réussi !</div>
+        <div class="alert alert-success">L\'utilisateur a bien été modifié !</div>
         </div>';
     }
 

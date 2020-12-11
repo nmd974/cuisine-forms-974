@@ -13,13 +13,27 @@
   $_POST["duree"] = htmlspecialchars($_POST["duree"]);
   $_POST["date_debut"] =  htmlspecialchars($_POST["date_debut"]);
   $_POST["nombre_places"] =  htmlspecialchars($_POST["nombre_places"]);
+  $_POST["heure_debut"] =  htmlspecialchars($_POST["heure_debut"]);
+  $_POST["image"] =  htmlspecialchars($_POST["image"]);
+  
+  $_POST["id"] = md5(uniqid(rand(), true));
+  $_POST["proprietaire"] = 1;
+
+  $_POST["date_ajout"] = [ $t=time(), date("Y-m-d")];
+    
+  
+
+  $_POST["participants"] =[];
+  $_POST["modifie"] = false;
+  
+
 
   array_unshift($data, $_POST);
 
- var_dump($data);
+
   
-  $tailleTableau = count($data);
-  $data[$tailleTableau] = $atelier;
+ // $tailleTableau = count($data);
+  //$data[$tailleTableau] = $atelier;
 
   file_put_contents($fichierDonneesAtelier, json_encode($data));
   

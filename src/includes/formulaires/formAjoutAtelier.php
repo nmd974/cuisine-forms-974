@@ -19,9 +19,15 @@
            
             <div class="row">
                 <div class="col d-flex flex-column ">
-                    <div class="form-group col-lg-12 px-0 mb-0 ">
-                        <label for="formGroupExampleInput2">Date de l'atelier</label>
-                        <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" name="date_debut" >
+                    <div class=" row form-group col-lg-12 px-0 mb-0  ">
+                        <div class="col-lg-6">
+                            <label for="formGroupExampleInput2">Date début de l'atelier</label>
+                            <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" name="date_debut" >
+                        </div>
+                        <div class="col-lg-6 text-end mr-0 pr-0 ">
+                            <label for="appt"> Heure de début:</label>
+                            <input type="time" id="appt" name="heure_debut" class="form-control" placeholder="Another input placeholder" >
+                        </div>
                         
                     </div>
                     <div class="form-group mt-3">
