@@ -2,7 +2,7 @@
 
 <!-- Cette page est la structure du formulaire visible par l'utilisateur dans la "pageAtelier.php" -->
 
-<?php include(__ROOT__ . 'controllerAtelier.php') // Ici on inclut la fonction qui permet de controller la sécurité du formulaire
+<?php include(__ROOT__ . '/src/controllers/controllerAtelier.php') // Ici on inclut la fonction qui permet de controller la sécurité du formulaire
 ?>
 
 <?php if (isset($_GET['id'])) { // Je recupère la valeur $_GET_['ID'] dans le fichier atelier.json
