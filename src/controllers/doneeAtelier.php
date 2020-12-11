@@ -1,22 +1,23 @@
 
 <?php
  
-
   $fichierDonneesAtelier = "../../data/ateliers.json";
 
   $data = json_decode(file_get_contents($fichierDonneesAtelier), true);
 
+ 
 
-  $atelier = htmlspecialchars($_POST["titreAtelier"]);
-  $description = htmlspecialchars($_POST["description"]);
-  $prix = htmlspecialchars($_POST["prixAtelier"]);
-  $date = htmlspecialchars($_POST["dateAtelier"]);
-  $heure =  htmlspecialchars($_POST["time"]);
-  $place =  htmlspecialchars($_POST["placeDisponible"]);
+  $_POST["titre"] = htmlspecialchars($_POST["titre"]);
+  $_POST["description"] = htmlspecialchars($_POST["description"]);
+  $_POST["prix"] = htmlspecialchars($_POST["prix"]);
+  $_POST["duree"] = htmlspecialchars($_POST["duree"]);
+  $_POST["date_debut"] =  htmlspecialchars($_POST["date_debut"]);
+  $_POST["nombre_places"] =  htmlspecialchars($_POST["nombre_places"]);
 
-  $atelier = new Ateliers((int)3, $atelier, $description, $date, (int)$heure, 
-  (int)$place, null, null, new DateTime(), (int)$prix, null);
+  array_unshift($data, $_POST);
 
+ var_dump($data);
+  
   $tailleTableau = count($data);
   $data[$tailleTableau] = $atelier;
 
