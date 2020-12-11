@@ -72,7 +72,7 @@
       </li>
     </ul>
     <!--Ici on gere l'affichage du bouton se connecter si personne est connecte-->
-    <?php if(!$_SESSION['adminLogged'] && !$_SESSION['cuisinierLoggedIn'] && !$_SESSION['particulierLoggedIn'] ):?> 
+    <?php if(!$_SESSION['adminLoggedIn'] && !$_SESSION['cuisinierLoggedIn'] && !$_SESSION['particulierLoggedIn'] ):?> 
                     <div class="d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex">
                             <span class="text-dark effect-underline font-weight-bold">Non connecté</pspan>
@@ -88,7 +88,7 @@
                     <div class="d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex">
                             <span class="text-dark effect-underline font-weight-bold">Votre solde :</pspan>
-                            <?php $data_user = recupererUser();?>
+                            <?php $data_user = getUserData();?>
                             <?php if($data_user):?>
                                 <?php foreach($data_user as $key => $user):?>
                                     <?php if($_SESSION['id'] == $user['id']):?>
@@ -104,7 +104,7 @@
                         
                     </div>
                 <?php endif ?>
-                <?php if($_SESSION['adminLogged']):?> 
+                <?php if($_SESSION["adminLoggedIn"]):?> 
                     <div class="d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex">
                             <span class="text-dark effect-underline font-weight-bold">Mode admin active</pspan>
