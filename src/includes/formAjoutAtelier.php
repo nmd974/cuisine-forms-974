@@ -4,7 +4,7 @@
     </h2>
 </div>
 <section class="container mt-5 pt-5">
-    <form action="authentification.php" method="post">
+    <form action="doneeAtelier.php" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nom de l'atelier</label>
             <input type="text" class="form-control" id="#" aria-describedby="#" name="titreAtelier">
@@ -46,11 +46,10 @@
             <label for="">Image</label>
         </div>
         <div class="input-group mb-3 ">
-
-            <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
+            <input type="file" name="image" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
         </div>
         <div class="text-center">
-            <button type="button" class="btn btn-secondary">Ajouter</button>
+        <input type="submit" name="ajouter" value="Ajouter" class="btn btn-primary">
         </div>
     </form>
 

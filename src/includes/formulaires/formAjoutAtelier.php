@@ -6,7 +6,7 @@
         </h2>
     </div>
     <section class="container mt-5 pt-5">
-        <form action="..\controllers\doneeAtelier.php" method="post" >
+        <form action="..\controllers\doneeAtelier.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nom de l'atelier</label>
                 <input type="text" class="form-control" id="#" aria-describedby="#" name="titre">
@@ -14,7 +14,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" maxlength="250"></textarea>
             </div>
            
             <div class="row">
