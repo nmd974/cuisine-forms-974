@@ -57,13 +57,15 @@
 
     <script>
     $(document).ready(function(){
-        $('.accordion').on('click', 'input', function() {
-            if($('#labelswitch_'+ this.id).text() === "Désactivé"){
-                window.location = window.location.pathname + '?action=desactiver&id=' + this.id;
-            }
-            else{
-                window.location = window.location.pathname + '?action=activer&id=' + this.id;
-            }
+        $('.custom-control').on('click', function() {
+          console.log(this.id);
+          window.location = window.location.pathname + '?id=' + this.id;
+            // if($('#labelswitch_'+ this.id).text() === "Désactivé"){
+            //     window.location = window.location.pathname + '?id=' + this.id;
+            // }
+            // else{
+            //     window.location = window.location.pathname + '?action=activer&id=' + this.id;
+            // }
         })
     });
     </script>

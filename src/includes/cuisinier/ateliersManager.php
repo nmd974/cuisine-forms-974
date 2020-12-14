@@ -1,25 +1,20 @@
 <?php 
   require_once(__ROOT__.'/src/class/Ateliers.php');
   require_once(__ROOT__.'/src/controllers/accesData.php');
+  require_once(__ROOT__.'/src/controllers/controllerAtelier.php');
 ?>
 <?php 
-if(isset($_GET['action'])){
-    $action = $_GET['action'];
-    if($action == "activer"){
-        Ateliers::activerAtelier($_GET['id']);
-        var_dump($action);
-        // header('Location: ../pages/cuistoManager.php');
-    }
-    if($action == "desactiver"){
-        Ateliers::desactiverAtelier($_GET['id']);
-        // header('Location: ../pages/cuistoManager.php');
-    }
+if(isset($_GET['id'])){
+    $modification = activerDesactiverAtelier($_GET['id']);
 }
 ?>
 
 <div class="container" id="atelierManager">
-    
     <div class="table-responsive">
+        <?php if(isset($modification)){
+            echo $modification;
+        }
+        ?>
         <div class="accordion" id="ateliers">
             <?php $data = getAteliersData();?>
             <?php if($data):?>
@@ -32,7 +27,7 @@ if(isset($_GET['action'])){
                         aria-controls="collapse_<?= $atelier['id']?>">
                         <h2 class="mb-0 d-flex"><?= $atelier['titre']?></h2>
                     </button>
-                    <div class="custom-control custom-switch">
+                    <div class="custom-control custom-switch" id="<?= $atelier['id']?>">
                         <input type="checkbox" class="custom-control-input" 
                             <?php if($atelier['etat_atelier'] == "Active"){
                                 echo "checked";
