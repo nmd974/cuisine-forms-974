@@ -51,7 +51,37 @@
                                         class="text-muted"><?= !$atelier['modifie'] ? "Ajouté le :" : "Modifié le :"?><?= $atelier['date_ajout'][1]?></small>
                                 </p>
                                 <a href="../pages/home.php?id=<?= $atelier['id']?>"
-                                    class="btn btn-primary">S'inscrire</a>
+                                    class="btn btn-primary
+                                    <?php 
+                                      if(isLoggedIn()){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
+                                        foreach($_SESSION['inscription_atelier'] as $inscriptionIndice){
+                                          if($inscriptionIndice == $_SESSION['id']){
+                                            echo 'disabled';
+                                          }
+                                        }
+                                      }
+                                      if(count($atelier['participants']) == $atelier['nombre_places']){
+                                        echo 'disabled';
+                                      }
+                                    ?>
+                                    ">
+                                    <?php 
+                                      if(isLoggedIn()){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
+                                        foreach($_SESSION['inscription_atelier'] as $inscriptionIndice){
+                                          if($inscriptionIndice == $_SESSION['id']){
+                                            echo 'Inscrit !';
+                                            exit();
+                                          }
+                                        }
+                                      }
+                                      if(count($atelier['participants']) == $atelier['nombre_places']){
+                                        echo 'Atelier plein';
+                                      }
+                                      else{
+                                        echo "S'inscrire";
+                                      }
+                                    ?>
+                                </a>
                             </div>
                         </div>
               </div>

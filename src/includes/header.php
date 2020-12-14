@@ -1,6 +1,6 @@
 <?php
     define('__ROOT__', dirname(dirname(__DIR__))); 
-    require_once(__ROOT__.'/src/class/AccesBDD.php');
+    require_once(__ROOT__.'/src/controllers/accesData.php');
 
     
     // On lance la session
@@ -15,8 +15,13 @@
     }
     //On verifie si un utilisateur est connecte
     if(!isset($_SESSION['particulierLoggedIn'])){
-        $_SESSION['particulierLoggedIn'] = false;
+        $_SESSION['particulierLoggedIn'] = true;
+        $_SESSION['id'] = "53d76686b5ad4c04e63460b7bb02ec85";
     }
+    $_SESSION['particulierLoggedIn'] = true;
+    $_SESSION['id'] = "53d76686b5ad4c04e63460b7bb02ec85";
+    $_SESSION['inscription_atelier']=["53d76686b5ad4c04e63460b7bb02ec85"]
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -88,12 +93,12 @@
                 <?php if($_SESSION['particulierLoggedIn']):?> 
                     <div class="d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex">
-                            <span class="text-dark effect-underline font-weight-bold">Votre solde :</pspan>
+                            <span class="text-dark effect-underline font-weight-bold">Connecté :</pspan>
                             <?php $data_user = getUserData();?>
                             <?php if($data_user):?>
                                 <?php foreach($data_user as $key => $user):?>
                                     <?php if($_SESSION['id'] == $user['id']):?>
-                                        <span class="text-dark effect-underline font-weight-bold text-center ml-2"><?= $user['solde'] ?> €</span>
+                                        <span class="text-dark effect-underline font-weight-bold text-center ml-2"><?= $user['nomUser'] ?> <?= $user['prenomUser'] ?></span>
                                     <?php endif?>
                                 <?php endforeach?>
                             <?php endif?>
