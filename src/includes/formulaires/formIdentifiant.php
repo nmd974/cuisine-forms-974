@@ -10,11 +10,11 @@
       <h5 class="card-title">Déjà membre?</h5>
       <h5 class="card-title">Se connecter</h5>
 
-      <?php echo print_r($_SESSION) ?>
-
       <?php 
-      include("../controllers/authentification.php"); 
-      validationConnexion();
+        require_once(__ROOT__.'/src/controllers/authentification.php');
+        if(isset($_POST['connecter'])){
+            validationConnexion();
+        }
       ?>
       
       
@@ -22,13 +22,12 @@
       <form method="POST" enctype="multipart/form-data" action="" class="mb-3"> 
 
           <div class="">
-              <label for="exampleInputEmail1" class="form-label">Identifiant</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required id="username" name="email">
-              <div id="emailHelp" class="form-text">votre adresse email.</div>
+              <label for="email" class="form-label">Identifiant</label>
+              <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Votre adresse email" name="email">
           </div>
           <div  class="">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="passord" required name="password">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Votre adresse mot de passe"  name="password">
           </div>
           <div class="col-12 text-end my-3">
               <button type="submit" class="btn btn-primary mr-4" name="connecter">Se conneter</button>

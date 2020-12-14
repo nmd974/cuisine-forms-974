@@ -53,7 +53,7 @@
                                 <a href="../pages/home.php?id=<?= $atelier['id']?>"
                                     class="btn btn-primary
                                     <?php 
-                                      if(isLoggedIn()){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
+                                      if($_SESSION['particulierLoggedIn']){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
                                         foreach($_SESSION['inscription_atelier'] as $inscriptionIndice){
                                           if($inscriptionIndice == $_SESSION['id']){
                                             echo 'disabled';
@@ -63,10 +63,13 @@
                                       if(count($atelier['participants']) == $atelier['nombre_places']){
                                         echo 'disabled';
                                       }
+                                      if($_SESSION['cuisinierLoggedIn']){
+                                        echo 'disabled';
+                                      }
                                     ?>
                                     ">
                                     <?php 
-                                      if(isLoggedIn()){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
+                                      if($_SESSION['particulierLoggedIn']){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
                                         foreach($_SESSION['inscription_atelier'] as $inscriptionIndice){
                                           if($inscriptionIndice == $_SESSION['id']){
                                             echo 'Inscrit !';
