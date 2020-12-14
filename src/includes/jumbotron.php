@@ -1,7 +1,7 @@
- <div class="imageprincipale d-flex align-items-center justify-content-center">
+ <div class="imageprincipale d-flex justify-content-center">
 
    <!--Début Jumbotron-->
-   <div class="jumbotron col-lg-5 col-md-8 col-9  mt-5 backgroundJumbotron text-center">
+   <div class="jumbotron col-lg-5 col-md-8 col-9  mt-5 backgroundJumbotron text-center d-flex align-items-center flex-column">
     <h1 class="ml9">
       <span class="text-wrapper">
         <span class="letters">Coffee mornings</span>
