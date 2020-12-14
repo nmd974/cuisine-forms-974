@@ -71,3 +71,4 @@ if (isset($_GET['id'])) {
     </div>
 </div>
 </div>
+<?php endif; ?>
