@@ -26,7 +26,7 @@
         ?>
         <?php if($atelier['etat_atelier'] == "Active"):?>
         <!--Atelier-->
-        <div class="card my-3" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
+        <div class="card my-3" style="max-width: 1000px; margin-left: auto; margin-right: auto;" data-aos="flip-down">
             <div class="row no-gutters">
               <div class="col-md-4">
                 <img src="../../images/<?= $atelier['image']?>" class="card-img" alt="Nos cours de cuisine">

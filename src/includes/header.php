@@ -44,6 +44,8 @@
     <link rel="stylesheet" href="../styles/loader.css">
     <script src="https://use.fontawesome.com/c18e5332f2.js"></script>
     <title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
         <?php if($title){
             echo $title;
         }else{

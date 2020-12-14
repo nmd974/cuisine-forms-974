@@ -54,6 +54,12 @@
         crossorigin="anonymous"></script>
     <!--script JS-->
     <script type="text/javascript" src="../script/jumbotron.js"></script>
+    
+    <!--Animation card-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
 
     <script>
     $(document).ready(function(){
