@@ -12,6 +12,8 @@ html,body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Light', 'Roboto Medium', 'Roboto';
 }
+
+
 .imageprincipale{
   background-size: cover;
   background:linear-gradient(to bottom, rgba(83, 83, 83, 0.8) 0%, rgba(83, 83, 83, 0.8) 100%), url(../../images/main.jpeg);

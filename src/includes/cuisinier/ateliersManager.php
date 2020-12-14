@@ -14,7 +14,7 @@ if(isset($_GET['action'])){
     }
 }
 ?>
-<div class="container mt-5 pt-5">
+<div class="container">
     <h2 class="text-center align-middle font-weight-bold">Liste des ateliers</h2>
     <div class="table-responsive">
         <div class="accordion" id="ateliers">
