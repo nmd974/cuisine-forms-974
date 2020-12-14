@@ -70,9 +70,4 @@ if (isset($_GET['id'])) {
 <?php endif; ?>
     </div>
 </div>
-<<<<<<< HEAD
 </div>
-<?php endif?>
-=======
-</div>
->>>>>>> 58e5b9aa71188596f0b3eecd607d9db673ced0db
