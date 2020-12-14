@@ -8,7 +8,7 @@ if(isset($_GET['id'])){
     $modification = activerDesactiverAtelier($_GET['id']);
 }
 ?>
-
+<?php if($_SESSION['cuisinierLoggedIn']):?>
 <div class="container" id="atelierManager">
     <div class="table-responsive">
         <?php if(isset($modification)){
@@ -78,3 +78,4 @@ if(isset($_GET['id'])){
     </div>
 </div>
 </div>
+<?php endif?>

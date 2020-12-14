@@ -22,10 +22,11 @@ if (isset($_POST['modifier'])) {
             $data[$key]['titre'] = $_POST["titre"];
             $data[$key]['description'] = $_POST["description"];
             $data[$key]['date_ajout'] = $_POST["date_ajout"];
-            $data[$key]['place_disponible'] = $_POST["place_disponible"];
-            $data[$key]['date_debut'] = $_POST["date__debut"];
-            $data[$key]['date_debut'] = $_POST["date__debut"];
+            $data[$key]['nombre_places'] = $_POST["nombre_places"];
+            $data[$key]['date_debut'] = $_POST["date_debut"];
+            $data[$key]['heure_debut'] = $_POST["heure_debut"];
             $data[$key]['prix'] = $_POST["prix"];
+            $data[$key]['modifie'] = true;
 
             file_put_contents($fichierDonneesAtelier, json_encode($data)); // ici j'encode les données $data et je les mets dans la variable $fichierDonnéeAtelier
 
@@ -85,7 +86,7 @@ foreach ($data as $atelier) :
                         </div>
                         <div class="form-group mt-3">
                             <label for="formGroupExampleInput">Place disponibe</label>
-                            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="placeDisponible" <?= $atelier['place_disponible'] ?>>
+                            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="placeDisponible" value="<?= $atelier['place_disponible'] ?>">
                         </div>
 
                     </div>
