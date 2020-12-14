@@ -13,13 +13,8 @@
                 
             </div>
             <div class="mb-3">
-<<<<<<< HEAD
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" id="description" rows="3" name="description" maxlength="250"></textarea>
-=======
-                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" maxlength="250"></textarea>
->>>>>>> 3d282d15952053fccf584d3a147123885c45d506
             </div>
            
             <div class="row">
@@ -30,7 +25,7 @@
                             <input type="date" class="form-control" id="date_debut" placeholder="Another input placeholder" name="date_debut" >
                         </div>
                         <div class="col-lg-6 text-end mr-0 pr-0 ">
-                            <label for="appt"> Heure de début:</label>
+                            <label for="heure_debut"> Heure de début:</label>
                             <input type="time" id="heure_debut" name="heure_debut" class="form-control" placeholder="Another input placeholder" >
                         </div>
                         
@@ -60,7 +55,7 @@
             </div>
             <div class="input-group mb-3 ">
                
-                <input type="file" class="form-control" id="image" aria-describedby="inputGroupFileAddon03" aria-label="Upload" name="image">
+                <input type="file" for="image" class="form-control" id="image" aria-describedby="inputGroupFileAddon03" aria-label="Upload" name="image">
             </div>
             <div class="text-center">
                 <button type="submit" name="valide" class="btn btn-secondary">Ajouter</button>
