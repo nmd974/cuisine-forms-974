@@ -54,7 +54,7 @@
                                     class="btn btn-primary
                                     <?php 
                                       if($_SESSION['particulierLoggedIn']){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
-                                        foreach($_SESSION['inscription_atelier'] as $inscriptionIndice){
+                                        foreach($_SESSION['ateliers'] as $inscriptionIndice){
                                           if($inscriptionIndice == $_SESSION['id']){
                                             echo 'disabled';
                                           }
@@ -70,7 +70,7 @@
                                     ">
                                     <?php 
                                       if($_SESSION['particulierLoggedIn']){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
-                                        foreach($_SESSION['inscription_atelier'] as $inscriptionIndice){
+                                        foreach($_SESSION['ateliers'] as $inscriptionIndice){
                                           if($inscriptionIndice == $_SESSION['id']){
                                             echo 'Inscrit !';
                                             exit();
