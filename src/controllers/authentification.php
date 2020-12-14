@@ -11,7 +11,6 @@
         $password = htmlentities($_POST['password'], ENT_QUOTES);
         $passHash = password_hash($password, PASSWORD_DEFAULT);
         $passwordValid = password_verify($_POST['password'], $passHash); // On crypte le mot
-        echo var_dump($passwordValid);
 
         $datajson = file_get_contents("../../data/users.json");
 
