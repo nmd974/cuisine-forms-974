@@ -1,64 +1,221 @@
+<?php
+    require_once(__ROOT__.'/src/controllers/ajoutAtelier.php');
+?>
+
+<?php
+    if(isset($_POST['ajouter'])){
+        if($_FILES['image_upload']['name'] == ""){
+            $validationFormulaire = [false, '<div class="container alert alert-danger col-12 mb-5">Veuillez sélectionner une image !</div>', 'image_upload'];
+        }else{
+            $validationFormulaire = ajoutAtelier($_POST, $_FILES);
+        }       
+    }
+    // var_dump(substr($_POST['date_debut'],6,1));
+    // var_dump($_FILES);
+?>
 
 
-    <div class="text-center mt-5 pt-5">
-        <h2>
-            AJOUTEZ VOS ATELIERS
-        </h2>
-    </div>
-    <section class="container mt-5 pt-5">
-        <form action="..\controllers\doneeAtelier.php" method="post" >
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nom de l'atelier</label>
-                <input type="text" class="form-control" id="#" aria-describedby="#" name="titre">
-                
+    <section class="container mt-5">
+        <?php
+            if(isset($validationFormulaire[1])){
+                echo $validationFormulaire[1];
+            }  
+        ?>
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3 form-group col-12">
+                <label for="titre">Titre de l'atelier :</label>
+                <input 
+                    type="text" 
+                    class="form-control 
+                    <?php
+                        if(isset($validationFormulaire[2])){
+                            if($validationFormulaire[2] == "titre"){
+                                echo "invalid";
+                            }
+                        }
+                    ?>" 
+                    id="titre" 
+                    aria-describedby="titre" 
+                    name="titre" 
+                    value="<?= isset($_POST['titre']) ? htmlentities($_POST['titre'],ENT_QUOTES) : ""?>"
+                >
             </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+            <div class="mb-3 form-group col-12">
+                <label for="description">Description :</label>
+                <textarea 
+                    class="form-control
+                    <?php
+                        if(isset($validationFormulaire[2])){
+                            if($validationFormulaire[2] == "description"){
+                                echo "invalid";
+                            }
+                        }
+                    ?>"
+                    id="description" 
+                    rows="3" 
+                    name="description"
+                    ><?= isset($_POST['description']) ? htmlentities($_POST['description'],ENT_QUOTES) : "" ?></textarea>
             </div>
-           
-            <div class="row">
-                <div class="col d-flex flex-column ">
-                    <div class=" row form-group col-lg-12 px-0 mb-0  ">
-                        <div class="col-lg-6">
-                            <label for="formGroupExampleInput2">Date début de l'atelier</label>
-                            <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" name="date_debut" >
-                        </div>
-                        <div class="col-lg-6 text-end mr-0 pr-0 ">
-                            <label for="appt"> Heure de début:</label>
-                            <input type="time" id="appt" name="heure_debut" class="form-control" placeholder="Another input placeholder" >
-                        </div>
-                        
-                    </div>
-                    <div class="form-group mt-3">
-                        <label for="formGroupExampleInput">Place disponibe</label>
-                        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="nombre_places" >
-                    </div>
-                    
+            <div class="d-lg-flex">
+                <div class="mb-3 form-group col-lg-4 col-12">
+                    <label for="date_debut">Date de début :</label>
+                    <input 
+                        type="date" 
+                        class="form-control
+                        <?php
+                            if(isset($validationFormulaire[2])){
+                                if($validationFormulaire[2] == "date_debut"){
+                                    echo "invalid";
+                                }
+                            }
+                        ?>"  
+                        id="date_debut" 
+                        name="date_debut"
+                        value="<?= isset($_POST['date_debut']) ? htmlentities($_POST['date_debut'],ENT_QUOTES) : ""?>"
+                    >
                 </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Durée</label>
-                        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="selection l'heure" name="duree" >
+                <div class="mb-3 col-lg-4 col-12">
+                    <label for="heure_debut">Heure de début :</label>
+                    <div class="input-group" id="heure_debut">
+                        <select 
+                            class="custom-select
+                            <?php
+                                if(isset($validationFormulaire[2])){
+                                    if($validationFormulaire[2] == "heureDebut"){
+                                        echo "invalid";
+                                    }
+                                }
+                            ?>"  
+                            id="heureSelect" 
+                            name="heureDebut"
+                        >
+                        </select>
+                        <div class="input-group-append">
+                            <label class="input-group-text" for="heureSelect">H</label>
+                        </div>
+                        <select 
+                            class="custom-select
+                            <?php
+                                if(isset($validationFormulaire[2])){
+                                    if($validationFormulaire[2] == "minDebut"){
+                                        echo "invalid";
+                                    }
+                                }
+                            ?>"   
+                            id="minSelect" 
+                            name="minDebut"
+                        >
+                        </select>
+                        <div class="input-group-append">
+                            <label class="input-group-text" for="minSelect">Min</label>
+                        </div>
                     </div>
-                    <div class="form-group mt-3">
-                        <label for="formGroupExampleInput">Prix de l'atelier</label>
-                        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="selection coût" name="prix" >
-                    </div>
-                   
                 </div>
-                
+                <div class="mb-3 col-lg-4 col-12">
+                    <label for="date_debut">Durée :</label>
+                    <div class="input-group">
+                        <select 
+                            class="custom-select
+                            <?php
+                                if(isset($validationFormulaire[2])){
+                                    if($validationFormulaire[2] == "heureDuree"){
+                                        echo "invalid";
+                                    }
+                                }
+                            ?>"
+                            id="heureSelect2" 
+                            name="heureDuree"
+                        >
+                        </select>
+                        <div class="input-group-append">
+                            <label class="input-group-text" for="heureSelect2">H</label>
+                        </div>
+                        <select 
+                            class="custom-select
+                            <?php
+                                if(isset($validationFormulaire[2])){
+                                    if($validationFormulaire[2] == "minutesDuree"){
+                                        echo "invalid";
+                                    }
+                                }
+                            ?>"
+                            id="minSelect2" 
+                            name="minutesDuree"
+                        >
+                            <option value="00" selected>00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                        <div class="input-group-append">
+                            <label class="input-group-text" for="minSelect2">Min</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class=" mt-3 mb-0">
-                <label for="">Image</label>
+            <div class="d-lg-flex">
+                <div class="mb-3 col-lg-6 col-12">
+                    <label for="nombre_places">Nombre de places :</label>
+                    <input 
+                        type="number" 
+                        class="form-control
+                        <?php
+                            if(isset($validationFormulaire[2])){
+                                if($validationFormulaire[2] == "nombre_places"){
+                                    echo "invalid";
+                                }
+                            }
+                        ?>" 
+                        id="nombre_places" 
+                        name="nombre_places"
+                        value="<?= isset($_POST['nombre_places']) ? htmlentities($_POST['nombre_places'],ENT_QUOTES) : 0 ?>"
+                    >
+                </div>
+
+                <div class="mb-3 col-lg-6 col-12">
+                    <label for="nombre_places">Prix :</label>
+                    <div class="input-group">
+                        <input 
+                            type="number" 
+                            class="form-control
+                            <?php
+                                if(isset($validationFormulaire[2])){
+                                    if($validationFormulaire[2] == "prix"){
+                                        echo "invalid";
+                                    }
+                                }
+                            ?>" 
+                            id="prix" 
+                            name="prix"
+                            value="<?= isset($_POST['prix']) ? htmlentities($_POST['prix'],ENT_QUOTES) : 0 ?>"
+                        >
+                        <div class="input-group-append">
+                            <span class="input-group-text">€</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="input-group mb-3 ">
-               
-                <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload" name="image">
+            <div class="input-group mb-3 mt-3 col-12">
+                <div class="custom-file">
+                    <input 
+                        type="file" 
+                        class="custom-file-input
+                        <?php
+                                if(isset($validationFormulaire[2])){
+                                    if($validationFormulaire[2] == "image_upload"){
+                                        echo "invalid";
+                                    }
+                                }
+                        ?>" 
+                        style="border:1px solid green;"
+                        id="image_upload" 
+                        name="image_upload"
+                    >
+                    <label class="custom-file-label" for="image_upload">Choisir une image</label>
+                </div>
             </div>
-            <div class="text-center">
-                <button type="submit"  class="btn btn-secondary">Ajouter</button>
+            <div class="text-center mt-5">
+                <button type="submit" name="ajouter" class="btn btn-primary">Ajouter l'atelier</button>
             </div>
         </form>
        

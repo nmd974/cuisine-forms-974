@@ -55,7 +55,7 @@
 
 <body id="body">
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <a class="navbar-brand" href="../pages/home.php">
     <img src="../../images/logo.png" width="30" height="30" alt="">
   Application</a>
@@ -76,7 +76,7 @@
             <a class="nav-link" href="../pages/ajoutAtelier.php">Ajout atelier</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../pages/cuistoManager.php">Cuisto manager</a>
+            <a class="nav-link" href="../pages/compteCuisinier.php">Mes ateliers</a>
         </li>
       <?php endif ?>
       <?php if($_SESSION['particulierLoggedIn'] == true):?>
@@ -155,9 +155,9 @@
   </div>
 </nav>
 <?php 
-    if(isset($titlePage)):?>{
+    if(isset($titlePage)):?>
     <div class="container mt-5 titrePage">
         <h1 class="text-center align-middle font-weight-bold"><?php echo $titlePage?></h1>
-    </div>';
+    </div>
     
 <?php endif ?>

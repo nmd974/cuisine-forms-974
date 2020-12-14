@@ -1,5 +1,5 @@
 <?php 
-  require_once(__ROOT__.'/src/class/AccesBDD.php');
+  require_once(__ROOT__.'/src/controllers/accesData.php');
   require_once(__ROOT__.'/src/controllers/inscriptionAtelier.php');
   require_once(__ROOT__.'/src/controllers/authentification.php');
   $allInactif = true;
@@ -17,7 +17,7 @@
    <!-- début section des Ateliers-->
     <section class="container">
 
-      <?php $ateliers = AccesBDD::ateliersData();?>
+      <?php $ateliers = getAteliersData();?>
       <?php foreach ($ateliers as $key => $atelier):?>
         <?php 
           if($atelier['etat_atelier'] == "Active"){

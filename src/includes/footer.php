@@ -54,21 +54,8 @@
         crossorigin="anonymous"></script>
     <!--script JS-->
     <script type="text/javascript" src="../script/jumbotron.js"></script>
-
-    <script>
-    $(document).ready(function(){
-        $('.custom-control').on('click', function() {
-          console.log(this.id);
-          window.location = window.location.pathname + '?id=' + this.id;
-            // if($('#labelswitch_'+ this.id).text() === "Désactivé"){
-            //     window.location = window.location.pathname + '?id=' + this.id;
-            // }
-            // else{
-            //     window.location = window.location.pathname + '?action=activer&id=' + this.id;
-            // }
-        })
-    });
-    </script>
+    <script type="text/javascript" src="../includes/cuisinier/script.js"></script>
+    <script type="text/javascript" src="../script/inputHeure.js"></script>
     </body>
 </html>
 

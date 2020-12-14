@@ -21,10 +21,12 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
+  margin-top: 55px !important;
 }
 /*Navbar*/
-
+.titrePage{
+  margin-top: 150px !important;
+}
 .nav-link{
   font-size: 20px;
   color: black !important;
@@ -184,7 +186,18 @@ footer {
     background-color: #F9F9F9;
   }
 
+/*formulaire ajout*/
 
+.formulaireAjout{
+  display: flex;
+  flex-direction: row;
+}
+.invalid{
+  border: 2px solid red;
+}
+.valid{
+  border: 2px solid green;
+}
 /*responisve pour tablette (vérifier ipad et ipad pro*/
 @media (max-width: 1024px) {
 
@@ -200,4 +213,8 @@ footer {
     align-items: center;
     padding: 10px !important;
   }
+  .formulaireAjout{
+    flex-direction: column;
+  }
+
 }

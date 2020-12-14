@@ -24,7 +24,7 @@ function validationConnexion(){
                     $_SESSION['cuisinierLoggedIn'] = true;
                     $_SESSION['id'] = $value['id'];
                     $_SESSION['ateliers'] = $value['ateliers'];
-                    header('Location: ./cuistoManager.php');
+                    header('Location: ./compteCuisinier.php');
                 } else {
                     $role = 'user';
                     $verificationStatus = true;

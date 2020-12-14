@@ -94,11 +94,7 @@ foreach ($data as $atelier) :
 
                         <div class="form-group mt-3">
                             <label for="formGroupExampleInput">Place disponibe</label>
-<<<<<<< HEAD
-                            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="placeDisponible" value="<?= $atelier['place_disponible'] ?>">
-=======
                             <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="nombre_places" value="<?= $atelier['nombre_places'] ?>">
->>>>>>> 58e5b9aa71188596f0b3eecd607d9db673ced0db
                         </div>
 
                     </div>
