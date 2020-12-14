@@ -1,3 +1,36 @@
 [
-    
-]
+    {
+        "titre": "masosopory",
+        "description": "m\u00f9*j\u00f9h",
+        "date_debut": "2020-12-11",
+        "heure_debut": "21:10",
+        "nombre_places": "9",
+        "duree": "5",
+        "prix": "6",
+        "valider": "",
+        "id": "040422e69e060562e7bf360f5b85bb78",
+        "proprietaire": 1,
+        "date_ajout": "14-12-2020 18:09:21",
+        "etat_atelier": "D\u00e9sactiv\u00e9",
+        "participants": [],
+        "modifie": false,
+        "image": "..\\..\\images\\uploadedFiles\\admin.jpg"
+    },
+    {
+        "titre": "test2",
+        "description": "hglgfldf",
+        "date_debut": "2020-12-19",
+        "heure_debut": "20:00",
+        "nombre_places": "5",
+        "duree": "6",
+        "prix": "2",
+        "valider": "",
+        "id": "5f1b4c2f2f394b24e4d07bed4cdb0af1",
+        "proprietaire": 1,
+        "date_ajout": "14-12-2020 18:00:04",
+        "etat_atelier": "D\u00e9sactiv\u00e9",
+        "participants": [],
+        "modifie": false,
+        "image": "..\\..\\images\\uploadedFilesiphone.png"
+    }
+]00..
