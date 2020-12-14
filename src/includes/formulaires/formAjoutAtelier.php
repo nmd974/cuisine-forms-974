@@ -13,8 +13,13 @@
                 
             </div>
             <div class="mb-3">
+<<<<<<< HEAD
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" id="description" rows="3" name="description" maxlength="250"></textarea>
+=======
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" maxlength="250"></textarea>
+>>>>>>> 3d282d15952053fccf584d3a147123885c45d506
             </div>
            
             <div class="row">
