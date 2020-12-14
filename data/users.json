@@ -4,8 +4,8 @@
         "prenomUser": "Olivier",
         "emailUser": "Olivier@lebon.dev",
         "telUser": "0692451594",
-        "passwordUser": "$2y$10$RGpBslQvOF6OYjKmLPlN\/Oix9GJS75B5CD6p3MCkaBbTj6vLICLn2",
-        "id": "20728c4bd3817274bd6a891c8a00c582",
+        "passwordUser": "$2y$10$NN92LmJ21gh8es3i1AP63OqZ4B9L5N0q2PGQHoDVm9anapY9Zmh8y",
+        "id": "cd8f07ad17e078f34be3b92a79d96cf7",
         "role": "user",
         "ateliers": []
     },
@@ -17,6 +17,8 @@
         "passwordUser": "1234",
         "id": "e4ee56d7a383984c435e49df03b97bf1",
         "role": "cuisinier",
-        "ateliers": ["e4ee56d7a383984c435e49df03b97bf1"]
+        "ateliers": [
+            "e4ee56d7a383984c435e49df03b97bf1"
+        ]
     }
 ]

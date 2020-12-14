@@ -9,15 +9,17 @@
         $message = '<div class="alert alert-success"> Connexion réussie</div>';
         $email = htmlentities($_POST['email'], ENT_QUOTES);
         $password = htmlentities($_POST['password'], ENT_QUOTES);
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // On crypte le mot
-        echo $password;
+        $passHash = password_hash($password, PASSWORD_DEFAULT);
+        $passwordValid = password_verify($_POST['password'], $passHash); // On crypte le mot
+        echo var_dump($passwordValid);
+
         $datajson = file_get_contents("../../data/users.json");
 
         $data = json_decode($datajson, true);
         
         foreach ($data as $value) {
             if($value['emailUser'] == $email){
-                if($value['passwordUser'] == $password){
+                if($value['passwordUser'] == $passwordValid){
                     if($value['role'] == "cuisinier"){
                         $verificationStatus = true;
                         $_SESSION['cuisinierLoggedIn'] = true;
