@@ -1,1 +1,34 @@
+<<<<<<< HEAD
 [{"nomUser":"Payet","prenomUser":"Jordan","emailUser":"jha.payet@gmail.com","telUser":"","passwordUser":"1234","id":"e4ee56d7a383984c435e49df03b97bf1","role":"cuisinier"},{"nomUser":"Lebon","prenomUser":"Olivier","emailUser":"Olivier@lebon.dev","telUser":"0692451594","passwordUser":"teste","id":"53d76686b5ad4c04e63460b7bb02ec85","ateliers":["4003d2b1b82a015f61c56a68e18d5834","4003d2b1b82a015f61c56a68e18d5834","4003d2b1b82a015f61c56a68e18d5834","4003d2b1b82a015f61c56a68e18d5834","4003d2b1b82a015f61c56a68e18d5834","4003d2b1b82a015f61c56a68e18d5834","4003d2b1b82a015f61c56a68e18d5834","4003d2b1b82a015f61c56a68e18d5834"],"role":"user"}]
+=======
+[
+    {
+        "nomUser": "Olivier",
+        "prenomUser": "Lebon",
+        "emailUser": "Olivier@lebon.dev",
+        "telUser": "0692070654",
+        "passwordUser": "123456",
+        "id": "c8d17522f81dd1ca68dc15c05c598368",
+        "role": "user",
+        "ateliers": []
+    },
+    {
+        "nomUser": "Payet",
+        "prenomUser": "Jordan",
+        "emailUser": "jha.payet@gmail.com",
+        "telUser": "",
+        "passwordUser": "1234",
+        "id": "e4ee56d7a383984c435e49df03b97bf1",
+        "role": "cuisinier"
+    },
+    {
+        "nomUser": "Lebon",
+        "prenomUser": "Olivier",
+        "emailUser": "Olivier@lebon.dev",
+        "telUser": "0692451594",
+        "passwordUser": "teste",
+        "id": "53d76686b5ad4c04e63460b7bb02ec85",
+        "role": "user"
+    }
+]
+>>>>>>> 88aad685889df44cc9550ff49996d9e0b73b30e8
