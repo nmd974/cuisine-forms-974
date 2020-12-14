@@ -14,6 +14,7 @@
         if(isset($_POST['connecter'])){
             validationConnexion();
         }
+
       ?>
       
       

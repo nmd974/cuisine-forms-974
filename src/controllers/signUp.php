@@ -17,7 +17,7 @@
         $_POST['emailUser'] = htmlentities($_POST['emailUser'], ENT_QUOTES);
         $_POST['telUser'] = htmlentities($_POST['telUser'], ENT_QUOTES);
         $_POST['passwordUser'] = htmlentities($_POST['passwordUser'], ENT_QUOTES);
-        $_POST['passwordUser'] = crypt($_POST['passwordUser']); // On crypte le mot de passe
+        $_POST['passwordUser'] = password_hash($_POST['passwordUser'], PASSWORD_DEFAULT); // On crypte le mot de passe
         //surppression $post signUp
         unset($_POST['signUp']);
 
