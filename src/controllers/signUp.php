@@ -12,8 +12,15 @@
         //affectation rôle:
         $_POST['role'] = "user";
         $_POST['ateliers'] = [];
+        $_POST['nomUser'] = htmlentities($_POST['nomUser'], ENT_QUOTES);
+        $_POST['prenomUser'] = htmlentities($_POST['prenomUser'], ENT_QUOTES);
+        $_POST['emailUser'] = htmlentities($_POST['emailUser'], ENT_QUOTES);
+        $_POST['telUser'] = htmlentities($_POST['telUser'], ENT_QUOTES);
+        $_POST['passwordUser'] = htmlentities($_POST['passwordUser'], ENT_QUOTES);
+        $_POST['passwordUser'] = crypt($_POST['passwordUser']); // On crypte le mot de passe
         //surppression $post signUp
         unset($_POST['signUp']);
+
         //attribution destination json dans variable
         $filename = '../../data/users.json';
        
