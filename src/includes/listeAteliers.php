@@ -45,11 +45,13 @@
     <?php if($key + 1 > $pagination->intervalleMin() && $key + 1 <= $pagination->intervalleMax()):?>
       <?php $pagination->nombreAfficheActuel();?>
     <!--Atelier-->
-    <div class="card">
+    <div class="card cardListe">
         <div class="d-lg-flex">
             <div class="col-md-4 col-12">
-                <img src="../../images/<?= $atelier['image']?>" class="card-img imageListe position-relative"
+            <div class="duree d-flex position-absolute w-50 justify-content-center align-items-center font-weight-bold"></div>
+                <img src="../../images/<?= $atelier['image']?>" class="card-img imageListe"
                     alt="Nos cours de cuisine">
+                    <div class="duree2 d-flex position-absolute w-50 justify-content-center align-items-center font-weight-bold"></div>
             </div>
             <div class="col-md-8">
                 <div class="card-header">
@@ -57,16 +59,16 @@
                         <?= $atelier['titre']?>
                     </h2>
                 </div>
-                <div class="card-body">
+                <div class="card-body card-body-liste">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><strong>Description : </strong>
-                            <?= $atelier['description']?>
+                            <?= htmlentities($atelier['description'], ENT_QUOTES)?>
                         </li>
                         <li class="list-group-item"><strong>Date début : </strong>
-                            <?= $atelier['date_debut']?>
+                            <?= htmlentities($atelier['date_debut'], ENT_QUOTES)?>
                         </li>
                         <li class="list-group-item"><strong>Durée : </strong>
-                            <?= $atelier['duree']?> h
+                            <?= htmlentities($atelier['duree'], ENT_QUOTES)?> h
                         </li>
                         <li class="list-group-item"><strong>Nombre de réservations :
                             </strong>
@@ -74,17 +76,17 @@
                         </li>
                         <li class="list-group-item"><strong>Nombre de places :
                             </strong>
-                            <?= $atelier['nombre_places']?>
+                            <?= htmlentities($atelier['nombre_places'], ENT_QUOTES)?>
                         </li>
                         <li class="list-group-item"><strong>Prix : </strong>
-                            <?= $atelier['prix']?> €
+                            <?= htmlentities($atelier['prix'], ENT_QUOTES)?> €
                         </li>
                     </ul>
                     <div class="d-flex flex-lg-row flex-column w-100 justify-content-between align-items-center mt-5">
                         <p class="card-text"><small class="text-muted">
                                 <?= !$atelier['modifie'] ? "Ajouté le :" : "Modifié le :"?>
-                                <?= substr($atelier['date_ajout'],0,10)?> à
-                                <?= substr($atelier['date_ajout'],11,8) ?>
+                                <?= htmlentities(substr($atelier['date_ajout'],0,10), ENT_QUOTES)?> à
+                                <?= htmlentities(substr($atelier['date_ajout'],11,8), ENT_QUOTES) ?>
                             </small>
                         </p>
                         <a href="../pages/home.php?page=1&id=<?= $atelier['id']?>" class="btn btn-primary

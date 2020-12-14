@@ -14,19 +14,6 @@
     // var_dump($_FILES);
 ?>
 
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-  <div class="toast-header">
-    <img src="..." class="rounded mr-2" alt="...">
-    <strong class="mr-auto">Bootstrap</strong>
-    <small>11 mins ago</small>
-    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="toast-body">
-    Hello, world! This is a toast message.
-  </div>
-</div>
     <section class="container mt-5">
         <?php
             if(isset($validationFormulaire[1])){
@@ -67,7 +54,7 @@
                     id="description" 
                     rows="3" 
                     name="description"
-                    >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos ut distinctio sequi! Placeat odio vitae aspernatur accusamus ipsum, corrupti consequuntur neque accusantium quas minima, error, consectetur ea. Accusamus, impedit!</textarea>
+                    ><?= isset($_POST['description']) ? htmlentities($_POST['description'],ENT_QUOTES) : ""?></textarea>
             </div>
             <div class="d-lg-flex">
                 <div class="mb-3 form-group col-lg-4 col-12">

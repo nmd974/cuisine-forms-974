@@ -43,9 +43,37 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh !important;
 }
 
+/*Bouton*/
 .btn-primary{
   background-color: #f3671f !important;
   border-color: #f3671f !important;
+}
+/*carte liste*/
+.cardListe{
+  max-height: 640px !important;
+  /* padding: 0 !important; */
+}
+.card-header{
+  text-transform: capitalize !important;
+}
+.card-body-liste{
+  padding: 0 1rem !important;
+}
+.duree {
+  background: #f3671f;
+  height: 10%;
+  font-size: 1rem;
+  color: white;
+  border-top-left-radius: 4px !important;
+}
+.duree2 {
+  background: #f3671f;
+  height: 10%;
+  font-size: 1rem;
+  color: white;
+  border-top-left-radius: 4px !important;
+  bottom: 0;
+  right: 0;
 }
 /*image manager */
 .img-manager{
