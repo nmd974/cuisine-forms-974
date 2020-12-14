@@ -14,13 +14,15 @@ if(isset($_GET['action'])){
     }
 }
 ?>
-<div class="container">
-    <h2 class="text-center align-middle font-weight-bold">Liste des ateliers</h2>
+
+<div class="container" id="atelierManager">
+    
     <div class="table-responsive">
         <div class="accordion" id="ateliers">
             <?php $data = getAteliersData();?>
             <?php if($data):?>
             <?php foreach($data as $atelier):?>
+                <?php if($atelier['proprietaire'] == $_SESSION['id']):?>
             <div class="card">
                 <div class="card-header d-flex align-items-center">
                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
@@ -62,7 +64,7 @@ if(isset($_GET['action'])){
                             </ul>
                             <div class="d-flex w-100 justify-content-between align-items-center mt-5">
                                 <p class="card-text"><small
-                                        class="text-muted"><?php !$atelier['modifie'] ? "Ajouté le :" : "Modifié le :"?><?= $atelier['date_ajout']?></small>
+                                        class="text-muted"><?= !$atelier['modifie'] ? "Ajouté le :" : "Modifié le :"?><?= $atelier['date_ajout'][1]?></small>
                                 </p>
                                 <a href="../pages/pageAtelier.php?id=<?= $atelier['id']?>"
                                     class="btn btn-primary">Modifier</a>
@@ -73,7 +75,7 @@ if(isset($_GET['action'])){
             </div>
 
         </div>
-
+                            <?php endif?>
         <?php endforeach;?>
         <?php endif;?>
     </div>

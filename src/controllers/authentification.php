@@ -37,4 +37,35 @@
 
     }
 
+     //Fonction qui va recuperer le contenu du fichier data.json
+     /*function recupererData()
+     {
+         $data = json_decode(file_get_contents(__ROOT__.'data/data.json'), true);
+         if($data){
+             return $data;
+         }else{
+             return null;
+         }
+ 
+     }*/
+
+         //Fonction qui va recuperer le contenu du fichier user.json
+     function recupererUser()
+     {
+         $data = json_decode(file_get_contents(__ROOT__.'data/users.json'), true);
+         if($data){
+             return $data;
+         }else{
+             return null;
+         }
+     }
+
+     function isLoggedIn():bool
+     {
+         if($_SESSION['adminLoggedIn'] || $_SESSION['cuisinierLoggedIn'] || $_SESSION['particulierLoggedIn']){
+             return true;
+         }else{
+             return false;
+         }
+     }
 ?>

@@ -120,4 +120,10 @@
     </div>
   </div>
 </nav>
-
+<?php 
+    if(isset($titlePage)):?>{
+    <div class="container mt-5 titrePage">
+        <h1 class="text-center align-middle font-weight-bold"><?php echo $titlePage?></h1>
+    </div>';
+    
+<?php endif ?>
