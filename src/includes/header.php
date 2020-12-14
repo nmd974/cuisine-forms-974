@@ -15,12 +15,12 @@
     }
     //On verifie si un utilisateur est connecte
     if(!isset($_SESSION['particulierLoggedIn'])){
-        $_SESSION['particulierLoggedIn'] = true;
-        $_SESSION['id'] = "53d76686b5ad4c04e63460b7bb02ec85";
+        $_SESSION['particulierLoggedIn'] = false;
+        // $_SESSION['id'] = "53d76686b5ad4c04e63460b7bb02ec85";
     }
-    $_SESSION['particulierLoggedIn'] = true;
-    $_SESSION['id'] = "53d76686b5ad4c04e63460b7bb02ec85";
-    $_SESSION['inscription_atelier']=["53d76686b5ad4c04e63460b7bb02ec85"]
+    // $_SESSION['particulierLoggedIn'] = true;
+    // $_SESSION['id'] = "53d76686b5ad4c04e63460b7bb02ec85";
+    // $_SESSION['inscription_atelier']=["53d76686b5ad4c04e63460b7bb02ec85"]
 
 ?>
 <!DOCTYPE html>
