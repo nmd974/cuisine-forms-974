@@ -29,7 +29,7 @@
                             </ul>
                             <div class="d-flex w-100 justify-content-between align-items-center mt-5">
                                 <p class="card-text"><small
-                                        class="text-muted"><?php !$atelier['modifie'] ? "Ajouté le :" : "Modifié le :"?><?= $atelier['date_ajout']?></small>
+                                        class="text-muted"><?= !$atelier['modifie'] ? "Ajouté le :" : "Modifié le :"?><?= $atelier['date_ajout'][1]?></small>
                                 </p>
                                 <a href="../pages/pageAtelier.php?id=<?= $atelier['id']?>"
                                     class="btn btn-primary">Modifier</a>
