@@ -16,16 +16,10 @@
     //On verifie si un utilisateur est connecte
     if(!isset($_SESSION['particulierLoggedIn'])){
         $_SESSION['particulierLoggedIn'] = false;
-        // $_SESSION['id'] = "53d76686b5ad4c04e63460b7bb02ec85";
     }
     if(isset($_SESSION['id'])){
         $_SESSION['id'] = false;
     }
-
-    
-    // $_SESSION['particulierLoggedIn'] = true;
-    // $_SESSION['id'] = "53d76686b5ad4c04e63460b7bb02ec85";
-    // $_SESSION['inscription_atelier']=["53d76686b5ad4c04e63460b7bb02ec85"]
 
 ?>
 <!DOCTYPE html>
@@ -86,70 +80,69 @@
 
     <!--Ici on gere l'affichage du bouton se connecter si personne est connecte-->
     <?php if(!$_SESSION['adminLoggedIn'] && !$_SESSION['cuisinierLoggedIn'] && !$_SESSION['particulierLoggedIn'] ):?> 
-        
-                    <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="d-flex">
+                <span class="text-dark effect-underline font-weight-bold">Non connecté</span>
+            </div>
+            <div>
+                <a href="../pages/authentification.php" class="text-white effect-underline font-weight-bold">
+                    <button class="btn btn-primary">Se connecter <i class="fa fa-sign-out" aria-hidden="true"></i></button>
+                </a>
+            </div>
+        </div>
+    <?php endif ?>
+    <?php if($_SESSION['particulierLoggedIn'] == true):?> 
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="d-flex">
+                <span class="text-dark effect-underline font-weight-bold">Connecté :</span>
+            <?php $data_user = getUserData();?>
+        <?php if($data_user):?>
+            <?php foreach($data_user as $key => $user):?>
+                <?php if($_SESSION['id'] == $user['id']):?>
+                    <span class="text-dark effect-underline font-weight-bold text-center ml-2"><?= $user['nomUser'] ?> <?= $user['prenomUser'] ?></span>
+                    <?php endif?>
+                    <?php endforeach?>
+                    <?php endif?>
+                    </div>
+                    <div>
+                    <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold">
+                    <button class="btn btn-primary">Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                    </div>
+                    
+                    </div>
+                    <?php endif ?>
+                    <?php if($_SESSION["adminLoggedIn"] == true):?> 
+                        <div class="d-flex flex-column justify-content-center align-items-center">
                         <div class="d-flex">
-                            <span class="text-dark effect-underline font-weight-bold">Non connecté</pspan>
+                        <span class="text-dark effect-underline font-weight-bold">Mode admin active</pspan>
                         </div>
                         <div>
-                            <a href="../pages/authentification.php" class="text-white effect-underline font-weight-bold">
-                            <button class="btn btn-primary">Se connecter <i class="fa fa-sign-out" aria-hidden="true"></i></button></a>
+                        <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold">
+                        <button class="btn btn-primary">Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
                         </div>
                         
-                    </div>
-                <?php endif ?>
-                <?php if($_SESSION['particulierLoggedIn'] == true):?> 
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <div class="d-flex">
+                        </div>
+                        <?php endif ?>
+                        <?php if($_SESSION['cuisinierLoggedIn'] == true):?> 
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="d-flex">
                             <span class="text-dark effect-underline font-weight-bold">Connecté :</pspan>
                             <?php $data_user = getUserData();?>
                             <?php if($data_user):?>
                                 <?php foreach($data_user as $key => $user):?>
                                     <?php if($_SESSION['id'] == $user['id']):?>
                                         <span class="text-dark effect-underline font-weight-bold text-center ml-2"><?= $user['nomUser'] ?> <?= $user['prenomUser'] ?></span>
-                                    <?php endif?>
-                                <?php endforeach?>
-                            <?php endif?>
-                        </div>
-                        <div>
-                            <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold">
-                            <button class="btn btn-primary">Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
-                        </div>
-                        
-                    </div>
-                <?php endif ?>
-                <?php if($_SESSION["adminLoggedIn"] == true):?> 
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <div class="d-flex">
-                            <span class="text-dark effect-underline font-weight-bold">Mode admin active</pspan>
-                        </div>
-                        <div>
-                            <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold">
-                            <button class="btn btn-primary">Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
-                        </div>
-                        
-                    </div>
-                <?php endif ?>
-                <?php if($_SESSION['cuisinierLoggedIn'] == true):?> 
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <div class="d-flex">
-                            <span class="text-dark effect-underline font-weight-bold">Connecté :</pspan>
-                            <?php $data_user = getUserData();?>
-                            <?php if($data_user):?>
-                                <?php foreach($data_user as $key => $user):?>
-                                    <?php if($_SESSION['id'] == $user['id']):?>
-                                        <span class="text-dark effect-underline font-weight-bold text-center ml-2"><?= $user['nomUser'] ?> <?= $user['prenomUser'] ?></span>
-                                    <?php endif?>
-                                <?php endforeach?>
-                            <?php endif?>
-                        </div>
-                        <div>
-                            <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold">
-                            <button class="btn btn-primary">Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
-                        </div>
-                        
-                    </div>
-                <?php endif ?>
+                                        <?php endif?>
+                                        <?php endforeach?>
+                                        <?php endif?>
+                                        </div>
+                                        <div>
+                                        <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold">
+                                        <button class="btn btn-primary">Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                                        </div>
+                                        
+                                        </div>
+                                        <?php endif ?>
     </div>
   </div>
 </nav>

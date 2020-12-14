@@ -15,19 +15,21 @@
         $data = json_decode($datajson, true);
         
         foreach ($data as $value) {
-            if (isset($value['emailUser']) == $email AND ($value['passwordUser'] == $password)) {
-                if($value['role'] == "cuisinier"){
-                    $verificationStatus = true;
-                    $_SESSION['cuisinierLoggedIn'] = true;
-                    $_SESSION['id'] = $value['id'];
-                    header('Location: ./cuistoManager.php');      
-                }else{
-                    $role = 'user';
-                    $verificationStatus = true;
-                    $_SESSION['particulierLoggedIn'] = true;
-                    $_SESSION['id'] = $value['id'];
-                    $_SESSION['ateliers'] = 
-                    header('Location: ./home.php');      
+            if($value['emailUser'] == $email){
+                if($value['passwordUser'] == $password){
+                    if($value['role'] == "cuisinier"){
+                        $verificationStatus = true;
+                        $_SESSION['cuisinierLoggedIn'] = true;
+                        $_SESSION['id'] = $value['id'];
+                        header('Location: ./cuistoManager.php');      
+                    }else{
+                        $role = 'user';
+                        $verificationStatus = true;
+                        $_SESSION['particulierLoggedIn'] = true;
+                        $_SESSION['id'] = $value['id'];
+                        $_SESSION['ateliers'] = $value['ateliers'];
+                        header('Location: ./home.php');      
+                    }
                 }
             }
         }
