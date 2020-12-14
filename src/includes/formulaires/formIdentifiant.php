@@ -1,4 +1,4 @@
-<div class="text-center mt-5 pt-5">
+<div class="text-center mt-5">
         <h1> Connexion au compte</h1>
 </div>
 
