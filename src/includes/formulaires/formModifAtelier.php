@@ -30,7 +30,7 @@ if (isset($_POST['modifier'])) {
 
             file_put_contents($fichierDonneesAtelier, json_encode($data)); // ici j'encode les données $data et je les mets dans la variable $fichierDonnéeAtelier
             
-            header('Location: ../pages/cuistoManager.php');
+            header('Location: ../../pages/cuistoManager.php');
         }
     }
 }
@@ -82,7 +82,7 @@ foreach ($data as $atelier) :
                         <div class=" row form-group col-lg-12 px-0 mb-0  ">
                             <div class="col-lg-6">
                                 <label for="formGroupExampleInput2">Date début de l'atelier</label>
-                                <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" name="date_ajout" value="<?= $atelier['date_ajout'] ?>"> 
+                                <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" name="date_ajout" value="<?= $atelier['date_ajout'] ?>">
                             </div>
                             <div class="col-lg-6 text-end mr-0 pr-0 ">
                                 <label for="appt"> Heure de début:</label>
@@ -94,11 +94,7 @@ foreach ($data as $atelier) :
 
                         <div class="form-group mt-3">
                             <label for="formGroupExampleInput">Place disponibe</label>
-<<<<<<< HEAD
-                            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="placeDisponible" value="<?= $atelier['place_disponible'] ?>">
-=======
                             <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="nombre_places" value="<?= $atelier['nombre_places'] ?>">
->>>>>>> 58e5b9aa71188596f0b3eecd607d9db673ced0db
                         </div>
 
                     </div>
