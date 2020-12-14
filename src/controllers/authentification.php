@@ -7,8 +7,8 @@
         $verificationStatus = false;
         $role = null;
         $message = '<div class="alert alert-success"> Connexion réussie</div>';
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $email = htmlentities($_POST['email'], ENT_QUOTES);
+        $password = htmlentities($_POST['password'], ENT_QUOTES);
         
         $datajson = file_get_contents("../../data/users.json");
 

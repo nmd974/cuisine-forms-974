@@ -2,7 +2,6 @@
         <h1> Connexion au compte</h1>
 </div>
 
-<?php var_dump($_SESSION);?>
 <div class="card-deck m-auto">
 
   <div class="card rounded"style="max-width: 6000px;">
