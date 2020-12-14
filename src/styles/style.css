@@ -23,11 +23,22 @@ h1, h2, h3, h4, h5, h6 {
   background-attachment: fixed;
 
 }
+/*Navbar*/
+.navbar{
+  height: 100px !important;
+  background-color: #fff !important;
+}
+.nav-link{
+  font-size: 20px;
+  color: black !important;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
 /*section jumbotron*/
 .jumbotron {
   background-color:transparent;
   color: white;
-
+  top: 25%;
 }
 
 .btn-primary{
