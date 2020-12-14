@@ -11,6 +11,12 @@
       <h5 class="card-title">Se connecter</h5>
 
       <?php echo print_r($_SESSION) ?>
+
+      <?php 
+      include("../../controllers/authentification.php"); 
+      validationConnexion();
+      ?>
+      
       
       <!--Début identification-->       
       <form method="POST" enctype="multipart/form-data" action="" class="mb-3"> 
@@ -27,7 +33,7 @@
           <div class="col-12 text-end my-3">
               <button type="submit" class="btn btn-primary mr-4" name="connecter">Se conneter</button>
           </div>
-           <?php include("../controllers/authentification.php"); ?>
+           
                     
       </form>
       <!--Fin identification-->
@@ -40,6 +46,9 @@
     <div class="card-body">
       <h5 class="card-title">Pas encore membre ?</h5>
       <h5 class="card-title">Créer vite votre compte</h5>
+
+       <!--appel controller SignUp positionner ici de manière à rester dans la colonne inscription-->
+       <?php include("../controllers/signUp.php"); ?>
 
        <!--Début Formulaire inscription-->
        <form class="row" method="POST" action="" enctype="multipart/form-data">
@@ -70,9 +79,6 @@
                         <button type="submit" class="btn btn-primary mr-5" name="signUp" formmethod="post">M'inscrire</button>
                                 
                     </div>
-
-                    <!--appel controller SignUp positionner ici de manière à rester dans la colonne inscription-->
-                     <?php include("../controllers/signUp.php"); ?>
 
                 </form>
                 <!--Fin Formulaire-->

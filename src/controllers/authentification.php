@@ -2,7 +2,7 @@
     
 
     //Ici on contrôle le mot de passe et email de l'utilisateur
-    if (isset($_POST['activer'])) {
+    function validationConnexion() {
 
         $verificationStatus = false;
         $role = null;
