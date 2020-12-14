@@ -2,23 +2,85 @@
         <h1> Connexion au compte</h1>
 </div>
 
-<div class="row row-cols-2 row-cols-md-1">
-  <div class="col mb-4">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
+
+<div class="card-deck m-auto">
+
+  <div class="card rounded"style="max-width: 540px;">
+    <div class="card-body">
+      <h5 class="card-title">Déjà membre?</h5>
+      <h5 class="card-title">Se connecter</h5>
+      
+      
+      <!--Début identification-->
+                
+      <form method="POST"
+                enctype="multipart/form-data" action="<?php htmlentities($_SERVER["PHP_SELF"], ENT_QUOTES)?>" class="mb-3"> 
+
+               
+
+                    <div class="">
+                      <label for="exampleInputEmail1" class="form-label">Identifiant</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required id="username" name="username">
+                      <div id="emailHelp" class="form-text">votre adresse email.</div>
+                    </div>
+
+                    <div  class="">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="passord" required name="password">
+                    </div>
+                    <div class="col-12 text-end my-3">
+                        <button type="submit" class="btn btn-primary mr-4">Se conneter</button>
+                    </div>
+                    
+
+                </form>
+                <!--Fin identification-->
+
+
     </div>
   </div>
-  <div class="col mb-4">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
+
+  <div class="card rounded" style="max-width: 540px;">
+    <div class="card-body">
+      <h5 class="card-title">Pas encore membre ?</h5>
+      <h5 class="card-title">Créer vite votre compte</h5>
+
+       <!--Début Formulaire inscription-->
+       <form class="row" method="POST" action="" enctype="multipart/form-data">
+                    <div class="col-md-12">
+                        <label for="name" class="form-label">Nom</label>
+                        <input type="text" class="form-control" name="nomUser" value="" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="prenom" class="form-label">Prénoms</label>
+                        <input type="text" class="form-control" value="" required name="prenomUser">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" name="emailUser" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="telephone" class="form-label">Telephone</label>
+                        <input type="number" class="form-control" value="" name="telUser">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="inputPassword4" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="inputPassword4" name="passwordUser" required>
+                    </div>
+
+                    <!--button validation inscription-->
+                    <div class="col-12 text-end my-3">
+                        
+                        <button type="submit" class="btn btn-primary mr-5" name="signUp" formmethod="post">M'inscrire</button>
+                                
+                    </div>
+
+                    <!--appel controller SignUp positionner ici de manière à rester dans la colonne inscription-->
+                     <?php include("../controllers/signUp.php"); ?>
+
+                </form>
+                <!--Fin Formulaire-->
     </div>
   </div>
+
 </div>
