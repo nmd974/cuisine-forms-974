@@ -13,7 +13,7 @@
       <?php echo print_r($_SESSION) ?>
 
       <?php 
-      include("../../controllers/authentification.php"); 
+      include("../controllers/authentification.php"); 
       validationConnexion();
       ?>
       
