@@ -1,4 +1,4 @@
- <div class="imageprincipale d-flex align-items-center justify-content-center">
+ <div class="imageprincipale d-flex align-items-center justify-content-center mb-5">
 
    <!--Début Jumbotron-->
    <div class="jumbotron col-lg-5 col-md-8 col-9  mt-5 backgroundJumbotron text-center">

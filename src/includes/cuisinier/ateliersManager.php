@@ -6,12 +6,16 @@ require_once(__ROOT__ . '/src/controllers/controllerAtelier.php');
 <?php
 if (isset($_GET['id'])) {
     $modification = activerDesactiverAtelier($_GET['id']);
-    header_remove("id");
-    // header('Location : ../pages/cuistoManager.php');
 }
 ?>
+
+<?php if(!$_SESSION['cuisinierLoggedIn']){
+        header('Location: ./home.php');
+    }
+?>
+
 <?php if($_SESSION['cuisinierLoggedIn']):?>
-<div class="container" id="atelierManager">
+<div class="container mt-5" id="atelierManager">
     <div class="table-responsive">
         <?php if (isset($modification)) {
             echo $modification;
@@ -48,7 +52,7 @@ if (isset($_GET['id'])) {
                 </div>
                 <div id="collapse_<?= $atelier['id'] ?>" class="collapse" data-parent="#ateliers">
                     <div class="card w-100 card-manager">
-                        <img src="../../images/gateau1.jpeg" class="card-img img-manager" alt="cours de cuisine">
+                        <img src="../../images/<?= $atelier['image']?>" class="card-img img-manager" alt="cours de cuisine">
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><strong>Description : </strong>
@@ -74,8 +78,9 @@ if (isset($_GET['id'])) {
                             </ul>
                             <div class="d-flex w-100 justify-content-between align-items-center mt-5">
                                 <p class="card-text"><small class="text-muted">
-                                        <?= !$atelier['modifie'] ? "Ajouté le :" : "Modifié le :" ?>
-                                        <?= $atelier['date_ajout'][1] ?>
+                                        <?= !$atelier['modifie'] ? "Ajouté le :" : "Modifié le :" ?> 
+                                        <?= substr($atelier['date_ajout'],0,10) ?>
+                                        à <?= substr($atelier['date_ajout'],11,8) ?>
                                     </small>
                                 </p>
                                 <a href="../pages/pageAtelier.php?id=<?= $atelier['id'] ?>"
@@ -90,5 +95,10 @@ if (isset($_GET['id'])) {
             <?php endif; ?>
         </div>
     </div>
+    <?php if ($_SESSION['ateliers']):?>
+        <div class="container mt-5 titrePage">
+          <h2 class="text-center align-middle font-weight-bold">Aucun ateliers de cuisines créés</h2>
+        </div>
+    <?php endif; ?>
 </div>
 <?php endif; ?>

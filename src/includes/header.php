@@ -23,6 +23,9 @@
     if(!isset($_SESSION['ateliers'])){
         $_SESSION['ateliers'] = "";
     }
+    // if(!isset($_SESSION['page'])){
+    //     $_SESSION['page'] = 1;
+    // }
 
 ?>
 <!DOCTYPE html>
@@ -56,7 +59,7 @@
 <body id="body">
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <a class="navbar-brand" href="../pages/home.php">
+  <a class="navbar-brand" href="../pages/home.php?page=1">
     <img src="../../images/logo.png" width="30" height="30" alt="">
   Application</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +72,7 @@
 
     <ul class="navbar-nav my-2 my-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="../pages/home.php">Accueil</a>
+        <a class="nav-link" href="../pages/home.php?page=1">Accueil</a>
       </li>
       <?php if($_SESSION['cuisinierLoggedIn'] == true):?>
         <li class="nav-item">

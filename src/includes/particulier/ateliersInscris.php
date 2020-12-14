@@ -8,6 +8,10 @@ if(isset($_GET['id'])){
     $modification = activerDesactiverAtelier($_GET['id']);
 }
 ?>
+<?php if(!$_SESSION['particulierLoggedIn']){
+        header('Location: ./home.php');
+    }
+?>
 <?php if($_SESSION['particulierLoggedIn']):?>
 <div class="container" id="atelierManager">
     <div class="table-responsive">
