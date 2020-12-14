@@ -79,6 +79,11 @@
             <a class="nav-link" href="../pages/cuistoManager.php">Cuisto manager</a>
         </li>
       <?php endif ?>
+      <?php if($_SESSION['particulierLoggedIn'] == true):?>
+        <li class="nav-item">
+            <a class="nav-link" href="../pages/particulierManager.php">Mon compte</a>
+        </li>
+      <?php endif ?>
     </ul>
 
     <!--Ici on gere l'affichage du bouton se connecter si personne est connecte-->
