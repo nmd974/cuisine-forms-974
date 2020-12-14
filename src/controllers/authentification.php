@@ -14,7 +14,7 @@
 
         $data = json_decode($datajson, true);
         
-        foreach ($data as $value) {
+        foreach ($data as  $value) {
             if ($value['pseudo'] == $pseudo && $value['password'] == $password){
                 if($value['role'] == "cuisinier"){
                     $role = 'cuisinier';
