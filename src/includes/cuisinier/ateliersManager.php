@@ -22,6 +22,7 @@ if(isset($_GET['action'])){
             <?php $data = getAteliersData();?>
             <?php if($data):?>
             <?php foreach($data as $atelier):?>
+                <?php if($atelier['proprietaire'] == $_SESSION['id']):?>
             <div class="card">
                 <div class="card-header d-flex align-items-center">
                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
@@ -74,7 +75,7 @@ if(isset($_GET['action'])){
             </div>
 
         </div>
-
+                            <?php endif?>
         <?php endforeach;?>
         <?php endif;?>
     </div>

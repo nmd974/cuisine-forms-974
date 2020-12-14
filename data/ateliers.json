@@ -1,1 +1,40 @@
-[{"titre":"sdvsdfd","description":"dfvdv","date_debut":"2020-12-15","heure_debut":"16:58","nombre_places":"1","duree":"1","prix":"1","image":"","id":"0b236a0ed2be618143bafc19bfc7918f","proprietaire":1,"date_ajout":[1607684341,"2020-12-11"],"etat_atelier":"D\u00e9sactiv\u00e9","participants":[],"modifie":false},{"titre":"wsfwsfgwfsg","description":"wsfdwsfgwsfg","date_debut":"2020-12-16","heure_debut":"15:52","nombre_places":"1","duree":"1","prix":"1","image":"","id":"484ed9bf0e0f304ef80bce7b47d3ee15","proprietaire":1,"date_ajout":[1607680368,"2020-12-11"],"etat_atelier":"Activ\u00e9","participants":[],"modifie":false,"etat_ajout":"Modifi\u00e9 le : "}]
+[
+    {
+        "titre": "cuisine du monde",
+        "description": "test",
+        "date_debut": "2020-12-16",
+        "heure_debut": "11:54",
+        "nombre_places": "7",
+        "duree": "3",
+        "prix": "100",
+        "image": "",
+        "id": "b256170c9d7048cb3d178e4f240df5b4",
+        "proprietaire": 1,
+        "date_ajout": [
+            1607925274,
+            "2020-12-14"
+        ],
+        "etat_atelier": "D\u00e9sactiv\u00e9",
+        "participants": [],
+        "modifie": false
+    },
+    {
+        "titre": "cuisine du monde",
+        "description": "Specialiqmdkjfhqsmflkjghqw",
+        "date_debut": "2020-12-16",
+        "heure_debut": "09:57",
+        "nombre_places": "3",
+        "duree": "3",
+        "prix": "4",
+        "image": "",
+        "id": "4003d2b1b82a015f61c56a68e18d5834",
+        "proprietaire": 1,
+        "date_ajout": [
+            1607921868,
+            "2020-12-14"
+        ],
+        "etat_atelier": "Active",
+        "participants": [],
+        "modifie": false
+    }
+]

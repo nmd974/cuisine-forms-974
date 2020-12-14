@@ -58,4 +58,13 @@
              return null;
          }
      }
+
+     function isLoggedIn():bool
+     {
+         if($_SESSION['adminLoggedIn'] || $_SESSION['cuisinierLoggedIn'] || $_SESSION['particulierLoggedIn']){
+             return true;
+         }else{
+             return false;
+         }
+     }
 ?>
