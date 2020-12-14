@@ -1,18 +1,3 @@
 [
-    {
-        "titre": "test2",
-        "description": "dsmffhq",
-        "date_debut": "2020-12-10",
-        "heure_debut": "17:27",
-        "nombre_places": "6",
-        "duree": "92",
-        "prix": "69",
-        "valide": "",
-        "id": "fc6a04a843ccd0c05ddcd18ffa8f1d10",
-        "proprietaire": 1,
-        "date_ajout": "14-12-2020 14:30:06",
-        "etat_atelier": "D\u00e9sactiv\u00e9",
-        "participants": [],
-        "modifie": false
-    }
+    
 ]
