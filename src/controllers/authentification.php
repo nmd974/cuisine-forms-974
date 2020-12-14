@@ -9,17 +9,12 @@
         $message = '<div class="alert alert-success"> Connexion réussie</div>';
         $pseudo = htmlentities($data_entry['username'], ENT_QUOTES);
         $password = htmlentities($data_entry['password'], ENT_QUOTES);
-<<<<<<< Updated upstream
-        $data = recupererUser();
-        foreach ($data as $key => $value) {
-=======
         
         $datajson = file_get_contents("../../data/users.json");
 
         $data = json_decode($datajson, true);
         
         foreach ($data as  $value) {
->>>>>>> Stashed changes
             if ($value['pseudo'] == $pseudo && $value['password'] == $password){
                 if($value['role'] == "cuisinier"){
                     $role = 'cuisinier';
