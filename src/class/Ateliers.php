@@ -65,13 +65,13 @@ HTML;
       if($data){
         foreach($data as $key => $atelier){
           if($atelier['id'] == $id){
-            $data[$key]['etat_ajout'] = "Modifié le : ";
             date_default_timezone_set("Indian/Reunion");//On definie la timezone à la reunion
             $data[$key]['etat_atelier'] = mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y"));
-            $data[$key]['etat_atelier'] = "Activé";
+            $data[$key]['etat_atelier'] = "Active";
           }
         }
         saveAteliersData($data);
+        
       }else{
         return         
         '<div class="col-12 d-flex justify-content-center">
@@ -85,10 +85,9 @@ HTML;
       if($data){
         foreach($data as $key => $atelier){
           if($atelier['id'] == $id){
-            $data[$key]['etat_ajout'] = "Modifié le : ";
             date_default_timezone_set("Indian/Reunion");//On definie la timezone à la reunion
             $data[$key]['etat_atelier'] = mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y"));
-            $data[$key]['etat_atelier'] = "Désactivé";
+            $data[$key]['etat_atelier'] = "Desactive";
           }
         }
         saveAteliersData($data);

@@ -7,9 +7,12 @@ if(isset($_GET['action'])){
     $action = $_GET['action'];
     if($action == "activer"){
         Ateliers::activerAtelier($_GET['id']);
+        var_dump($action);
+        // header('Location: ../pages/cuistoManager.php');
     }
     if($action == "desactiver"){
-        Ateliers::activerAtelier($_GET['id']);
+        Ateliers::desactiverAtelier($_GET['id']);
+        // header('Location: ../pages/cuistoManager.php');
     }
 }
 ?>
@@ -31,13 +34,13 @@ if(isset($_GET['action'])){
                     </button>
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input" 
-                            <?php if($atelier['etat_atelier'] == "Activé"){
+                            <?php if($atelier['etat_atelier'] == "Active"){
                                 echo "checked";
                             }?>
                         id="<?= $atelier['id']?>">
                         <label class="custom-control-label" for="<?= $atelier['id']?>"
-                            id="labelswitch">                            
-                            <?php if($atelier['etat_atelier'] == "Activé"){
+                            id="<?php echo 'labelswitch_'.$atelier['id']?>">                            
+                            <?php if($atelier['etat_atelier'] == "Active"){
                                 echo "Activé";
                             }else{
                                 echo "Désactivé";

@@ -17,8 +17,11 @@
     if(!isset($_SESSION['particulierLoggedIn'])){
         $_SESSION['particulierLoggedIn'] = false;
     }
-    if(isset($_SESSION['id'])){
-        $_SESSION['id'] = false;
+    if(!isset($_SESSION['id'])){
+        $_SESSION['id'] = "";
+    }
+    if(!isset($_SESSION['ateliers'])){
+        $_SESSION['ateliers'] = "";
     }
 
 ?>

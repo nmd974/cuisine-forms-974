@@ -21,6 +21,7 @@
                         $verificationStatus = true;
                         $_SESSION['cuisinierLoggedIn'] = true;
                         $_SESSION['id'] = $value['id'];
+                        $_SESSION['ateliers'] = $value['ateliers'];
                         header('Location: ./cuistoManager.php');      
                     }else{
                         $role = 'user';
@@ -40,7 +41,7 @@
 
     }
 
-     function isLoggedIn():bool
+     function isLoggedIn()
      {
          if($_SESSION['adminLoggedIn'] || $_SESSION['cuisinierLoggedIn'] || $_SESSION['particulierLoggedIn']){
              return true;
