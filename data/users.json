@@ -1,12 +1,22 @@
 [
     {
+        "nomUser": "Olivier",
+        "prenomUser": "Lebon",
+        "emailUser": "Olivier@lebon.dev",
+        "telUser": "0692070654",
+        "passwordUser": "123456",
+        "id": "c8d17522f81dd1ca68dc15c05c598368",
+        "role": "user",
+        "ateliers": []
+    },
+    {
         "nomUser": "Payet",
         "prenomUser": "Jordan",
         "emailUser": "jha.payet@gmail.com",
         "telUser": "",
         "passwordUser": "1234",
         "id": "e4ee56d7a383984c435e49df03b97bf1",
-        "role": "user"
+        "role": "cuisinier"
     },
     {
         "nomUser": "Lebon",

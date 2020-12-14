@@ -11,6 +11,7 @@
         $emailUser = $_POST['emailUser'];
         //affectation rôle:
         $_POST['role'] = "user";
+        $_POST['ateliers'] = [];
         //surppression $post signUp
         unset($_POST['signUp']);
         //attribution destination json dans variable

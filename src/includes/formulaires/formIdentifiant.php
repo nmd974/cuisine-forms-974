@@ -9,38 +9,34 @@
     <div class="card-body">
       <h5 class="card-title">Déjà membre?</h5>
       <h5 class="card-title">Se connecter</h5>
+
+      <?php echo print_r($_SESSION) ?>
       
-      
-      <!--Début identification-->
-                
-      <form method="POST"
-                enctype="multipart/form-data" action="<?php htmlentities($_SERVER["PHP_SELF"], ENT_QUOTES)?>" class="mb-3"> 
+      <!--Début identification-->       
+      <form method="POST" enctype="multipart/form-data" action="" class="mb-3"> 
 
-               
-
-                    <div class="">
-                      <label for="exampleInputEmail1" class="form-label">Identifiant</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required id="username" name="username">
-                      <div id="emailHelp" class="form-text">votre adresse email.</div>
-                    </div>
-
-                    <div  class="">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="passord" required name="password">
-                    </div>
-                    <div class="col-12 text-end my-3">
-                        <button type="submit" class="btn btn-primary mr-4">Se conneter</button>
-                    </div>
+          <div class="">
+              <label for="exampleInputEmail1" class="form-label">Identifiant</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required id="username" name="email">
+              <div id="emailHelp" class="form-text">votre adresse email.</div>
+          </div>
+          <div  class="">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="passord" required name="password">
+          </div>
+          <div class="col-12 text-end my-3">
+              <button type="submit" class="btn btn-primary mr-4" name="connecter">Se conneter</button>
+          </div>
+           <?php include("../controllers/authentification.php"); ?>
                     
-
-                </form>
-                <!--Fin identification-->
+      </form>
+      <!--Fin identification-->
 
 
     </div>
-  </div>
+</div>
 
-  <div class="card rounded" style="max-width: 600px;">
+<div class="card rounded" style="max-width: 600px;">
     <div class="card-body">
       <h5 class="card-title">Pas encore membre ?</h5>
       <h5 class="card-title">Créer vite votre compte</h5>
