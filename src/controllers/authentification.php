@@ -7,8 +7,9 @@
         $verificationStatus = false;
         $role = null;
         $message = '<div class="alert alert-success"> Connexion réussie</div>';
-        $email = htmlentities($_POST['email'], ENT_QUOTES);
+        $email = htmlentities($_POST['email'], ENT_QUOTES);  //début hash password
         $password = htmlentities($_POST['password'], ENT_QUOTES);
+        //sécurisation password par hash
         $passHash = password_hash($password, PASSWORD_DEFAULT);
         $passwordValid = password_verify($_POST['password'], $passHash); // On crypte le mot
 
@@ -17,14 +18,18 @@
         $data = json_decode($datajson, true);
         
         foreach ($data as $value) {
+            //recherche correspondance par mail
             if($value['emailUser'] == $email){
+                //recherche correspondance par password
                 if($value['passwordUser'] == $passwordValid){
+                    //on vérifie si role cuisinier
                     if($value['role'] == "cuisinier"){
                         $verificationStatus = true;
                         $_SESSION['cuisinierLoggedIn'] = true;
                         $_SESSION['id'] = $value['id'];
                         $_SESSION['ateliers'] = $value['ateliers'];
-                        header('Location: ./cuistoManager.php');      
+                        header('Location: ./cuistoManager.php');  
+                    //sinon c'est un user    
                     }else{
                         $role = 'user';
                         $verificationStatus = true;
@@ -36,6 +41,7 @@
                 }
             }
         }
+        //alerte condition incorret !
         if(!$verificationStatus){
             $message = '<div class="alert alert-danger">Compte ou mot de passe incorrects !</div>';
         }
