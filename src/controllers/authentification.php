@@ -9,7 +9,7 @@
         $message = '<div class="alert alert-success"> Connexion réussie</div>';
         $email = htmlentities($_POST['email'], ENT_QUOTES);
         $password = htmlentities($_POST['password'], ENT_QUOTES);
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // On crypte le mot
+        // $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // On crypte le mot
         echo $password;
         $datajson = file_get_contents("../../data/users.json");
 

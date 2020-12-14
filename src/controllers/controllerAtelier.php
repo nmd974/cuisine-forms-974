@@ -8,8 +8,6 @@ function validationAjoutAtelier($data, $image_upload)
 }
 
 ?>
-
-
 <?php
     function activerDesactiverAtelier($id){
         $data = getAteliersData();
