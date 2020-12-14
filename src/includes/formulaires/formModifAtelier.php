@@ -14,7 +14,7 @@ if (isset($_POST['modifier'])) {
     $data = json_decode(file_get_contents($fichierDonneesAtelier), true); // Je décode les données JSON dans la variable $data
 
 
-    // parcourir le tableau récupère les valeurs $_GET.
+    // parcourir le tableau récupère les valeurs $_GET écraser les anciennes données par les nouvelle.
     foreach ($data as $key => $atelier) {
 
         if ($atelier['id'] == $_GET["id"]) {
@@ -29,12 +29,11 @@ if (isset($_POST['modifier'])) {
             $data[$key]['modifie'] = true;
 
             file_put_contents($fichierDonneesAtelier, json_encode($data)); // ici j'encode les données $data et je les mets dans la variable $fichierDonnéeAtelier
-
+            
+            header('Location: ../pages/cuistoManager.php');
         }
     }
 }
-
-
 ?>
 
 
@@ -66,38 +65,51 @@ foreach ($data as $atelier) :
             </h2>
         </div>
         <section class="container mt-5 pt-5">
-            <form action="..\..\controllers\doneeAtelier.php" method="post">
+            <form  method="post">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nom de l'atelier</label>
-                    <input type="text" class="form-control" id="#" aria-describedby="#" name="titreAtelier" value="<?= $atelier['titre'] ?>">
+                    <input type="text" class="form-control" id="#" aria-describedby="#" name="titre" value="<?= $atelier['titre'] ?>">
 
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" value="<?= $atelier['description'] ?>"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" <?= $atelier['description'] ?>></textarea>
                 </div>
 
                 <div class="row">
                     <div class="col d-flex flex-column ">
-                        <div class="form-group col-lg-12 px-0 mb-0 ">
-                            <label for="formGroupExampleInput2">Date de l'atelier</label>
-                            <input type="datetime-local" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" name="dateAtelier" <?= $atelier['date_ajout'] ?>>
+
+                        <div class=" row form-group col-lg-12 px-0 mb-0  ">
+                            <div class="col-lg-6">
+                                <label for="formGroupExampleInput2">Date début de l'atelier</label>
+                                <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" name="date_ajout" value="<?= $atelier['date_ajout'] ?>"> 
+                            </div>
+                            <div class="col-lg-6 text-end mr-0 pr-0 ">
+                                <label for="appt"> Heure de début:</label>
+                                <input type="time" id="appt" name="heure_debut" class="form-control" placeholder="Another input placeholder" value="<?= $atelier['heure_debut'] ?>">
+                            </div>
 
                         </div>
+
+
                         <div class="form-group mt-3">
                             <label for="formGroupExampleInput">Place disponibe</label>
+<<<<<<< HEAD
                             <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="placeDisponible" value="<?= $atelier['place_disponible'] ?>">
+=======
+                            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="nombre_places" value="<?= $atelier['nombre_places'] ?>">
+>>>>>>> 58e5b9aa71188596f0b3eecd607d9db673ced0db
                         </div>
 
                     </div>
                     <div class="col">
                         <div class="form-group">
                             <label for="formGroupExampleInput">Heure d'ouverture</label>
-                            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="selection l'heure" name="time" <?= $atelier['date_debut'] ?>>
+                            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="selection l'heure" name="date_debut" value="<?= $atelier['date_debut'] ?>">
                         </div>
                         <div class="form-group mt-3">
                             <label for="formGroupExampleInput">Prix de l'atelier</label>
-                            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="selection coût" name="prixAtelier" <?= $atelier['prix'] ?>>
+                            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="selection coût" name="prix" value="<?= $atelier['prix'] ?>">
                         </div>
 
                     </div>
@@ -109,7 +121,7 @@ foreach ($data as $atelier) :
                 </div>
                 <div class="input-group mb-3 ">
 
-                    <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload" <?= $atelier['image'] ?>>
+                    <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload" value="<?= $atelier['image'] ?>">
                 </div>
                 <div class="text-center">
                     <button type="submit" name="modifier" class="btn btn-secondary">Modifier</button>
@@ -117,7 +129,7 @@ foreach ($data as $atelier) :
             </form>
 
         </section>
-    <?php endif // Termine la fonction  
+    <?php endif // Termine la fonction
     ?>
 <?php endforeach // Termine la boucle foreach
 ?>
