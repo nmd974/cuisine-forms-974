@@ -15,6 +15,7 @@
     }
   };
 ?>
+
 <!-- début section des Ateliers-->
 <section class="container">
 
@@ -95,7 +96,7 @@
                                     <?php 
                                       if($_SESSION['particulierLoggedIn']){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
                                         foreach($_SESSION['ateliers'] as $inscriptionIndice){
-                                          if($inscriptionIndice == $_SESSION['id']){
+                                          if($inscriptionIndice == $atelier['id']){
                                             echo 'disabled';
                                           }
                                         }
@@ -111,7 +112,7 @@
                             <?php 
                                       if($_SESSION['particulierLoggedIn']){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
                                         foreach($_SESSION['ateliers'] as $inscriptionIndice){
-                                          if($inscriptionIndice == $_SESSION['id']){
+                                          if($inscriptionIndice == $atelier['id']){
                                             echo 'Inscrit !';
                                             exit();
                                           }

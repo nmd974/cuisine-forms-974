@@ -83,7 +83,7 @@
       <?php endif ?>
       <?php if($_SESSION['particulierLoggedIn'] == true):?>
         <li class="nav-item">
-            <a class="nav-link" href="../pages/particulierManager.php">Mon compte</a>
+            <a class="nav-link" href="../pages/compteParticulier.php">Mon compte</a>
         </li>
       <?php endif ?>
     </ul>

@@ -73,10 +73,10 @@
     $data['duree'] = $data['heureDuree'].'h'.$data['minutesDuree'];
     //On supprime les champs inutiles
     unset($data['ajouter']);
-    unset($data['minDebut']);
-    unset($data['heureDuree']);
-    unset($data['minutesDuree']);
-    unset($data['heureDebut']);
+    // unset($data['minDebut']);
+    // unset($data['heureDuree']);
+    // unset($data['minutesDuree']);
+    // unset($data['heureDebut']);
     
     //Ici on contrôle les valeurs de prix et nombre de place
     $inputsRequired = ['nombre_places','prix'];
@@ -109,7 +109,7 @@
           $data['participants'] = []; //Il s'agit ici d'un tableau vide qui va servir d'ajouter les participants qui s'inscrivent
           $data['modifie'] = false; //Il s'agit ici d'un indice à false donc creation et true si modifié';
           $data['id'] =  md5(uniqid(rand(), true));
-          array_push($dataAtelier, $data);
+          array_unshift($dataAtelier, $data);
           saveAteliersData($dataAtelier);
 
           //On dit que la verification est ok via la variable du début

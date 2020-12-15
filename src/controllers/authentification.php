@@ -31,7 +31,7 @@ function validationConnexion(){
                     $_SESSION['particulierLoggedIn'] = true;
                     $_SESSION['id'] = $value['id'];
                     $_SESSION['ateliers'] = $value['ateliers'];
-                    header('Location: ./home.php');
+                    header('Location: ./home.php?page=1');
                 }
             }
         }
