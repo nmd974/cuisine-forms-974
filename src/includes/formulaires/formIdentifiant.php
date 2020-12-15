@@ -61,7 +61,6 @@
 
           if(empty($nom)) $erreur="Nom laissé vide!";
           elseif(empty($prenom)) $erreur="Prénom laissé vide!";
-          elseif(empty($prenom)) $erreur="Prénom laissé vide!";
           elseif(empty($login)) $erreur="Login laissé vide!";
           elseif(empty($pass)) $erreur="Mot de passe laissé vide!";
           else{
@@ -74,28 +73,28 @@
        <form class="row" method="POST" action="" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <label for="name" class="form-label">Nom</label>
-                        <input type="text" class="form-control" name="nomUser" value="">
+                        <input type="text" class="form-control" name="nomUser" value="" require>
                     </div>
                     <div class="col-md-12">
                         <label for="prenom" class="form-label">Prénoms</label>
-                        <input type="text" class="form-control" value="" name="prenomUser">
+                        <input type="text" class="form-control" value="" name="prenomUser" require>
                     </div>
                     <div class="col-md-12">
                         <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" name="emailUser">
+                        <input type="email" class="form-control" id="inputEmail4" name="emailUser" require>
                     </div>
                     <div class="col-md-12">
                         <label for="telephone" class="form-label">Telephone</label>
-                        <input type="number" class="form-control" value="" name="telUser">
+                        <input type="number" class="form-control" value="" name="telUser" require>
                     </div>
                     <div class="col-md-12">
                         <label for="inputPassword4" class="form-label">Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="passwordUser">
+                        <input type="password" class="form-control" id="inputPassword4" name="passwordUser" require>
                     </div>
 
                     <div class="col-md-12">
                         <label for="inputPassword4" class="form-label">Retaper Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="repass" >
+                        <input type="password" class="form-control" id="inputPassword4" name="repass" require>
                     </div>
 
                     <!--button validation inscription-->
