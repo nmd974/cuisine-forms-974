@@ -112,9 +112,7 @@
                 <span class="text-dark effect-underline font-weight-bold">Non connecté</span>
             </div>
             <div>
-                <a href="../pages/authentification.php" class="text-white effect-underline font-weight-bold">
-                    <button class="btn btn-primary">Se connecter <i class="fa fa-sign-out" aria-hidden="true"></i></button>
-                </a>
+                <button class="btn btn-primary"><a href="../pages/authentification.php" class="text-white effect-underline font-weight-bold">Se connecter <i class="fa fa-sign-out" aria-hidden="true"></i></a></button>
             </div>
         </div>
     <?php endif ?>
