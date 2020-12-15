@@ -13,22 +13,23 @@
         $_POST['role'] = "user";
         $_POST['ateliers'] = [];
         
-
+        //condition pour vérifier format email valide
         if ( preg_match ( " /^.+@.+\.[a-zA-Z]{2,}$/ " , $emailUser)) {
-            $_POST['emailUser'] =htmlentities($_POST['emailUser'], ENT_QUOTES);
 
+            $_POST['emailUser'] =htmlentities($_POST['emailUser'], ENT_QUOTES);
             $_POST['telUser'] = htmlentities($_POST['telUser'], ENT_QUOTES);
 
              
             $repass = $_POST['repass'];
             $password = $_POST['passwordUser'];
             
-
+            //condition si mot passe identique dans les champs inputs
             if ($password == $repass) {
                 // On crypte le mot de passe
                 $_POST['passwordUser'] = htmlentities($_POST['passwordUser'], ENT_QUOTES);
                 $_POST['passwordUser'] = password_hash($_POST['passwordUser'], PASSWORD_DEFAULT);
 
+                //rentre bon format nom et prenom 
                 $_POST['nomUser'] = htmlentities($_POST['nomUser'], ENT_QUOTES);
                 $_POST['prenomUser'] = htmlentities($_POST['prenomUser'], ENT_QUOTES);
 
@@ -53,54 +54,23 @@
                     file_put_contents($filename,json_encode($jsonArray));
                     //message confirmation
                     echo '<div class="col-md-12 d-flex justify-content-center">
-                        <div class="alert alert-success">Inscription OK !</div></div>';
+                            <div class="alert alert-success">Inscription OK !</div>
+                        </div>';//message validatiion
                 }else {
                     
                     echo '<div class="col-md-12 d-flex justify-content-center">
-                    <div class="alert alert-danger">Erreur survenue lors saisie données !</div></div>';
+                    <div class="alert alert-danger">Erreur survenue lors saisie données !</div></div>';//message erreur saisie
                 }
 
             }else{
                 echo '<div class="col-md-12 d-flex justify-content-center">
                 <div class="alert alert-danger">retaper mot passe !</div></div>';
-            }
+            }//fin vérification mot passe identique
 
         }else{
             echo '<div class="col-md-12 d-flex justify-content-center">
             <div class="alert alert-danger">email pas valide !</div></div>';
-        }
+        }//fin vérification format mail
 
-            
-                                
-        
-       
-  /*  } */
-
-/* essai pour vérification email !!!!!
-//condition pour envoyer les data dans le fichier user.json
-        if (isset($filename)) {
-            //ouvre le fichier json
-            $datajson = file_get_contents("$filename");
-            //on decode le fichier json en php
-            $data = json_decode($datajson, true);
-            //recherche dans le tableau
-            foreach ($data as $valeur) {
-                //si email dans data existe oui ou non 
-                if ($valeur['emailUser'] != $emailUser) {
-                    array_unshift($data,$_POST);
-                    //en rencode le fichier en json aprés avoir reçu données
-                    file_put_contents($filename,json_encode($data));
-                    //message confirmation
-                    echo '<div class="col-md-12 d-flex justify-content-center">
-                    <div class="alert alert-success">Inscription OK !</div></div>';
-                }else {
-                    echo '<div class="col-md-12 d-flex justify-content-center">
-                    <div class="alert alert-danger">Erreur survenue lors saisie données !</div></div>';
-                }
-            } 
-        } 
-
-*/
-        
 
 ?>

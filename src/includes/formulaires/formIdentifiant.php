@@ -49,7 +49,7 @@
 
        <!--appel controller SignUp positionner ici de manière à rester dans la colonne inscription-->
        <?php 
-       
+       //@ en php permets afficher message ereeur
        @$nom=$_POST["nomUser"];
        @$prenom=$_POST["prenomUser"];
        @$login=$_POST["emailUser"];
