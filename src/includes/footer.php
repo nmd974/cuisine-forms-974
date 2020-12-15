@@ -1,7 +1,7 @@
 
     <!--début Footer-->
 
-    <footer class="mainfooter" role="contentinfo">
+    <footer class="mainfooter">
       <div class="footer-middle">
       <div class="container">
         <div class="row">
@@ -53,9 +53,9 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <!--script JS-->
-    <script type="text/javascript" src="../script/jumbotron.js"></script>
-    <script type="text/javascript" src="../includes/cuisinier/script.js"></script>
-    <script type="text/javascript" src="../script/inputHeure.js"></script>
+    <script src="../script/jumbotron.js"></script>
+    <script src="../includes/cuisinier/script.js"></script>
+    <script src="../script/inputHeure.js"></script>
     </body>
 </html>
 
