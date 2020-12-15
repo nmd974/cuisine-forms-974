@@ -17,7 +17,7 @@
                 return array($error, '<div class="alert alert-danger">Erreur survenue lors du transfert de l\'image</div>'); //Si oui alors on arrete la fonction et on affiche qu'il y a eu une erreur lors du transfert
                 exit();
             }
-        $maxSize = 1048576000; //On spécifie ici la taille maximale de l'image en bytes ici equivalent à 10mo 10485760
+        $maxSize = 10485760; //On spécifie ici la taille maximale de l'image en bytes ici equivalent à 10mo 10485760
         $fileSize = $_FILES['image_upload']['size'];//On recupere via la $_FILES la taille de l'image ajoutée dans l'input
         if($fileSize > $maxSize) //Taille de l'image doit être < à $maxSize
             {
