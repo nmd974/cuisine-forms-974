@@ -2,29 +2,32 @@
   
   function validerDonneesAtelierForm($data) {
     $champs = [ 
-      array("key" => "titre", "libele" => "'Nom de l'atelier'"), 
-      array("key" => "prix", "libele" => "'Prix de l'atelier'"),
-      array("key" => "duree", "libele" => "'Durée'"),
-      array("key" => "description", "libele" => "'Description'"),
-      array("key" => "date_debut", "libele" => "'Date début de l'atelier'"),
-      array("key" => "nombre_places", "libele" => "'Place disponibe'"),
-      array("key" => "heure_debut", "libele" => "'Heure de début'")];
+       "titre", 
+       "prix", 
+       "duree", 
+       "description", 
+       "date_debut",
+       "nombre_places", 
+       "heure_debut", 
+      ];
     $validation = true;
     
+    
     foreach ($champs as $champ){
-      if ($data[$champ["key"]] == "") {
-        return array("valide" => false, "message" => 'Le champ '.$champ["libele"].' est obligatoir');
+      if ($data[$champ] == "" && strlen($data[$champ["description"]]) > 7 ) {
+        return array("valide" => false, "message" => 'renseignez tous les champ');
       }
-      
-      if ($champ["key"] == "description" && strlen($data[$champ["key"]]) > 250 ) {
+    // var_dump (count($champ["description"]));
+     /* 
+      if ( strlen($data[$champ["description"]]) > 250 ) {
         return array("valide" => false, "message" => 'La description ne doit pas dépasser les 250 caractères');
       }
       
 
-     /*  if ($champ["key"] == "date_debut" /*$dataPost["date_debut"] !== date("jj/ mm / aaaa") ){
+       if ( $champ["key"]== "prix" && (string) $data[$champ["key"]] !== (int)$data[$champ["key"]]){
         return array("valide" => false, "message" => 'La date n\'est pas une Date ');
-       }*/
-     
+       }
+     */
    }
     return array("valide" => true);
   }
@@ -56,6 +59,7 @@
     }
 
     array_unshift($data, $dataPost);
+
     file_put_contents($fichierDonneesAtelier, json_encode($data));
   }
 ?>

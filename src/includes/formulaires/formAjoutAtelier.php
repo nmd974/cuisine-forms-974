@@ -7,7 +7,8 @@
         echo $message;
     }else{
         ajouterAtelier($_POST, $_FILES);
-        header("Location:.\cuistoManager.php");
+       
+       // header("Location:.\cuistoManager.php");
     }
 
   }
@@ -28,7 +29,7 @@
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" rows="3" name="description" maxlength="250"></textarea>
+                <textarea class="form-control" id="description" rows="3" name="description" ></textarea>
             </div>
            
             <div class="row">

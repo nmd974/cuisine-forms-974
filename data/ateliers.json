@@ -1,3 +1,18 @@
 [
-    
+    {
+        "titre": "sdF",
+        "description": "sDFF GGRRG G GGR ",
+        "date_debut": "2020-12-25",
+        "heure_debut": "14:13",
+        "nombre_places": "3",
+        "duree": "4",
+        "prix": "2",
+        "valider": "",
+        "id": "49232fd3e882c3b11d6893a161394791",
+        "proprietaire": 1,
+        "date_ajout": "15-12-2020 11:10:26",
+        "etat_atelier": "D\u00e9sactiv\u00e9",
+        "participants": [],
+        "modifie": false
+    }
 ]
