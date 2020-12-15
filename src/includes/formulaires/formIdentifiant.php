@@ -10,9 +10,26 @@
       <h5 class="card-title">Se connecter</h5>
 
       <?php 
-        require_once(__ROOT__.'/src/controllers/authentification.php');
-        if(isset($_POST['connecter'])){
-            validationConnexion();
+         @$nom=$_POST["nomUser"];
+         @$prenom=$_POST["prenomUser"];
+         @$login=$_POST["emailuser"];
+         @$pass=$_POST["passwordUser"];
+         @$repass=$_POST["repass"];
+         @$valider=$_POST["signUp"];
+         $erreur="";
+         if(isset($valider)){
+
+            if(empty($nom)) $erreur="Nom laissé vide!";
+            elseif(empty($prenom)) $erreur="Prénom laissé vide!";
+            elseif(empty($prenom)) $erreur="Prénom laissé vide!";
+            elseif(empty($login)) $erreur="Login laissé vide!";
+            elseif(empty($pass)) $erreur="Mot de passe laissé vide!";
+            elseif($pass!=$repass) $erreur="Mots de passe non identiques!";
+            else{
+
+                require_once(__ROOT__.'/src/controllers/authentification.php');
+                if(isset($_POST['connecter'])){
+                    validationConnexion();
         }
 
       ?>
@@ -70,6 +87,11 @@
                     <div class="col-md-12">
                         <label for="inputPassword4" class="form-label">Mot de passe</label>
                         <input type="password" class="form-control" id="inputPassword4" name="passwordUser" required>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="inputPassword4" class="form-label">Retapper Mot de passe</label>
+                        <input type="password" class="form-control" id="inputPassword4" name="repass" required>
                     </div>
 
                     <!--button validation inscription-->
