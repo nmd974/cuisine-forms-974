@@ -11,7 +11,7 @@
 
       <?php 
         
-        require_once(__ROOT__.'/src/controllers/authentification.php');
+        required_once(__ROOT__.'/src/controllers/authentification.php');
         if(isset($_POST['connecter'])){
             validationConnexion();
         }
@@ -20,7 +20,7 @@
       
       
       <!--Début identification-->       
-      <form method="POST" enctype="multipart/form-data" action="" class="mb-3"> 
+      <form method="POST" enctype="multipart/form-data" class="mb-3"> 
 
           <div class="">
               <label for="email" class="form-label">Identifiant</label>
@@ -42,7 +42,7 @@
     </div>
 </div>
 
-<div class="card rounded" style="max-width: 600px;">
+<div class="card rounded" style="max-width:600px;">
     <div class="card-body">
       <h5 class="card-title">Pas encore membre ?</h5>
       <h5 class="card-title">Créer vite votre compte</h5>
@@ -70,31 +70,31 @@
         ?>
 
        <!--Début Formulaire inscription-->
-       <form class="row" method="POST" action="" enctype="multipart/form-data">
+       <form class="row" method="POST" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <label for="name" class="form-label">Nom</label>
-                        <input type="text" class="form-control" name="nomUser" value="" require>
+                        <input type="text" class="form-control" name="nomUser" id="name" required>
                     </div>
                     <div class="col-md-12">
                         <label for="prenom" class="form-label">Prénoms</label>
-                        <input type="text" class="form-control" value="" name="prenomUser" require>
+                        <input type="text" class="form-control" name="prenomUser" id="prenom" required>
                     </div>
                     <div class="col-md-12">
                         <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" name="emailUser" require>
+                        <input type="email" class="form-control" id="inputEmail4" name="emailUser" required>
                     </div>
                     <div class="col-md-12">
                         <label for="telephone" class="form-label">Telephone</label>
-                        <input type="number" class="form-control" value="" name="telUser" require>
+                        <input type="number" class="form-control" name="telUser" id="telephone" required>
                     </div>
                     <div class="col-md-12">
                         <label for="inputPassword4" class="form-label">Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="passwordUser" require>
+                        <input type="password" class="form-control" id="inputPassword4" name="passwordUser" required>
                     </div>
 
                     <div class="col-md-12">
-                        <label for="inputPassword4" class="form-label">Retaper Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="repass" require>
+                        <label for="confirmPassword" class="form-label">Retaper Mot de passe</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="repass" required>
                     </div>
 
                     <!--button validation inscription-->
