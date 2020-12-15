@@ -46,7 +46,7 @@ if(isset($_GET['action'])){
                 </div>
                 <div id="collapse_<?= $atelier['id']?>" class="collapse" data-parent="#ateliers">
                     <div class="card w-100 card-manager">
-                        <img src="../../images/gateau1.jpeg" class="card-img img-manager" alt="cours de cuisine">
+                        <img src="<?= $atelier['image']?>" class="card-img img-manager" alt="cours de cuisine">
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><strong>Description : </strong><?= $atelier['description']?>

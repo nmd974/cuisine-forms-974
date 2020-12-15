@@ -1,18 +1,1 @@
-[
-    {
-        "titre": "sdF",
-        "description": "sDFF GGRRG G GGR ",
-        "date_debut": "2020-12-25",
-        "heure_debut": "14:13",
-        "nombre_places": "3",
-        "duree": "4",
-        "prix": "2",
-        "valider": "",
-        "id": "49232fd3e882c3b11d6893a161394791",
-        "proprietaire": 1,
-        "date_ajout": "15-12-2020 11:10:26",
-        "etat_atelier": "D\u00e9sactiv\u00e9",
-        "participants": [],
-        "modifie": false
-    }
-]
+[{"titre":"masosopory","description":"daaadd","date_debut":"2020-12-18","heure_debut":"22:49","nombre_places":"3","duree":"4","prix":"3","valider":"","id":"24c5e7b1410f571e1c7451551908400d","proprietaire":1,"date_ajout":"15-12-2020 19:48:06","etat_atelier":"Activ\u00e9","participants":[],"modifie":false,"image":"..\\..\\images\\uploadedFiles\\t au coef.png","etat_ajout":"Modifi\u00e9 le : "},{"titre":"Fa aona mitsy ary ","description":"dq","date_debut":"2020-12-16","heure_debut":"21:57","nombre_places":"5","duree":"5","prix":"5","valider":"","id":"d91a70f6f3072c527ed9fa90b6ff3aa8","proprietaire":1,"date_ajout":"15-12-2020 18:55:50","etat_atelier":"D\u00e9sactiv\u00e9","participants":[],"modifie":false,"image":"..\\..\\images\\uploadedFiles\\Sans titre01.png"},{"titre":"Fa aona mitsy ary ","description":"zsdcsds","date_debut":"2020-12-25","heure_debut":"01:01","nombre_places":"2","duree":"2","prix":"2","valider":"","id":"0d52327dcb23868c74cdd502d4872114","proprietaire":1,"date_ajout":"15-12-2020 18:45:35","etat_atelier":"D\u00e9sactiv\u00e9","participants":[],"modifie":false,"image":"..\\..\\images\\uploadedFiles\\t au coef.png"}]
