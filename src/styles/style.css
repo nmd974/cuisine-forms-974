@@ -370,4 +370,8 @@ footer {
     padding: 0 !important;
   }
 
+  footer {
+    text-align: center;
+  }
+
 }
