@@ -20,9 +20,11 @@
         return array("valide" => false, "message" => 'La description ne doit pas dépasser les 250 caractères');
       }
       
-      if ($champ["key"] == "description" && strlen($data[$champ["key"]]) > 25 ) {
-        return array("valide" => false, "message" => 'La description ne doit pas dépasser les 250 caractères');
-      }
+
+     /*  if ($champ["key"] == "date_debut" /*$dataPost["date_debut"] !== date("jj/ mm / aaaa") ){
+        return array("valide" => false, "message" => 'La date n\'est pas une Date ');
+       }*/
+     
    }
     return array("valide" => true);
   }
@@ -36,6 +38,7 @@
     $dataPost["prix"] = htmlentities($dataPost["prix"]);
     $dataPost["duree"] = htmlentities($dataPost["duree"]);
     $dataPost["date_debut"] =  htmlspecialchars($dataPost["date_debut"]);
+
     $dataPost["nombre_places"] = htmlentities($dataPost["nombre_places"]);
     $dataPost["heure_debut"] =  htmlspecialchars($dataPost["heure_debut"]);
     $dataPost["id"] = md5(uniqid(rand(), true));
