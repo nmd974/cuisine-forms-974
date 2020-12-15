@@ -1,17 +1,19 @@
 <?php
-    require_once(__ROOT__.'/src/controllers/ajoutAtelier.php');
+    require_once(__ROOT__.'/src/controllers/accesData.php');
+    require_once(__ROOT__.'/src/controllers/modifierAtelier.php');
 ?>
 <?php
     if(!$_SESSION['cuisinierLoggedIn']){
         header('Location: ./home.php');
     }
 ?>
+
 <?php
-    if(isset($_POST['ajouter'])){
-        if($_FILES['image_upload']['name'] == ""){
-            $validationFormulaire = [false, '<div class="container alert alert-danger col-12 mb-5">Veuillez sélectionner une image !</div>', 'image_upload'];
+    if(isset($_POST['modifier'])){
+        if($_FILES['image_upload']['name'] !== ""){
+            $validationFormulaire = modifierAtelier($_POST, $_FILES, $_GET['idmo']);
         }else{
-            $validationFormulaire = ajoutAtelier($_POST, $_FILES);
+            $validationFormulaire = modifierAtelier($_POST, null, $_GET['idmo']);
         }       
     }
 ?>
@@ -22,7 +24,11 @@
                 echo $validationFormulaire[1];
             }  
         ?>
-        <form method="post" enctype="multipart/form-data">
+        <?php if(isset($_GET['idmo'])):?><!--On recupere l'id passé en URL-->
+        <?php $data = getAteliersData();?>
+        <?php foreach($data as $atelier):?>
+        <?php if($atelier['id'] == $_GET['idmo']):?>
+          <form method="post" enctype="multipart/form-data">
             <div class="mb-3 form-group col-12">
                 <label for="titre">Titre de l'atelier :</label>
                 <input 
@@ -38,10 +44,10 @@
                     id="titre" 
                     aria-describedby="titre" 
                     name="titre" 
-                    value="<?= isset($_POST['titre']) ? htmlentities($_POST['titre'],ENT_QUOTES) : ""?>"
+                    value="<?= isset($atelier['titre']) ? htmlentities($atelier['titre'],ENT_QUOTES) : ""?>"
                 >
             </div>
-            <!--isset($_POST['description']) ? htmlentities($_POST['description'],ENT_QUOTES) : ""--> 
+            <!--isset($atelier['description']) ? htmlentities($atelier['description'],ENT_QUOTES) : ""--> 
             <div class="mb-3 form-group col-12">
                 <label for="description">Description :</label>
                 <textarea 
@@ -56,7 +62,7 @@
                     id="description" 
                     rows="3" 
                     name="description"
-                    ><?= isset($_POST['description']) ? htmlentities($_POST['description'],ENT_QUOTES) : ""?></textarea>
+                    ><?= isset($atelier['description']) ? htmlentities($atelier['description'],ENT_QUOTES) : ""?></textarea>
             </div>
             <div class="d-lg-flex">
                 <div class="mb-3 form-group col-lg-4 col-12">
@@ -73,7 +79,7 @@
                         ?>"  
                         id="date_debut" 
                         name="date_debut"
-                        value="<?= isset($_POST['date_debut']) ? htmlentities($_POST['date_debut'],ENT_QUOTES) : ""?>"
+                        value="<?= isset($atelier['date_debut']) ? DateTime::createFromFormat('U', htmlentities($atelier['date_debut'], ENT_QUOTES))->format('Y-m-d') : ""?>"
                     >
                 </div>
                 <div class="mb-3 col-lg-4 col-12">
@@ -91,7 +97,7 @@
                             id="heureSelect" 
                             name="heureDebut"
                             type="number"
-                            value="<?= isset($_POST['heureDebut']) ? htmlentities($_POST['heureDebut'],ENT_QUOTES) : ""?>"
+                            value="<?= isset($atelier['heureDebut']) ? htmlentities($atelier['heureDebut'],ENT_QUOTES) : ""?>"
                         >
 
                         <div class="input-group-append">
@@ -109,7 +115,7 @@
                             id="minSelect" 
                             name="minDebut"
                             type="number"
-                            value="<?= isset($_POST['minDebut']) ? htmlentities($_POST['minDebut'],ENT_QUOTES) : ""?>"
+                            value="<?= isset($atelier['minDebut']) ? htmlentities($atelier['minDebut'],ENT_QUOTES) : ""?>"
                         >
                         <div class="input-group-append">
                             <label class="input-group-text" for="minSelect">Min</label>
@@ -131,7 +137,7 @@
                             id="heureSelect2" 
                             name="heureDuree"
                             type="number"
-                            value="<?= isset($_POST['heureDuree']) ? htmlentities($_POST['heureDuree'],ENT_QUOTES) : ""?>"
+                            value="<?= isset($atelier['heureDuree']) ? htmlentities($atelier['heureDuree'],ENT_QUOTES) : ""?>"
                         >
                         <div class="input-group-append">
                             <label class="input-group-text" for="heureSelect2">H</label>
@@ -148,7 +154,7 @@
                             id="minSelect2" 
                             name="minutesDuree"
                             type="number"
-                            value="<?= isset($_POST['minutesDuree']) ? htmlentities($_POST['minutesDuree'],ENT_QUOTES) : ""?>"
+                            value="<?= isset($atelier['minutesDuree']) ? htmlentities($atelier['minutesDuree'],ENT_QUOTES) : ""?>"
                         >
                         <div class="input-group-append">
                             <label class="input-group-text" for="minSelect2">Min</label>
@@ -171,7 +177,7 @@
                         ?>" 
                         id="nombre_places" 
                         name="nombre_places"
-                        value="<?= isset($_POST['nombre_places']) ? htmlentities($_POST['nombre_places'],ENT_QUOTES) : 0 ?>"
+                        value="<?= isset($atelier['nombre_places']) ? htmlentities($atelier['nombre_places'],ENT_QUOTES) : 0 ?>"
                     >
                 </div>
 
@@ -190,7 +196,7 @@
                             ?>" 
                             id="prix" 
                             name="prix"
-                            value="<?= isset($_POST['prix']) ? htmlentities($_POST['prix'],ENT_QUOTES) : 0 ?>"
+                            value="<?= isset($atelier['prix']) ? htmlentities($atelier['prix'],ENT_QUOTES) : 0 ?>"
                         >
                         <div class="input-group-append">
                             <span class="input-group-text">€</span>
@@ -218,9 +224,11 @@
                 </div>
             </div>
             <div class="text-center mt-5">
-                <button type="submit" name="ajouter" class="btn btn-primary">Ajouter l'atelier</button>
+                <button type="submit" name="modifier" class="btn btn-primary">Modifier l'atelier</button>
             </div>
         </form>
-       
+        <?php endif?>
+       <?php endforeach?>
+       <?php endif?>
     </section>
 

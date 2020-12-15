@@ -1,5 +1,15 @@
 [
     {
+        "nomUser": "team",
+        "prenomUser": "rocket",
+        "emailUser": "admin@admin.com",
+        "telUser": "",
+        "passwordUser": "$2y$10$M4Kq1\/dfa1fx4NqGDDQwIeTYu57C7kcPAX3DYnk3t5gVLOtZPgOge",
+        "id": "7a724de0d905f182870cc5792ab358b4",
+        "role": "admin",
+        "ateliers": []
+    },
+    {
         "nomUser": "Lebon",
         "prenomUser": "Olivier",
         "emailUser": "Olivier@lebon.dev",
@@ -8,7 +18,8 @@
         "id": "cd8f07ad17e078f34be3b92a79d96cf7",
         "role": "user",
         "ateliers": [
-            "b256170c9d7048cb3d178e4f240df5b4"
+            "57c5867a213540fd9eb53fcabc342c5e",
+            "6a586b909144a3ab6d19a9a96a986a3f"
         ]
     },
     {
@@ -19,8 +30,6 @@
         "passwordUser": "1234",
         "id": "e4ee56d7a383984c435e49df03b97bf1",
         "role": "cuisinier",
-        "ateliers": [
-            "e4ee56d7a383984c435e49df03b97bf1"
-        ]
+        "ateliers": []
     }
 ]
