@@ -23,6 +23,9 @@
     if(!isset($_SESSION['ateliers'])){
         $_SESSION['ateliers'] = "";
     }
+    // if(!isset($_SESSION['page'])){
+    //     $_SESSION['page'] = 1;
+    // }
 
 ?>
 <!DOCTYPE html>
@@ -41,7 +44,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/loader.css">
     <script src="https://use.fontawesome.com/c18e5332f2.js"></script>
     <title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -57,10 +59,10 @@
 
 <body id="body">
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="../pages/home.php">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="../pages/home.php?page=1">
     <img src="../../images/logo.png" width="30" height="30" alt="">
-  Application</a>
+  CuisineForms974</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -70,20 +72,20 @@
 
 
     <ul class="navbar-nav my-2 my-lg-0">
-      <li class="nav-item">
-        <a class="nav-link" href="../pages/home.php">Accueil</a>
-      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="../pages/home.php?page=1">Accueil</a>
+      </li> -->
       <?php if($_SESSION['cuisinierLoggedIn'] == true):?>
         <li class="nav-item">
             <a class="nav-link" href="../pages/ajoutAtelier.php">Ajout atelier</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../pages/cuistoManager.php">Cuisto manager</a>
+            <a class="nav-link" href="../pages/compteCuisinier.php">Mes ateliers</a>
         </li>
       <?php endif ?>
       <?php if($_SESSION['particulierLoggedIn'] == true):?>
         <li class="nav-item">
-            <a class="nav-link" href="../pages/particulierManager.php">Mon compte</a>
+            <a class="nav-link" href="../pages/compteParticulier.php">Mon compte</a>
         </li>
       <?php endif ?>
     </ul>
@@ -157,9 +159,9 @@
   </div>
 </nav>
 <?php 
-    if(isset($titlePage)):?>{
+    if(isset($titlePage)):?>
     <div class="container mt-5 titrePage">
         <h1 class="text-center align-middle font-weight-bold"><?php echo $titlePage?></h1>
-    </div>';
+    </div>
     
 <?php endif ?>

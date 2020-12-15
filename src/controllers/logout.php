@@ -5,5 +5,5 @@
     unset($_SESSION['cuisinierLoggedIn']);
     unset($_SESSION['particulierLoggedIn']);
     unset($_SESSION['ateliers']);
-    header('Location: ../pages/home.php');
+    header('Location: ../pages/home.php?page=1');
 ?>
