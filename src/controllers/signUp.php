@@ -14,7 +14,15 @@
         $_POST['ateliers'] = [];
         $_POST['nomUser'] = htmlentities($_POST['nomUser'], ENT_QUOTES);
         $_POST['prenomUser'] = htmlentities($_POST['prenomUser'], ENT_QUOTES);
-        $_POST['emailUser'] = htmlentities($_POST['emailUser'], ENT_QUOTES);
+
+        $testEmail =  $_POST['emailUser'];
+        if ( preg_match ( " /^.+@.+\.[a-zA-Z]{2,}$/ " , $testEmail)) {
+            $_POST['emailUser'] =htmlentities($_POST['emailUser'], ENT_QUOTES);
+        }else{
+            echo "error";
+        };
+                                
+        
         $_POST['telUser'] = htmlentities($_POST['telUser'], ENT_QUOTES);
         $_POST['passwordUser'] = htmlentities($_POST['passwordUser'], ENT_QUOTES);
         $_POST['passwordUser'] = password_hash($_POST['passwordUser'], PASSWORD_DEFAULT); // On crypte le mot de passe

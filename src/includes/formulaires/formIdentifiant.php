@@ -50,21 +50,25 @@
        <!--appel controller SignUp positionner ici de manière à rester dans la colonne inscription-->
        <?php 
        
-       @$nom=$_POST["nomUser"];
-       @$prenom=$_POST["prenomUser"];
-       @$login=$_POST["emailuser"];
-       @$pass=$_POST["passwordUser"];
-       @$repass=$_POST["repass"];
-       @$valider=$_POST["signUp"];
+       $nom=$_POST["nomUser"];
+       $prenom=$_POST["prenomUser"];
+       $login=$_POST["emailUser"];
+       $pass=$_POST["passwordUser"];
+       $repass=$_POST["repass"];
+       $valider=$_POST["signUp"];
        $erreur="";
        if(isset($valider)){
 
-          if(empty($nom)) $erreur="Nom laissé vide!";
-          elseif(empty($prenom)) $erreur="Prénom laissé vide!";
-          elseif(empty($prenom)) $erreur="Prénom laissé vide!";
-          elseif(empty($login)) $erreur="Login laissé vide!";
-          elseif(empty($pass)) $erreur="Mot de passe laissé vide!";
-          elseif($pass!=$repass) $erreur="Mots de passe non identiques!";
+          if(empty($nom)) $erreur='<div class="col-md-12 d-flex justify-content-center">
+          <div class="alert alert-danger">Nom laissé vide</div></div>';
+          elseif(empty($prenom)) $erreur='<div class="col-md-12 d-flex justify-content-center">
+          <div class="alert alert-danger">Prénom laissé vide</div></div>';
+          elseif(empty($login)) $erreur='<div class="col-md-12 d-flex justify-content-center">
+          <div class="alert alert-danger">email laissé vide</div></div>';
+          elseif(empty($pass)) $erreur='<div class="col-md-12 d-flex justify-content-center">
+          <div class="alert alert-danger">mot passe laissé vide</div></div>';
+          elseif($pass!=$repass) $erreur='<div class="col-md-12 d-flex justify-content-center">
+          <div class="alert alert-danger">mot de passe non identique</div></div>';
           else{
             include("../controllers/signUp.php"); 
           }
@@ -75,15 +79,15 @@
        <form class="row" method="POST" action="" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <label for="name" class="form-label">Nom</label>
-                        <input type="text" class="form-control" name="nomUser" value="" required>
+                        <input type="text" class="form-control" name="nomUser" value="">
                     </div>
                     <div class="col-md-12">
                         <label for="prenom" class="form-label">Prénoms</label>
-                        <input type="text" class="form-control" value="" required name="prenomUser">
+                        <input type="text" class="form-control" value="" name="prenomUser">
                     </div>
                     <div class="col-md-12">
                         <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" name="emailUser" required>
+                        <input type="email" class="form-control" id="inputEmail4" name="emailUser">
                     </div>
                     <div class="col-md-12">
                         <label for="telephone" class="form-label">Telephone</label>
@@ -91,12 +95,12 @@
                     </div>
                     <div class="col-md-12">
                         <label for="inputPassword4" class="form-label">Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="passwordUser" required>
+                        <input type="password" class="form-control" id="inputPassword4" name="passwordUser">
                     </div>
 
                     <div class="col-md-12">
-                        <label for="inputPassword4" class="form-label">Retapper Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="repass" required>
+                        <label for="inputPassword4" class="form-label">Retaper Mot de passe</label>
+                        <input type="password" class="form-control" id="inputPassword4" name="repass">
                     </div>
 
                     <!--button validation inscription-->
