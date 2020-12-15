@@ -50,25 +50,21 @@
        <!--appel controller SignUp positionner ici de manière à rester dans la colonne inscription-->
        <?php 
        
-       $nom=$_POST["nomUser"];
-       $prenom=$_POST["prenomUser"];
-       $login=$_POST["emailUser"];
-       $pass=$_POST["passwordUser"];
-       $repass=$_POST["repass"];
-       $valider=$_POST["signUp"];
+       @$nom=$_POST["nomUser"];
+       @$prenom=$_POST["prenomUser"];
+       @$login=$_POST["emailUser"];
+       @$pass=$_POST["passwordUser"];
+       @$repass=$_POST["repass"];
+       @$valider=$_POST["signUp"];
        $erreur="";
        if(isset($valider)){
 
-          if(empty($nom)) $erreur='<div class="col-md-12 d-flex justify-content-center">
-          <div class="alert alert-danger">Nom laissé vide</div></div>';
-          elseif(empty($prenom)) $erreur='<div class="col-md-12 d-flex justify-content-center">
-          <div class="alert alert-danger">Prénom laissé vide</div></div>';
-          elseif(empty($login)) $erreur='<div class="col-md-12 d-flex justify-content-center">
-          <div class="alert alert-danger">email laissé vide</div></div>';
-          elseif(empty($pass)) $erreur='<div class="col-md-12 d-flex justify-content-center">
-          <div class="alert alert-danger">mot passe laissé vide</div></div>';
-          elseif($pass!=$repass) $erreur='<div class="col-md-12 d-flex justify-content-center">
-          <div class="alert alert-danger">mot de passe non identique</div></div>';
+          if(empty($nom)) $erreur="Nom laissé vide!";
+          elseif(empty($prenom)) $erreur="Prénom laissé vide!";
+          elseif(empty($prenom)) $erreur="Prénom laissé vide!";
+          elseif(empty($login)) $erreur="Login laissé vide!";
+          elseif(empty($pass)) $erreur="Mot de passe laissé vide!";
+          elseif($pass!=$repass) $erreur="Mots de passe non identiques!";
           else{
             include("../controllers/signUp.php"); 
           }
@@ -100,7 +96,7 @@
 
                     <div class="col-md-12">
                         <label for="inputPassword4" class="form-label">Retaper Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="repass">
+                        <input type="password" class="form-control" id="inputPassword4" name="repass" >
                     </div>
 
                     <!--button validation inscription-->
