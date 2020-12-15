@@ -1,6 +1,6 @@
-<div class="text-center mt-5">
+<!-- <div class="text-center mt-5">
         <h1> Connexion au compte</h1>
-</div>
+</div> -->
 
 <div class="card-deck m-auto">
 
