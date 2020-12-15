@@ -4,7 +4,7 @@
 
 
 $title = "Ateliers de cuisine"; //Titre de la page.
-$titlePage = "Modification de l'atelier"; //Titre de la page.
+// $titlePage = "Modification de l'atelier"; //Titre de la page.
 
 require_once(dirname(__DIR__) . "/includes/header.php"); // Ici on inclut le header de la page avec le fichier "header.php"
 ?>

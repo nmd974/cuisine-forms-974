@@ -25,12 +25,20 @@ function validationConnexion(){
                     $_SESSION['id'] = $value['id'];
                     $_SESSION['ateliers'] = $value['ateliers'];
                     header('Location: ./compteCuisinier.php');
-                } else {
+                } 
+                if($value['role'] == "user"){
                     $role = 'user';
                     $verificationStatus = true;
                     $_SESSION['particulierLoggedIn'] = true;
                     $_SESSION['id'] = $value['id'];
                     $_SESSION['ateliers'] = $value['ateliers'];
+                    header('Location: ./home.php?page=1');
+                }
+                if($value['role'] == "admin"){
+                    $role = 'admin';
+                    $verificationStatus = true;
+                    $_SESSION['adminLoggedIn'] = true;
+                    $_SESSION['id'] = $value['id'];
                     header('Location: ./home.php?page=1');
                 }
             }

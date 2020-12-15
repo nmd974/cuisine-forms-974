@@ -69,7 +69,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="d-flex justify-content-between align-items-center w-100">
+    <div class="d-flex justify-content-end align-items-center w-100">
 
 
     <ul class="navbar-nav my-2 my-lg-0">
@@ -77,16 +77,30 @@
         <a class="nav-link" href="../pages/home.php?page=1">Accueil</a>
       </li> -->
       <?php if($_SESSION['cuisinierLoggedIn'] == true):?>
-        <li class="nav-item">
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Mon compte
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../pages/ajoutAtelier.php">Ajout atelier</a>
+          <a class="dropdown-item" href="../pages/compteCuisinier.php">Mes ateliers</a>
+        </div>
+      </li>
+        <!-- <li class="nav-item">
             <a class="nav-link" href="../pages/ajoutAtelier.php">Ajout atelier</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="../pages/compteCuisinier.php">Mes ateliers</a>
-        </li>
+        </li> -->
       <?php endif ?>
       <?php if($_SESSION['particulierLoggedIn'] == true):?>
         <li class="nav-item">
             <a class="nav-link" href="../pages/compteParticulier.php">Mon compte</a>
+        </li>
+      <?php endif ?>
+      <?php if($_SESSION['adminLoggedIn'] == true):?>
+        <li class="nav-item">
+            <a class="nav-link" href="../pages/ajoutCuisinier.php">Ajouter un cuisinier</a>
         </li>
       <?php endif ?>
     </ul>
