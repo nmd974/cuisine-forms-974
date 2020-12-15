@@ -12,47 +12,65 @@
         //affectation rôle:
         $_POST['role'] = "user";
         $_POST['ateliers'] = [];
-        $_POST['nomUser'] = htmlentities($_POST['nomUser'], ENT_QUOTES);
-        $_POST['prenomUser'] = htmlentities($_POST['prenomUser'], ENT_QUOTES);
+        
 
-        $testEmail =  $_POST['emailUser'];
-        if ( preg_match ( " /^.+@.+\.[a-zA-Z]{2,}$/ " , $testEmail)) {
+        if ( preg_match ( " /^.+@.+\.[a-zA-Z]{2,}$/ " , $emailUser)) {
             $_POST['emailUser'] =htmlentities($_POST['emailUser'], ENT_QUOTES);
 
             $_POST['telUser'] = htmlentities($_POST['telUser'], ENT_QUOTES);
-            $_POST['passwordUser'] = htmlentities($_POST['passwordUser'], ENT_QUOTES);
-            $_POST['passwordUser'] = password_hash($_POST['passwordUser'], PASSWORD_DEFAULT); // On crypte le mot de passe
-            //surppression $post signUp
-            unset($_POST['signUp']);
-            unset($_POST['repass']);
-    
-            //attribution destination json dans variable
-            $filename = '../../data/users.json';
-           
-    
-            //condition pour envoyer les data dans le fichier user.json
-            if (isset($filename)) {
-                //fichier existe alors on récupère son contenu on transforme en array
-                //retourne le contenu du fichier dans une variable de type string
-                $jsonString = file_get_contents($filename);
-                //Transforme la structure json en array PHP
-                $jsonArray = json_decode($jsonString, true);
-                //$jsonArray = []; // si pas de tableau on crée un tableau
-                array_unshift($jsonArray,$_POST);
-                //en rencode le fichier en json aprés avoir reçu données
-                file_put_contents($filename,json_encode($jsonArray));
-                //message confirmation
+
+             
+            $repass = $_POST['repass'];
+            $password = $_POST['passwordUser'];
+            
+
+            if ($password == $repass) {
+                // On crypte le mot de passe
+                $_POST['passwordUser'] = htmlentities($_POST['passwordUser'], ENT_QUOTES);
+                $_POST['passwordUser'] = password_hash($_POST['passwordUser'], PASSWORD_DEFAULT);
+
+                $_POST['nomUser'] = htmlentities($_POST['nomUser'], ENT_QUOTES);
+                $_POST['prenomUser'] = htmlentities($_POST['prenomUser'], ENT_QUOTES);
+
+                //surppression $post signUp
+                unset($_POST['signUp']);
+                unset($_POST['repass']);
+        
+                //attribution destination json dans variable
+                $filename = '../../data/users.json';
+            
+        
+                //condition pour envoyer les data dans le fichier user.json
+                if (isset($filename)) {
+                    //fichier existe alors on récupère son contenu on transforme en array
+                    //retourne le contenu du fichier dans une variable de type string
+                    $jsonString = file_get_contents($filename);
+                    //Transforme la structure json en array PHP
+                    $jsonArray = json_decode($jsonString, true);
+                    //$jsonArray = []; // si pas de tableau on crée un tableau
+                    array_unshift($jsonArray,$_POST);
+                    //en rencode le fichier en json aprés avoir reçu données
+                    file_put_contents($filename,json_encode($jsonArray));
+                    //message confirmation
+                    echo '<div class="col-md-12 d-flex justify-content-center">
+                        <div class="alert alert-success">Inscription OK !</div></div>';
+                }else {
+                    
+                    echo '<div class="col-md-12 d-flex justify-content-center">
+                    <div class="alert alert-danger">Erreur survenue lors saisie données !</div></div>';
+                }
+
+            }else{
                 echo '<div class="col-md-12 d-flex justify-content-center">
-                      <div class="alert alert-success">Inscription OK !</div></div>';
-            }else {
-                
-                echo '<div class="col-md-12 d-flex justify-content-center">
-                <div class="alert alert-danger">Erreur survenue lors saisie données !</div></div>';
+                <div class="alert alert-danger">retaper mot passe !</div></div>';
             }
+
         }else{
             echo '<div class="col-md-12 d-flex justify-content-center">
             <div class="alert alert-danger">email pas valide !</div></div>';
-        };
+        }
+
+            
                                 
         
        
