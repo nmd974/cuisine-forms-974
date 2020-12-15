@@ -55,7 +55,7 @@
     <!--Atelier-->
     <div class="card cardListe">
         <div class="d-lg-flex">
-            <div class="col-md-4 col-12">
+            <div class="col-lg-4 col-12">
             <div class="duree d-flex position-absolute w-50 justify-content-center align-items-center font-weight-bold"><?= htmlentities($atelier['prix'], ENT_QUOTES)?> €</div>
                 <img src="../../images/<?= $atelier['image']?>" class="card-img imageListe"
                     alt="Nos cours de cuisine">
@@ -66,7 +66,7 @@
                       ?>
                     </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 <div class="card-header">
                     <h2>
                         <?= $atelier['titre']?>
@@ -135,7 +135,7 @@
 
     <!--séparation-->
     <div class="row separated  mt-5">
-        <hr class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <hr class="col-xs-12 col-sm-12 col-lg-12 col-lg-12">
     </div>
     <!--fin séparation-->
     <?php endif?>

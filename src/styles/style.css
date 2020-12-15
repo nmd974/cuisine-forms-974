@@ -14,8 +14,6 @@ html,body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Light', 'Roboto Medium', 'Roboto';
 }
-
-
 .imageprincipale{
   background-size: cover;
   background:linear-gradient(to bottom, rgba(83, 83, 83, 0.8) 0%, rgba(83, 83, 83, 0.8) 100%), url(../../images/main.jpeg);
@@ -158,10 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   right: 0;
 }
-/* .basCard{
-  bottom: 0 !important;
-  height: 50%;
-} */
+
 /*image manager */
 .img-manager{
   width: 200px !important;
@@ -318,7 +313,16 @@ footer {
 }
 /*responisve pour tablette (vérifier ipad et ipad pro*/
 @media (max-width: 1024px) {
-
+  .cardListe{
+    max-height: 100% !important;
+    /* padding: 0 !important; */
+  }
+  .basCard{
+    margin-bottom: 20px !important;
+  }
+  .card-body-liste{
+    padding: 0 !important;
+  }
 
 }
 
@@ -340,6 +344,30 @@ footer {
   }
   .jumbotron{
     top: 13%;
+  }
+  .navbar-brand{
+    font-size: 18px;
+    color: black !important;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+  }
+  .nav-link{
+    font-size: 18px;
+    color: black !important;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+  }
+  .navbarClass{
+    flex-direction: column !important;
+  }
+  .basCard{
+    margin-bottom: 20px !important;
+  }
+  .duree2, .duree{
+    font-size: 0.7rem;
+  }
+  .card-body-liste{
+    padding: 0 !important;
   }
 
 }

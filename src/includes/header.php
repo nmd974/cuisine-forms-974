@@ -69,7 +69,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="d-flex justify-content-end align-items-center w-100">
+    <div class="d-flex navbarClass justify-content-end align-items-center w-100">
 
 
     <ul class="navbar-nav my-2 my-lg-0">
@@ -107,7 +107,7 @@
 
     <!--Ici on gere l'affichage du bouton se connecter si personne est connecte-->
     <?php if(!$_SESSION['adminLoggedIn'] && !$_SESSION['cuisinierLoggedIn'] && !$_SESSION['particulierLoggedIn'] ):?> 
-        <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex flex-column justify-content-center align-items-center ml-5">
             <div class="d-flex">
                 <span class="text-dark effect-underline font-weight-bold">Non connecté</span>
             </div>
