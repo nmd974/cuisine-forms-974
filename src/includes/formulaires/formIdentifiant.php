@@ -11,7 +11,7 @@
 
       <?php 
         
-        required_once(__ROOT__.'/src/controllers/authentification.php');
+        require_once(__ROOT__.'/src/controllers/authentification.php');
         if(isset($_POST['connecter'])){
             validationConnexion();
         }
