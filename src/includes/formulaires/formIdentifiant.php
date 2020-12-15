@@ -64,7 +64,6 @@
           elseif(empty($prenom)) $erreur="Prénom laissé vide!";
           elseif(empty($login)) $erreur="Login laissé vide!";
           elseif(empty($pass)) $erreur="Mot de passe laissé vide!";
-          elseif($pass!=$repass) $erreur="Mots de passe non identiques!";
           else{
             include("../controllers/signUp.php"); 
           }
