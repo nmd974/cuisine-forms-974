@@ -10,26 +10,10 @@
       <h5 class="card-title">Se connecter</h5>
 
       <?php 
-         @$nom=$_POST["nomUser"];
-         @$prenom=$_POST["prenomUser"];
-         @$login=$_POST["emailuser"];
-         @$pass=$_POST["passwordUser"];
-         @$repass=$_POST["repass"];
-         @$valider=$_POST["signUp"];
-         $erreur="";
-         if(isset($valider)){
-
-            if(empty($nom)) $erreur="Nom laissé vide!";
-            elseif(empty($prenom)) $erreur="Prénom laissé vide!";
-            elseif(empty($prenom)) $erreur="Prénom laissé vide!";
-            elseif(empty($login)) $erreur="Login laissé vide!";
-            elseif(empty($pass)) $erreur="Mot de passe laissé vide!";
-            elseif($pass!=$repass) $erreur="Mots de passe non identiques!";
-            else{
-
-                require_once(__ROOT__.'/src/controllers/authentification.php');
-                if(isset($_POST['connecter'])){
-                    validationConnexion();
+        
+        require_once(__ROOT__.'/src/controllers/authentification.php');
+        if(isset($_POST['connecter'])){
+            validationConnexion();
         }
 
       ?>
@@ -64,7 +48,28 @@
       <h5 class="card-title">Créer vite votre compte</h5>
 
        <!--appel controller SignUp positionner ici de manière à rester dans la colonne inscription-->
-       <?php include("../controllers/signUp.php"); ?>
+       <?php 
+       
+       @$nom=$_POST["nomUser"];
+       @$prenom=$_POST["prenomUser"];
+       @$login=$_POST["emailuser"];
+       @$pass=$_POST["passwordUser"];
+       @$repass=$_POST["repass"];
+       @$valider=$_POST["signUp"];
+       $erreur="";
+       if(isset($valider)){
+
+          if(empty($nom)) $erreur="Nom laissé vide!";
+          elseif(empty($prenom)) $erreur="Prénom laissé vide!";
+          elseif(empty($prenom)) $erreur="Prénom laissé vide!";
+          elseif(empty($login)) $erreur="Login laissé vide!";
+          elseif(empty($pass)) $erreur="Mot de passe laissé vide!";
+          elseif($pass!=$repass) $erreur="Mots de passe non identiques!";
+          else{
+            include("../controllers/signUp.php"); 
+          }
+        }    
+        ?>
 
        <!--Début Formulaire inscription-->
        <form class="row" method="POST" action="" enctype="multipart/form-data">
