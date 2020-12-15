@@ -31,12 +31,15 @@ if (isset($_GET['id'])) {
 <?php if($_SESSION['cuisinierLoggedIn']):?>
 <div class="container mt-5" id="atelierManager">
     <div class="table-responsive">
+        <?php if(isset($modification)){
+            echo $modification;
+        }?>
         <div class="accordion" id="ateliers">
             <?php $data = getAteliersData();?>
             <?php if ($data) : ?>
             <?php foreach ($data as $atelier) : ?>
             <!-- Modal -->
-            <div class="modal fade" id="<?= 'modal_idmo'.$atelier['id']?>" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            <div class="modal fade" id="<?= 'modal_'.$atelier['id']?>" data-backdrop="static" data-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
                 <div class="modal-dialog">
@@ -48,23 +51,24 @@ if (isset($_GET['id'])) {
                             </button>
                         </div>
 
-                        <form method="post" enctype="multipart/form-data" action="../pages/compteCuisinier.php?idmo=<?= $atelier['id']?>">
+                        <form method="post" enctype="multipart/form-data">
                             <div class="modal-body">
 <?php if(isset($validationFormulaire[1])){echo $validationFormulaire[1];} ;?>
+<?php var_dump($_POST);?>
                                 <div class="mb-3 form-group col-12">
-                                    <label for="titre">Titre de l'atelier :</label>
+                                    <label >Titre de l'atelier :</label>
                                     <input type="text" class="form-control 
                     <?php
                         if(isset($validationFormulaire[2])){
                             if($validationFormulaire[2] == " titre"){ echo "invalid" ; } } ?>"
-                                    id="titre"
+                                    
                                     aria-describedby="titre"
                                     name="titre"
                                     value="<?= isset($atelier['titre']) ? htmlentities($atelier['titre'],ENT_QUOTES) : ""?>"
                                     >
                                 </div>
                                 <div class="mb-3 form-group col-12">
-                                    <label for="description">Description :</label>
+                                    <label>Description :</label>
                                     <textarea class="form-control
                     <?php
                         if(isset($validationFormulaire[2])){
@@ -73,19 +77,19 @@ if (isset($_GET['id'])) {
                             } 
                         }
                      ?>"
-                    id="description" 
+                   
                     rows="3" 
                     name="description"
                     ><?= isset($atelier['description']) ? htmlentities($atelier['description'],ENT_QUOTES) : ""?></textarea>
                                 </div>
 
                                 <div class="mb-3 form-group col-12">
-                                    <label for="date_debut">Date de début :</label>
+                                    <label >Date de début :</label>
                                     <input type="date" class="form-control
                         <?php
                             if(isset($validationFormulaire[2])){
                                 if($validationFormulaire[2] == " date_debut"){ echo "invalid" ; } } ?>"
-                                    id="date_debut"
+                                   
                                     name="date_debut"
                                     value="<?= isset($atelier['date_debut']) ? htmlentities($atelier['date_debut'],ENT_QUOTES) : ""?>"
                                     >
@@ -196,7 +200,7 @@ if (isset($_GET['id'])) {
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-                                <button type="submit" name="modifier" class="btn btn-primary"><a href="../pages/compteCuisinier.php?idmo=<?= $atelier['id'] ?>">Sauvegarder</a></button>
+                                <button type="submit" id="<?= 'button_'.$atelier['id']?>" name="modifier" class="btn btn-primary">Sauvegarder</button>
                             </div>
                         </form>
                     </div>
@@ -267,7 +271,7 @@ if (isset($_GET['id'])) {
                                     class="btn btn-primary" id="modifierAtelier">Modifier</a>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#<?= 'modal_idmo'.$atelier['id']?>">
+                                    data-target="#<?= 'modal_'.$atelier['id']?>">
                                     Modifier
                                 </button>
                             </div>

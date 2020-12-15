@@ -29,6 +29,12 @@ h1, h2, h3, h4, h5, h6 {
 .titrePage{
   margin-top: 150px !important;
 }
+.navbar-brand{
+  font-size: 20px;
+  color: black !important;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
 .nav-link{
   font-size: 20px;
   color: black !important;
@@ -50,14 +56,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 /*carte liste*/
 .cardListe{
-  max-height: 640px !important;
+  max-height: 550px !important;
   /* padding: 0 !important; */
+}
+.imageListe{
+  height: 450px !important;
+  width: 100% !important;
+}
+.alert{
+  padding: 17px !important;
 }
 .card-header{
   text-transform: capitalize !important;
 }
 .card-body-liste{
   padding: 0 1rem !important;
+  bottom: 0 !important;
 }
 .duree {
   background: #f3671f;
@@ -75,6 +89,10 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   right: 0;
 }
+/* .basCard{
+  bottom: 0 !important;
+  height: 50%;
+} */
 /*image manager */
 .img-manager{
   width: 200px !important;
@@ -91,10 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 .checked{
   border-color: #80bdff;
 }
-.imageListe{
-  height: 400px !important;
-  width: 100% !important;
-}
+
  /*séparateur card Atelier*/ 
 .separated hr {
     margin: 15px 0;

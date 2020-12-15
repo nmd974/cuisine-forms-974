@@ -31,27 +31,39 @@
                     3,
                     $_GET['page']
                 );
-                $compteur=0;
+                if($_GET['page'] > 1){
+                  $compteur= 1 * 4;
+                }else{
+                  $compteur=1;
+                }
+                
         ?>
     <?php foreach ($ateliers as $key => $atelier):?>
     <?php 
           if($atelier['etat_atelier'] == "Active"){
             $allInactif = false;
-            
           }
         ?>
+
+       <?php if($key + 1 == $compteur):?>
     <?php if($atelier['etat_atelier'] == "Active"):?>
     <!--Ici on gère là où on doit prendre les données selon la page actuelle-->
-    <?php if($key + 1 > $pagination->intervalleMin() && $key + 1 <= $pagination->intervalleMax()):?>
+    <?php if($compteur > $pagination->intervalleMin() && $compteur <= $pagination->intervalleMax()):?>
+      <?php $compteur++;?>
       <?php $pagination->nombreAfficheActuel();?>
     <!--Atelier-->
     <div class="card cardListe">
         <div class="d-lg-flex">
             <div class="col-md-4 col-12">
-            <div class="duree d-flex position-absolute w-50 justify-content-center align-items-center font-weight-bold"></div>
+            <div class="duree d-flex position-absolute w-50 justify-content-center align-items-center font-weight-bold"><?= htmlentities($atelier['prix'], ENT_QUOTES)?> €</div>
                 <img src="../../images/<?= $atelier['image']?>" class="card-img imageListe"
                     alt="Nos cours de cuisine">
-                    <div class="duree2 d-flex position-absolute w-50 justify-content-center align-items-center font-weight-bold"></div>
+                    <div class="duree2 d-flex position-absolute w-50 justify-content-center align-items-center font-weight-bold">
+                      <?= 
+                        htmlentities($atelier['nombre_places'], ENT_QUOTES) - count($atelier['participants']) < 0 ?
+                        "COMPLET" : (htmlentities($atelier['nombre_places'], ENT_QUOTES) - count($atelier['participants'])).' place(s) disponible(s)';
+                      ?>
+                    </div>
             </div>
             <div class="col-md-8">
                 <div class="card-header">
@@ -59,30 +71,20 @@
                         <?= $atelier['titre']?>
                     </h2>
                 </div>
-                <div class="card-body card-body-liste">
+                <div class="card-body card-body-liste d-flex flex-column justify-content-around">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><strong>Description : </strong>
                             <?= htmlentities($atelier['description'], ENT_QUOTES)?>
                         </li>
-                        <li class="list-group-item"><strong>Date début : </strong>
-                            <?= htmlentities($atelier['date_debut'], ENT_QUOTES)?>
+                        <li class="list-group-item mt-5"><strong>Date début : </strong>
+                          <?= "Le " . DateTime::createFromFormat('U', htmlentities($atelier['date_debut'], ENT_QUOTES))->format('j M Y');?>
+                          <?= "à ". htmlentities($atelier['heure_debut'], ENT_QUOTES);?>
                         </li>
                         <li class="list-group-item"><strong>Durée : </strong>
-                            <?= htmlentities($atelier['duree'], ENT_QUOTES)?> h
-                        </li>
-                        <li class="list-group-item"><strong>Nombre de réservations :
-                            </strong>
-                            <?= count($atelier['participants'])?>
-                        </li>
-                        <li class="list-group-item"><strong>Nombre de places :
-                            </strong>
-                            <?= htmlentities($atelier['nombre_places'], ENT_QUOTES)?>
-                        </li>
-                        <li class="list-group-item"><strong>Prix : </strong>
-                            <?= htmlentities($atelier['prix'], ENT_QUOTES)?> €
+                            <?= htmlentities($atelier['duree'], ENT_QUOTES);?>
                         </li>
                     </ul>
-                    <div class="d-flex flex-lg-row flex-column w-100 justify-content-between align-items-center mt-5">
+                    <div class="d-flex flex-lg-row flex-column justify-content-between align-items-center mt-5 basCard">
                         <p class="card-text"><small class="text-muted">
                                 <?= !$atelier['modifie'] ? "Ajouté le :" : "Modifié le :"?>
                                 <?= htmlentities(substr($atelier['date_ajout'],0,10), ENT_QUOTES)?> à
@@ -131,21 +133,24 @@
     <!--Fin exemple 1-->
 
     <!--séparation-->
-    <div class="row separated">
+    <div class="row separated  mt-5">
         <hr class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     </div>
     <!--fin séparation-->
     <?php endif?>
     <?php endif?>
+    <?php endif?>
     <?php endforeach ?>
     <?php endif?>
     <!--Ici on affiche la pagination s'il y a des articles-->
-    <?php if($ateliers || !$allInactif):?>
-      <?= $pagination->toHTMLPrevious();?>
-    <?php for($i = 1; $i < $pagination->nombrePages + 1; $i++):?>
-      <?= $pagination->toHTMLPages($i);?>
-    <?php endfor?>
-      <?= $pagination->toHTMLNext();?>
+    <?php if(!$allInactif):?>
+      <?php if($ateliers || !$allInactif):?>
+        <?= $pagination->toHTMLPrevious();?>
+      <?php for($i = 1; $i < $pagination->nombrePages + 1; $i++):?>
+        <?= $pagination->toHTMLPages($i);?>
+      <?php endfor?>
+        <?= $pagination->toHTMLNext();?>
+      <?php endif;?>
     <?php endif;?>
     <?php if($ateliers == null || $allInactif):?>
     <div class="container mt-5 titrePage">
