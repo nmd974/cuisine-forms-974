@@ -16,7 +16,7 @@
     }
 ?>
 
-    <section class="container mt-5">
+    <div class="container mt-5">
         <?php
             if(isset($validationFormulaire[1])){
                 echo $validationFormulaire[1];
@@ -77,8 +77,8 @@
                     >
                 </div>
                 <div class="mb-3 col-lg-4 col-12">
-                    <label for="heure_debut">Heure de début :</label>
-                    <div class="input-group" id="heure_debut">
+                    <label>Heure de début :</label>
+                    <div class="input-group">
                         <input 
                             class="form-control
                             <?php
@@ -117,7 +117,7 @@
                     </div>
                 </div>
                 <div class="mb-3 col-lg-4 col-12">
-                    <label for="date_debut">Durée :</label>
+                    <label>Durée :</label>
                     <div class="input-group">
                         <input 
                             class="form-control
@@ -222,5 +222,5 @@
             </div>
         </form>
        
-    </section>
+    </div>
 
