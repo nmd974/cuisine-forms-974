@@ -1,7 +1,7 @@
 
 <div class="card-deck m-auto">
 
-  <div class="card rounded"style="max-width: 6000px;">
+  <div class="card rounded" style="max-width: 6000px;">
     <div class="card-body">
       <h5 class="card-title">Déjà membre?</h5>
       <h5 class="card-title">Se connecter</h5>
