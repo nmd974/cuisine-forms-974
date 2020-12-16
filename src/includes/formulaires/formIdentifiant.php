@@ -1,7 +1,7 @@
 
 <div class="card-deck m-auto">
 
-  <div class="card rounded"style="max-width: 6000px;">
+  <div class="card rounded" style="max-width: 6000px;">
     <div class="card-body">
       <h5 class="card-title">Déjà membre?</h5>
       <h5 class="card-title">Se connecter</h5>
@@ -18,17 +18,18 @@
       
       <!--Début identification-->  
       <?php 
+      //Message retourné en cas d'erreur
         if(isset($messageValidation[2])){
             echo $messageValidation[2];
         }
       ?>
-      <form method="POST" enctype="multipart/form-data" action="" class="mb-3"> 
+      <form method="POST" enctype="multipart/form-data" class="mb-3"> 
 
-          <div class="">
+          <div>
               <label for="email" class="form-label">Identifiant</label>
               <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Votre adresse email" name="email">
           </div>
-          <div  class="">
+          <div>
               <label for="password" class="form-label">Password</label>
               <input type="password" class="form-control" id="password" placeholder="Votre adresse mot de passe"  name="password">
           </div>
@@ -65,7 +66,7 @@
           elseif(empty($prenom)) $erreur="Prénom laissé vide!";
           elseif(empty($login)) $erreur="Email laissé vide!";
           elseif(empty($pass)) $erreur="Mot de passe laissé vide!";
-          elseif(empty($repass)) $erreur="Retapé mot de passe laissé vide!";
+          elseif(empty($repass)) $erreur="Veuillez confirmer le mot de passe!";
           else{
             include("../controllers/signUp.php"); 
           }
@@ -73,14 +74,14 @@
         ?>
 
        <!--Début Formulaire inscription-->
-       <form class="row" method="POST" action="" enctype="multipart/form-data">
+       <form class="row" method="POST" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <label for="name" class="form-label">Nom</label>
-                        <input type="text" class="form-control" name="nomUser" value="">
+                        <input type="text" class="form-control" name="nomUser" id="name">
                     </div>
                     <div class="col-md-12">
                         <label for="prenom" class="form-label">Prénoms</label>
-                        <input type="text" class="form-control" value="" name="prenomUser">
+                        <input type="text" class="form-control" name="prenomUser" id="prenom">
                     </div>
                     <div class="col-md-12">
                         <label for="inputEmail4" class="form-label">Email</label>
@@ -88,11 +89,11 @@
                     </div>
                     <div class="col-md-12">
                         <label for="telephone" class="form-label">Telephone</label>
-                        <input type="number" class="form-control" value="" name="telUser">
+                        <input type="number" class="form-control" name="telUser" id="telephone">
                     </div>
                     <div class="col-md-12">
-                        <label for="inputPassword4" class="form-label">Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="passwordUser">
+                        <label for="confirmPassword" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="passwordUser">
                     </div>
 
                     <div class="col-md-12">
