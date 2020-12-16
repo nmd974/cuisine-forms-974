@@ -14,17 +14,15 @@ function validationConnexion(){
     $email = htmlentities($_POST['email'], ENT_QUOTES);
     //attribution input dans une variable
     $password = htmlentities($_POST['password'], ENT_QUOTES);
-    //verification cryptage du mot passe
-    $passHash = password_hash($password, PASSWORD_DEFAULT);
     $datajson = file_get_contents("../../data/users.json");
-// var_dump($passHash);
+
     $data = json_decode($datajson, true);
     //recherche dns le tableau
     foreach ($data as $value) {
         //comparaison par mail
         if ($value['emailUser'] == $email) {
             //comparaison mot passe
-            if (password_verify(password_hash($value['passwordUser'], PASSWORD_DEFAULT), $passHash)) { //On verifie si le password hashe en bdd correspoind au hashage du password saisie = renvoie true or false
+            if (password_verify($password, $value['passwordUser'])) { //On verifie si le password hashe en bdd correspoind au hashage du password saisie = renvoie true or false
                 //si enregistrerr en tant cuisinier
                 if ($value['role'] == "cuisinier") {
                     $verificationStatus = true;
