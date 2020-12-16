@@ -2,7 +2,7 @@
 
 
   function validerDonneesAtelierForm($data, $uploadedFiles) { // toutes mes verification des champ commence ici
-    $champs = [                                                 // je craye d'abord un tableau à verifier
+    $champs = [                                                 // je crée d'abord un tableau à verifier
       array("key" => "titre", "libele" => "Nom de l'atelier"),
       array("key" => "prix", "libele" => "Prix de l'atelier"), 
       array("key" => "duree", "libele" => "Durée"), 
@@ -26,14 +26,14 @@
         return array("valide" => false, "message" => 'Le champ "'.$champ["libele"].'" n\'est pas un entier ');
       }
       
-      if ( $champ["key"] == "date_debut"){ // ici ma comparaison de la date de début de l'atelier si c'est bien posterieur de la data d'aujourd'hui
-        $aujourdhui = new Datetime();
-        $dateDebut = new Datetime($data[$champ["key"]]);
-        if(date('Y-m-d', strtotime($data[$champ["key"]])) !== $data[$champ["key"]]){
+      if ( $champ["key"] == "date_debut"){                  // ici ma comparaison de la date de début de l'atelier si c'est bien posterieur de la data d'aujourd'hui
+        $aujourdhui = new Datetime();                       // reinitialisation date
+        $dateDebut = new Datetime($data[$champ["key"]]);    // je recupére la date tapée sur champ
+        if(date('Y-m-d', strtotime($data[$champ["key"]])) !== $data[$champ["key"]]){    // ma verification si c'est bien une date qui est entrée
           return array("valide" => false, "message" => 'Le champ "'.$champ["libele"].'" n\'est pas une Date ');
         }
 
-        if($dateDebut < $aujourdhui){
+        if($dateDebut < $aujourdhui){                       // ici je verifie aussi si la date est bien posterieur à la da date actuelle
           return array("valide" => false, "message" => 'La date de début est dans le passé');
         }
       }
@@ -73,10 +73,10 @@
     return false;
   }
 
-  function ajouterAtelier($dataPost, $files){ // je commence sauvgarder mes données ici 
-    $fichierDonneesAtelier = "../../data/ateliers.json";
+  function ajouterAtelier($dataPost, $files){ // je commence à sauvgarder mes données ici 
+    $fichierDonneesAtelier = "../../data/ateliers.json"; // je definie d'abord le cemain où je veux suvgarder mes données
     $data = json_decode(file_get_contents($fichierDonneesAtelier), true); // 
-
+      // **** à partir d'ici je recupère le données verifiées
     $dataPost["titre"] = htmlspecialchars($dataPost["titre"]);
     $dataPost["description"] = htmlspecialchars($dataPost["description"]);
     $dataPost["prix"] = htmlentities($dataPost["prix"]);
@@ -86,14 +86,14 @@
 
     $dataPost["nombre_places"] = htmlentities($dataPost["nombre_places"]);
     $dataPost["heure_debut"] =  htmlspecialchars($dataPost["heure_debut"]);
-    $dataPost["id"] = md5(uniqid(rand(), true));
+    $dataPost["id"] = md5(uniqid(rand(), true)); // methode pour créer un id
     $dataPost["proprietaire"] = 1;
     $dataPost["date_ajout"] = (new Datetime())->format('d-m-Y H:i:s');//sans paramettre Datetime() retourne la date et l'heure actuelle;
     $dataPost["etat_atelier"] ="Désactivé";
     $dataPost["participants"] =[];
     $dataPost["modifie"] = false;
 
-    $target_dir = "..\\..\\images\\uploadedFiles\\"; // definire le chemain du telechargemet faire attention c'est différe WIN et LINUX
+    $target_dir = "..\\..\\images\\uploadedFiles\\"; // definir le chemain du telechargemet faire attention c'est différe WIN et LINUX
     $target_file = $target_dir . basename($files["image"]["name"]);
 
     if (move_uploaded_file($files["image"]["tmp_name"], $target_file /*télécharger le fichier et enregistrer dans le répértoire */)) {
@@ -102,7 +102,7 @@
 
     array_unshift($data, $dataPost); // je push mes données sous forme de tableau 
 
-    file_put_contents($fichierDonneesAtelier, json_encode($data));
+    file_put_contents($fichierDonneesAtelier, json_encode($data)); 
   }
 
 ?>
