@@ -1,10 +1,4 @@
-<!-- <div class="text-center mt-5">
-        <h1> Connexion au compte</h1>
-</div> -->
-
 <div class="card-deck m-auto">
-
-
 <div class="card rounded" style="max-width: 600px;">
     <div class="card-body">
       <h5 class="card-title">Nouveau chef cuisinier ?</h5>
@@ -34,22 +28,22 @@
         ?>
 
        <!--Début Formulaire inscription-->
-       <form class="row" method="POST" action="" enctype="multipart/form-data">
+       <form class="row" method="POST" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <label for="name" class="form-label">Nom</label>
-                        <input type="text" class="form-control" name="nomUser" value="">
+                        <input type="text" class="form-control" name="nomUser" id="name">
                     </div>
                     <div class="col-md-12">
                         <label for="prenom" class="form-label">Prénoms</label>
-                        <input type="text" class="form-control" value="" name="prenomUser">
+                        <input type="text" class="form-control" name="prenomUser" id="prenom">
                     </div>
                     <div class="col-md-12">
-                        <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" name="emailUser">
+                        <label for="emailUser" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" name="emailUser" id="emailUser">
                     </div>
                     <div class="col-md-12">
                         <label for="specialite" class="form-label">Spécialité</label>
-                        <input type="text" class="form-control" value="" name="specialite">
+                        <input type="text" class="form-control" name="specialite" id="specialite">
                     </div>
                     <div class="col-md-12">
                         <label for="inputPassword4" class="form-label">Mot de passe</label>
@@ -57,15 +51,13 @@
                     </div>
 
                     <div class="col-md-12">
-                        <label for="inputPassword4" class="form-label">Retaper Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="repass" >
+                        <label for="confirmPass" class="form-label">Retaper Mot de passe</label>
+                        <input type="password" class="form-control" id="confirmPass" name="repass" >
                     </div>
 
                     <!--button validation inscription-->
                     <div class="col-12 text-end my-3">
-                        
                         <button type="submit" class="btn btn-primary mr-5" name="signUp" formmethod="post">Ajouter</button>
-                                
                     </div>
 
                 </form>

@@ -373,8 +373,11 @@ footer {
     padding: 0 !important;
   }
 
-  footer {
+  .footer-middle {
     text-align: center;
+  }
+  .navbar-brand{
+    font-size: 18px;
   }
 
 }
