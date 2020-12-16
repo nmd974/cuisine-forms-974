@@ -18,9 +18,9 @@
 ?>
 
 <!-- début section des Ateliers-->
-<section class="container" style="margin-top:70px">
+<h1 class="text-center mb-5" style="margin-top:70px">Liste des Ateliers</h1>
 
-  <h1 class="text-center mb-5">Liste des Ateliers</h1>
+<section class="container">
   <?php if(isset($modification)){
             echo $modification;
         }

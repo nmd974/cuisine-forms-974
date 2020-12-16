@@ -8,6 +8,7 @@ if (isset($_GET['id'])) {
     $modification = activerDesactiverAtelier($_GET['id']);
     unset($_GET['id']);
 }
+$indice_creation = false;
 ?>
 <!--Sur cette page on ajoute en liste accordion les ateliers et la modification lance un modal-->
 <?php if(!$_SESSION['cuisinierLoggedIn']){
@@ -38,6 +39,7 @@ if (isset($_GET['id'])) {
             
             <!--Conteu en liste -->
             <?php if ($atelier['proprietaire'] == $_SESSION['id']) : ?>
+                <?php $indice_creation = true;?>
             <div class="card">
                 <div class="card-header d-flex align-items-center">
                 <h2 class="mb-0 d-flex w-100">
@@ -116,7 +118,7 @@ if (isset($_GET['id'])) {
             <?php endif; ?>
         </div>
     </div>
-    <?php if (!$_SESSION['ateliers']):?>
+    <?php if (!$indice_creation):?>
         <div class="container mt-5 titrePage">
             <h2 class="text-center align-middle font-weight-bold">Aucun ateliers de cuisines créés</h2>
         </div>
