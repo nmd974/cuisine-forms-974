@@ -1,1 +1,46 @@
-[{"titre":"sdvsdfd","description":"dfvdv","date_debut":"2020-12-15","heure_debut":"16:58","nombre_places":"1","duree":"1","prix":"1","image":"","id":"0b236a0ed2be618143bafc19bfc7918f","proprietaire":1,"date_ajout":[1607684341,"2020-12-11"],"etat_atelier":"D\u00e9sactiv\u00e9","participants":[],"modifie":false},{"titre":"wsfwsfgwfsg","description":"wsfdwsfgwsfg","date_debut":"2020-12-16","heure_debut":"15:52","nombre_places":"1","duree":"1","prix":"1","image":"","id":"484ed9bf0e0f304ef80bce7b47d3ee15","proprietaire":1,"date_ajout":[1607680368,"2020-12-11"],"etat_atelier":"Activ\u00e9","participants":[],"modifie":false,"etat_ajout":"Modifi\u00e9 le : "}]
+[
+    {
+        "titre": "test 2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "date_debut": 1608246180,
+        "heureDebut": "03",
+        "minDebut": "03",
+        "heureDuree": "03",
+        "minutesDuree": "03",
+        "nombre_places": 3,
+        "prix": 3,
+        "heure_debut": "03h03",
+        "duree": "03h03",
+        "image": "9ead7b9474b8403b51ebba0141753604.jpg",
+        "proprietaire": "e4ee56d7a383984c435e49df03b97bf1",
+        "date_ajout": "15-12-2020 10:07:22",
+        "etat_atelier": "Active",
+        "participants": [
+            "cd8f07ad17e078f34be3b92a79d96cf7"
+        ],
+        "modifie": false,
+        "id": "6a586b909144a3ab6d19a9a96a986a3f"
+    },
+    {
+        "titre": "test",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "date_debut": 1608073380,
+        "heureDebut": "03",
+        "minDebut": "03",
+        "heureDuree": "03",
+        "minutesDuree": "02",
+        "nombre_places": 11,
+        "prix": 3,
+        "heure_debut": "03h03",
+        "duree": "03h02",
+        "image": "682179f6c11f7519aed86a7d0a31979e.jpg",
+        "proprietaire": "e4ee56d7a383984c435e49df03b97bf1",
+        "date_ajout": "15-12-2020 09:47:14",
+        "etat_atelier": "Active",
+        "participants": [
+            "cd8f07ad17e078f34be3b92a79d96cf7"
+        ],
+        "modifie": true,
+        "id": "57c5867a213540fd9eb53fcabc342c5e"
+    }
+]

@@ -44,7 +44,6 @@
                             <input type="time" id="heure_debut" name="heure_debut" class="form-control" placeholder="Another input placeholder" 
                                 value='<?php if(isset($_POST["heure_debut"])){ echo htmlentities($_POST["heure_debut"]);}?>'>
                         </div>
-                        
                     </div>
                     <div class="form-group mt-3">
                         <label for="nombre_places">Place disponibe</label>
@@ -64,13 +63,49 @@
                         <input type="number" class="form-control" id="prix" placeholder="selection coût" name="prix" 
                             value='<?php if(isset($_POST["prix"])){ echo htmlentities($_POST["prix"]);}?>'>
                     </div>
-                   
                 </div>
-                
             </div>
-            
-            <div class=" mt-3 mb-0">
-                <label for="">Image</label>
+            <div class="d-lg-flex">
+                <div class="mb-3 col-lg-6 col-12">
+                    <label for="nombre_places">Nombre de places :</label>
+                    <input 
+                        type="number" 
+                        class="form-control
+                        <?php
+                            if(isset($validationFormulaire[2])){
+                                if($validationFormulaire[2] == "nombre_places"){
+                                    echo "invalid";
+                                }
+                            }
+                        ?>" 
+                        id="nombre_places" 
+                        name="nombre_places"
+                        value="<?= isset($_POST['nombre_places']) ? htmlentities($_POST['nombre_places'],ENT_QUOTES) : 0 ?>"
+                    >
+                </div>
+
+                <div class="mb-3 col-lg-6 col-12">
+                    <label for="nombre_places">Prix :</label>
+                    <div class="input-group">
+                        <input 
+                            type="number" 
+                            class="form-control
+                            <?php
+                                if(isset($validationFormulaire[2])){
+                                    if($validationFormulaire[2] == "prix"){
+                                        echo "invalid";
+                                    }
+                                }
+                            ?>" 
+                            id="prix" 
+                            name="prix"
+                            value="<?= isset($_POST['prix']) ? htmlentities($_POST['prix'],ENT_QUOTES) : 0 ?>"
+                        >
+                        <div class="input-group-append">
+                            <span class="input-group-text">€</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="input-group mb-3 ">
                
@@ -81,5 +116,5 @@
             </div>
         </form>
        
-    </section>
+    </div>
 

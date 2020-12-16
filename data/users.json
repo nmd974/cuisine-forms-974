@@ -1,20 +1,35 @@
 [
     {
-        "nomUser": "Payet",
-        "prenomUser": "Jordan",
-        "emailUser": "jha.payet@gmail.com",
+        "nomUser": "team",
+        "prenomUser": "rocket",
+        "emailUser": "admin@admin.com",
         "telUser": "",
-        "passwordUser": "1234",
-        "id": "e4ee56d7a383984c435e49df03b97bf1",
-        "role": "user"
+        "passwordUser": "$2y$10$M4Kq1\/dfa1fx4NqGDDQwIeTYu57C7kcPAX3DYnk3t5gVLOtZPgOge",
+        "id": "7a724de0d905f182870cc5792ab358b4",
+        "role": "admin",
+        "ateliers": []
     },
     {
         "nomUser": "Lebon",
         "prenomUser": "Olivier",
         "emailUser": "Olivier@lebon.dev",
         "telUser": "0692451594",
-        "passwordUser": "teste",
-        "id": "53d76686b5ad4c04e63460b7bb02ec85",
-        "role": "user"
+        "passwordUser": "$2y$10$NN92LmJ21gh8es3i1AP63OqZ4B9L5N0q2PGQHoDVm9anapY9Zmh8y",
+        "id": "cd8f07ad17e078f34be3b92a79d96cf7",
+        "role": "user",
+        "ateliers": [
+            "57c5867a213540fd9eb53fcabc342c5e",
+            "6a586b909144a3ab6d19a9a96a986a3f"
+        ]
+    },
+    {
+        "nomUser": "Payet",
+        "prenomUser": "Jordan",
+        "emailUser": "jha.payet@gmail.com",
+        "telUser": "",
+        "passwordUser": "1234",
+        "id": "e4ee56d7a383984c435e49df03b97bf1",
+        "role": "cuisinier",
+        "ateliers": ["57c5867a213540fd9eb53fcabc342c5e", "6a586b909144a3ab6d19a9a96a986a3f"]
     }
 ]
