@@ -11,6 +11,7 @@ function validationConnexion(){
     $message = '<div class="alert alert-success"> Connexion réussie</div>';
     //attribution input dans une variable
     $email = htmlentities($_POST['email'], ENT_QUOTES);
+    $email = strtolower($_POST['email']);
     //attribution input dans une variable
     $password = htmlentities($_POST['password'], ENT_QUOTES);
     //verification cryptage du mot passe
