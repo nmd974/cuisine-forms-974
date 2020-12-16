@@ -1,7 +1,7 @@
 
     <!--début Footer-->
 
-    <footer class="mainfooter" role="contentinfo">
+    <footer class="mainfooter">
       <div class="footer-middle">
       <div class="container">
         <div class="row">
@@ -53,28 +53,9 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <!--script JS-->
-    <script type="text/javascript" src="../script/jumbotron.js"></script>
-    
-    <!--Animation card-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-    AOS.init();
-    </script>
-
-    <script>
-    $(document).ready(function(){
-        $('.custom-control').on('click', function() {
-          console.log(this.id);
-          window.location = window.location.pathname + '?id=' + this.id;
-            // if($('#labelswitch_'+ this.id).text() === "Désactivé"){
-            //     window.location = window.location.pathname + '?id=' + this.id;
-            // }
-            // else{
-            //     window.location = window.location.pathname + '?action=activer&id=' + this.id;
-            // }
-        })
-    });
-    </script>
+    <script src="../script/jumbotron.js"></script>
+    <script src="../includes/cuisinier/script.js"></script>
+    <!-- <script src="../script/inputHeure.js"></script> -->
     </body>
 </html>
 

@@ -24,14 +24,22 @@ function validationConnexion(){
                     $_SESSION['cuisinierLoggedIn'] = true;
                     $_SESSION['id'] = $value['id'];
                     $_SESSION['ateliers'] = $value['ateliers'];
-                    header('Location: ./cuistoManager.php');
-                } else {
+                    header('Location: ./compteCuisinier.php');
+                } 
+                if($value['role'] == "user"){
                     $role = 'user';
                     $verificationStatus = true;
                     $_SESSION['particulierLoggedIn'] = true;
                     $_SESSION['id'] = $value['id'];
                     $_SESSION['ateliers'] = $value['ateliers'];
-                    header('Location: ./home.php');
+                    header('Location: ./home.php?page=1');
+                }
+                if($value['role'] == "admin"){
+                    $role = 'admin';
+                    $verificationStatus = true;
+                    $_SESSION['adminLoggedIn'] = true;
+                    $_SESSION['id'] = $value['id'];
+                    header('Location: ./home.php?page=1');
                 }
             }
         }

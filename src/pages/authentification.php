@@ -1,5 +1,6 @@
 <?php 
     $title = "Ateliers de cuisine";
+    $titlePage = "Connexion au compte";
     require_once(dirname(__DIR__)."/includes/header.php");
 ?>
 
