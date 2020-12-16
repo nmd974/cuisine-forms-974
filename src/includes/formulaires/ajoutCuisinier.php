@@ -34,14 +34,14 @@
         ?>
 
        <!--Début Formulaire inscription-->
-       <form class="row" method="POST" action="" enctype="multipart/form-data">
+       <form class="row" method="POST" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <label for="name" class="form-label">Nom</label>
-                        <input type="text" class="form-control" name="nomUser" value="">
+                        <input type="text" class="form-control" name="nomUser" id="name">
                     </div>
                     <div class="col-md-12">
                         <label for="prenom" class="form-label">Prénoms</label>
-                        <input type="text" class="form-control" value="" name="prenomUser">
+                        <input type="text" class="form-control" id="prenom" name="prenomUser">
                     </div>
                     <div class="col-md-12">
                         <label for="inputEmail4" class="form-label">Email</label>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-md-12">
                         <label for="specialite" class="form-label">Spécialité</label>
-                        <input type="text" class="form-control" value="" name="specialite">
+                        <input type="text" class="form-control" id="specialite" name="specialite">
                     </div>
                     <div class="col-md-12">
                         <label for="inputPassword4" class="form-label">Mot de passe</label>
@@ -57,8 +57,8 @@
                     </div>
 
                     <div class="col-md-12">
-                        <label for="inputPassword4" class="form-label">Retaper Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="repass" >
+                        <label for="confirmPassword" class="form-label">Retaper Mot de passe</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="repass" >
                     </div>
 
                     <!--button validation inscription-->
