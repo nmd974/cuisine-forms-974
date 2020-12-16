@@ -17,7 +17,7 @@
 ?>
 
 <!-- début section des Ateliers-->
-<section class="container">
+<section class="container" style="margin-top:100px">
 
     <?php $ateliers = getAteliersData();?>
     <?php if($ateliers):?>
