@@ -33,7 +33,7 @@
               <input type="password" class="form-control" id="password" placeholder="Votre adresse mot de passe"  name="password">
           </div>
           <div class="col-12 text-end my-3">
-              <button type="submit" class="btn btn-primary mr-4" name="connecter">Se conneter</button>
+              <button type="submit" class="btn btn-primary mr-4" name="connecter">Se connecter</button>
           </div>
            
                     
