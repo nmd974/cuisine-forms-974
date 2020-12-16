@@ -22,8 +22,11 @@ if (isset($_GET['id'])) {
             $validationFormulaire = [false, '<div class="container alert alert-danger col-12 mb-5">Veuillez sélectionner une image !</div>', 'image_upload'];
         }else{
             $validationFormulaire = ajoutAtelier($_POST, $_FILES);
-        }      
+        }    
+           
     }
+    // var_dump(substr($_POST['date_debut'],6,1));
+    // var_dump($_FILES);
 ?>
 <?php if($_SESSION['cuisinierLoggedIn']):?>
 <div class="container mt-5" id="atelierManager">
@@ -35,7 +38,7 @@ if (isset($_GET['id'])) {
             <?php $data = getAteliersData();?>
             <?php if ($data) : ?>
             <?php foreach ($data as $atelier) : ?>
-            
+           
             <!--Conteu en liste -->
             <?php if ($atelier['proprietaire'] == $_SESSION['id']) : ?>
             <div class="card">
@@ -46,6 +49,7 @@ if (isset($_GET['id'])) {
                         aria-controls="collapse_<?= $atelier['id'] ?>">
                         <?= $atelier['titre'] ?>
                     </button>
+<<<<<<< HEAD
                 </h2>
                     <div class="custom-control custom-switch" id="<?=$atelier['id']?>">
                         <input type="checkbox" class="custom-control-input" 
@@ -63,6 +67,20 @@ if (isset($_GET['id'])) {
                                     echo "Désactivé";
                                 }
                             ?>
+=======
+                    <div class="custom-control custom-switch" id="<?= $atelier['id'] ?>">
+                        <input type="checkbox" class="custom-control-input" <?php if ($atelier['etat_atelier']=="Active"
+                            ) { echo "checked" ; } ?> id="
+                        <?= $atelier['id'] ?>">
+                        <label class="custom-control-label" for="<?= $atelier['id'] ?>"
+                            id="<?php echo 'labelswitch_' . $atelier['id'] ?>">
+                            <?php if ($atelier['etat_atelier'] == "Active") {
+                                            echo "Activé";
+                                        } else {
+                                            echo "Désactivé";
+                                        }
+                                        ?>
+>>>>>>> parent of 78f5450... Merge branch 'main' of https://github.com/nmd974/cuisine-forms-974 into main
                         </label>
                     </div>
                 </div>
@@ -101,9 +119,13 @@ if (isset($_GET['id'])) {
                                         <?= substr($atelier['date_ajout'],11,8) ?>
                                     </small>
                                 </p>
-                                <a href="../pages/pageAtelier.php?idmo=<?= $atelier['id'] ?>" class="btn btn-primary">
+                                <a href="../pages/pageAtelier.php?idmo=<?= $atelier['id'] ?>"
+                                    class="btn btn-primary" id="modifierAtelier">Modifier</a>
+                                <!-- Button trigger modal -->
+                                <!-- <button type="submit" class="btn btn-primary" 
+                                    >
                                     Modifier
-                                </a>
+                                </button> -->
                             </div>
                         </div>
                     </div>
@@ -115,9 +137,9 @@ if (isset($_GET['id'])) {
         </div>
     </div>
     <?php if (!$_SESSION['ateliers']):?>
-        <div class="container mt-5 titrePage">
-            <h2 class="text-center align-middle font-weight-bold">Aucun ateliers de cuisines créés</h2>
-        </div>
+    <div class="container mt-5 titrePage">
+        <h2 class="text-center align-middle font-weight-bold">Aucun ateliers de cuisines créés</h2>
+    </div>
     <?php endif; ?>
 </div>
 <?php endif ?>

@@ -12,6 +12,7 @@
     }
 ?>
 
+<<<<<<< HEAD
 
     <div class="text-center mt-5 pt-5">
         <h2>
@@ -25,11 +26,38 @@
                 <input type="text" class="form-control" id="titre" aria-describedby="#" name="titre" 
                     value='<?php if(isset($_POST["titre"])){ echo htmlentities($_POST["titre"]);}?>' >
                 
+=======
+    <section class="container mt-5">
+        <?php
+            if(isset($validationFormulaire[1])){
+                echo $validationFormulaire[1];
+            }  
+        ?>
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3 form-group col-12">
+                <label for="titre">Titre de l'atelier :</label>
+                <input 
+                    type="text" 
+                    class="form-control 
+                    <?php
+                        if(isset($validationFormulaire[2])){
+                            if($validationFormulaire[2] == "titre"){
+                                echo "invalid";
+                            }
+                        }
+                    ?>" 
+                    id="titre" 
+                    aria-describedby="titre" 
+                    name="titre" 
+                    value="<?= isset($_POST['titre']) ? htmlentities($_POST['titre'],ENT_QUOTES) : ""?>"
+                >
+>>>>>>> parent of 78f5450... Merge branch 'main' of https://github.com/nmd974/cuisine-forms-974 into main
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description moin de 250 caractères</label>
                 <textarea class="form-control" id="description" rows="3" name="description"><?php if(isset($_POST["description"])){ echo htmlentities($_POST["description"]);}?></textarea>
             </div>
+<<<<<<< HEAD
            
             <div class="row">
                 <div class="col d-flex flex-column ">
@@ -38,6 +66,46 @@
                             <label for="date_debut">Date début de l'atelier</label>
                             <input type="date" class="form-control" id="date_debut" placeholder="Another input placeholder" name="date_debut" 
                                 value='<?php if(isset($_POST["date_debut"])){ echo htmlentities($_POST["date_debut"]);}?>'>
+=======
+            <div class="d-lg-flex">
+                <div class="mb-3 form-group col-lg-4 col-12">
+                    <label for="date_debut">Date de début :</label>
+                    <input 
+                        type="date" 
+                        class="form-control
+                        <?php
+                            if(isset($validationFormulaire[2])){
+                                if($validationFormulaire[2] == "date_debut"){
+                                    echo "invalid";
+                                }
+                            }
+                        ?>"  
+                        id="date_debut" 
+                        name="date_debut"
+                        value="<?= isset($_POST['date_debut']) ? htmlentities($_POST['date_debut'],ENT_QUOTES) : ""?>"
+                    >
+                </div>
+                <div class="mb-3 col-lg-4 col-12">
+                    <label for="heure_debut">Heure de début :</label>
+                    <div class="input-group" id="heure_debut">
+                        <input 
+                            class="form-control
+                            <?php
+                                if(isset($validationFormulaire[2])){
+                                    if($validationFormulaire[2] == "heureDebut"){
+                                        echo "invalid";
+                                    }
+                                }
+                            ?>"  
+                            id="heureSelect" 
+                            name="heureDebut"
+                            type="number"
+                            value="<?= isset($_POST['heureDebut']) ? htmlentities($_POST['heureDebut'],ENT_QUOTES) : ""?>"
+                        >
+
+                        <div class="input-group-append">
+                            <label class="input-group-text" for="heureSelect">H</label>
+>>>>>>> parent of 78f5450... Merge branch 'main' of https://github.com/nmd974/cuisine-forms-974 into main
                         </div>
                         <div class="col-lg-6 text-end mr-0 pr-0 ">
                             <label for="heure_debut"> Heure de début:</label>
@@ -52,6 +120,7 @@
                     </div>
                     
                 </div>
+<<<<<<< HEAD
                 <div class="col">
                     <div class="form-group">
                         <label for="duree">Durée</label>
@@ -62,6 +131,45 @@
                         <label for="prix">Prix de l'atelier</label>
                         <input type="number" class="form-control" id="prix" placeholder="selection coût" name="prix" 
                             value='<?php if(isset($_POST["prix"])){ echo htmlentities($_POST["prix"]);}?>'>
+=======
+                <div class="mb-3 col-lg-4 col-12">
+                    <label for="date_debut">Durée :</label>
+                    <div class="input-group">
+                        <input 
+                            class="form-control
+                            <?php
+                                if(isset($validationFormulaire[2])){
+                                    if($validationFormulaire[2] == "heureDuree"){
+                                        echo "invalid";
+                                    }
+                                }
+                            ?>"
+                            id="heureSelect2" 
+                            name="heureDuree"
+                            type="number"
+                            value="<?= isset($_POST['heureDuree']) ? htmlentities($_POST['heureDuree'],ENT_QUOTES) : ""?>"
+                        >
+                        <div class="input-group-append">
+                            <label class="input-group-text" for="heureSelect2">H</label>
+                        </div>
+                        <input 
+                            class="form-control
+                            <?php
+                                if(isset($validationFormulaire[2])){
+                                    if($validationFormulaire[2] == "minutesDuree"){
+                                        echo "invalid";
+                                    }
+                                }
+                            ?>"
+                            id="minSelect2" 
+                            name="minutesDuree"
+                            type="number"
+                            value="<?= isset($_POST['minutesDuree']) ? htmlentities($_POST['minutesDuree'],ENT_QUOTES) : ""?>"
+                        >
+                        <div class="input-group-append">
+                            <label class="input-group-text" for="minSelect2">Min</label>
+                        </div>
+>>>>>>> parent of 78f5450... Merge branch 'main' of https://github.com/nmd974/cuisine-forms-974 into main
                     </div>
                 </div>
             </div>
@@ -116,5 +224,5 @@
             </div>
         </form>
        
-    </div>
+    </section>
 
