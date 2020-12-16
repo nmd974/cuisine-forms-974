@@ -70,8 +70,9 @@
                       <?php
                         if((htmlentities($atelier['nombre_places'], ENT_QUOTES) - count($atelier['participants'])) <= 0){
                           echo "COMPLET";
-                        } 
+                        }else{
                           echo (htmlentities($atelier['nombre_places'], ENT_QUOTES) - count($atelier['participants'])).' place(s) disponible(s)';
+                        } 
                       ?>
                     </div>
             </div>
@@ -117,23 +118,8 @@
                                         echo 'disabled';
                                       }
                                     ?>
-                                    ">
-                            <?php 
-                                      if($_SESSION['particulierLoggedIn']){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
-                                        foreach($_SESSION['ateliers'] as $inscriptionIndice){
-                                          if($inscriptionIndice == $atelier['id']){
-                                            echo 'Inscrit !';
-                                            exit();
-                                          }
-                                        }
-                                      }
-                                      if(count($atelier['participants']) == $atelier['nombre_places']){
-                                        echo 'Atelier plein';
-                                      }
-                                      else{
-                                        echo "S'inscrire";
-                                      }
-                                    ?>
+                                    ">S'inscrire
+
                         </a>
                     </div>
                 </div>
