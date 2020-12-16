@@ -12,7 +12,7 @@
     foreach ($inputsRequired as $input) {
       if($data["$input"] == ""){
         $validationInputs[0] = false;
-        array_push($validationInputs, '<div class="container alert alert-danger col-12 mb-5">Le formulaire est incomplet !</div>', $input);
+        array_push($validationInputs, '<div class="alert alert-danger">Le formulaire est incomplet !</div>', $input);
         return $validationInputs;
         exit();
       }else{
@@ -23,7 +23,7 @@
     //Contrôle de la date => On recupere les morceaux et on converti en int
     if(strlen($data['date_debut']) < 10 || substr($data['date_debut'],4,1) !== "-" || substr($data['date_debut'],7,1) !== "-" ||strlen($data['date_debut']) > 10){
       $validationInputs[0] = false;
-      array_push($validationInputs, '<div class="container alert alert-danger col-12 mb-5">Le format de la date n\'est pas correct !</div>', 'date_debut');
+      array_push($validationInputs, '<div class="alert alert-danger">Le format de la date n\'est pas correct !</div>', 'date_debut');
       return $validationInputs;
       exit();
     }else{
@@ -39,7 +39,7 @@
     foreach ($inputsRequiredHeure as $input) { //On transforme en entier au cas où un malin mets du decimal ou du texte en supprimant le type number le intval retourne 0 si c'est du texte
       if(intval($data["$input"]) < 0 && intval($data["$input"]) <= 23){
         $validationInputs[0] = false;
-        array_push($validationInputs, '<div class="container alert alert-danger col-12 mb-5">Le format de l\'heure n\'est pas respecté !</div>', $input);
+        array_push($validationInputs, '<div class="alert alert-danger">Le format de l\'heure n\'est pas respecté !</div>', $input);
         return $validationInputs;
         exit();
       }else{
@@ -49,7 +49,7 @@
     foreach ($inputsRequiredMinutes as $input) { //On transforme en entier au cas où un malin mets du decimal ou du texte en supprimant le type number le intval retourne 0 si c'est du texte
       if(intval($data["$input"]) < 0 && intval($data["$input"]) <= 59){
         $validationInputs[0] = false;
-        array_push($validationInputs, '<div class="container alert alert-danger col-12 mb-5">Le format des minutes n\'est pas respecté !</div>', $input);
+        array_push($validationInputs, '<div class="alert alert-danger">Le format des minutes n\'est pas respecté !</div>', $input);
         return $validationInputs;
         exit();
       }else{
@@ -62,7 +62,7 @@
       //On verifie que la date n'est pas inférieure à la date actuelle
       if(mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")) > $data['date_debut']){
         $validationInputs[0] = false;
-        array_push($validationInputs, '<div class="container alert alert-danger col-12 mb-5">L\'atelier ne peut pas se dérouler dans le passé...</div>', $input);
+        array_push($validationInputs, '<div class="alert alert-danger">L\'atelier ne peut pas se dérouler dans le passé...</div>', $input);
         return $validationInputs;
         exit();
       }
@@ -83,7 +83,7 @@
     foreach ($inputsRequired as $input) { //On transforme en entier au cas où un malin mets du decimal ou du texte en supprimant le type number le intval retourne 0 si c'est du texte
       if(intval($data["$input"]) <= 0){
         $validationInputs[0] = false;
-        array_push($validationInputs, '<div class="container alert alert-danger col-12 mb-5">Le prix ou le nombre de places doit être supérieure à 0 !</div>', $input);
+        array_push($validationInputs, '<div class="alert alert-danger">Le prix ou le nombre de places doit être supérieure à 0 !</div>', $input);
         return $validationInputs;
         exit();
       }else{
@@ -114,12 +114,12 @@
           saveAteliersData($dataAtelier);
 
           //On dit que la verification est ok via la variable du début
-          array_push($validationInputs, '<div class="container alert alert-success col-12 mb-5">Atelier ajouté avec succès</div>');
+          array_push($validationInputs, '<div class="alert alert-success">Atelier ajouté avec succès</div>');
           return $validationInputs;
           exit();
         }else{
           $validationInputs[0] = false;
-          array_push($validationInputs, '<div class="container alert alert-danger col-12 mb-5">Erreur lors de la sauvegarde des données !</div>');
+          array_push($validationInputs, '<div class="alert alert-danger">Erreur lors de la sauvegarde des données !</div>');
           return $validationInputs;
           exit();
         }
