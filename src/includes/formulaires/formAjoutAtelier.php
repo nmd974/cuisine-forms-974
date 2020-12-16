@@ -39,12 +39,16 @@
                             <input type="date" class="form-control" id="date_debut" placeholder="Another input placeholder" name="date_debut" 
                                 value='<?php if(isset($_POST["date_debut"])){ echo htmlentities($_POST["date_debut"]);}?>'>
                         </div>
-                        <div class="col-lg-6 text-end mr-0 pr-0 ">
-                            <label for="heure_debut"> Heure de début:</label>
-                            <input type="time" id="heure_debut" name="heure_debut" class="form-control" placeholder="Another input placeholder" 
+                        <div class="col-lg-3 text-end mr-0 pr-0 ">
+                            <label for="heure_debut"> H de début</label>
+                            <input type="number" id="heure_debut" name="heure_debut" class="form-control" placeholder="selectionnez H "
                                 value='<?php if(isset($_POST["heure_debut"])){ echo htmlentities($_POST["heure_debut"]);}?>'>
                         </div>
-                        
+                        <div class="col-lg-3 text-end mr-0 pr-0 ">
+                            <label for="heure_debut"> Mn de début</label>
+                            <input type="number" id="minDebut" name="minDebut" class="form-control" placeholder="selectionnez Mn" 
+                                value='<?php if(isset($_POST["minDebut"])){ echo htmlentities($_POST["minDebut"]);}?>'>
+                        </div>
                     </div>
                     <div class="form-group mt-3">
                         <label for="nombre_places">Place disponibe</label>

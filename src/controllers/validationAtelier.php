@@ -9,7 +9,8 @@
       array("key" => "description", "libele" => "Description"), 
       array("key" => "date_debut", "libele" => "Date début de l'atelier"),
       array("key" => "nombre_places", "libele" => "Place disponibe"), 
-      array("key" => "heure_debut", "libele" => "Heure de début")
+      array("key" => "heure_debut", "libele" => "H de début"),
+      array("key" => "minDebut", "libele" => "Mn de début"),
     ];  
     
     foreach ($champs as $champ){ // à l'aide de la fonction foreach je parcours le tableauc pour verifier les champs
@@ -21,7 +22,7 @@
         return array("valide" => false, "message" => 'votre description est trop long');
       }
 
-      if ( in_array($champ["key"], array("prix", "duree", "nombre_places")) && !is_numeric($data[$champ["key"]])){
+      if ( in_array($champ["key"], array("prix", "duree", "heure_debut", "minDebut", "nombre_places")) && !is_numeric($data[$champ["key"]])){
         return array("valide" => false, "message" => 'Le champ "'.$champ["libele"].'" n\'est pas un entier ');
       }
       
@@ -37,7 +38,7 @@
         }
       }
       
-      if ( $champ["key"] == "heure_debut" && !preg_match("/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/",$data[$champ["key"]])){ // definir vraiment format date
+      if ( $champ["key"] == "heure_debut" && $champ["key"] == "miDebut" && !preg_match("/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/",$data[$champ["key"]])){ // definir vraiment format date
         return array("valide" => false, "message" => 'Le champ "'.$champ["libele"].'" n\'est pas une heure valide ');
       }
     }
