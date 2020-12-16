@@ -63,7 +63,7 @@
       <?php $compteur++;?>
       <?php $pagination->nombreAfficheActuel();?>
     <!--Atelier-->
-    <div class="card cardListe" data-aos="flip-down">>
+    <div class="card cardListe" data-aos="flip-down">
         <div class="d-lg-flex">
             <div class="col-lg-4 col-12">
             <div class="duree d-flex position-absolute w-50 justify-content-center align-items-center font-weight-bold"><?= htmlentities($atelier['prix'], ENT_QUOTES)?> €</div>
