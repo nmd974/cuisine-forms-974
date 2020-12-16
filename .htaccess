@@ -10,7 +10,7 @@
     Order deny,allow
     Deny from all
 </Files>
-<Folder documentation>
+<Location "/documentation">
     Order deny,allow
     Deny from all
-</Folder>
+</Location>
