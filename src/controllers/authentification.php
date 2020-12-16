@@ -16,8 +16,6 @@ function validationConnexion(){
     $password = htmlentities($_POST['password'], ENT_QUOTES);
     //verification cryptage du mot passe
     $passHash = password_hash($password, PASSWORD_DEFAULT);
-    $passwordValid = password_verify($_POST['password'], $passHash); // On crypte le mot
-
     $datajson = file_get_contents("../../data/users.json");
 
     $data = json_decode($datajson, true);
@@ -26,14 +24,14 @@ function validationConnexion(){
         //comparaison par mail
         if ($value['emailUser'] == $email) {
             //comparaison mot passe
-            if ($value['passwordUser'] == $passwordValid) {
+            if (password_verify($value['passwordUser'], $passHash)) { //On verifie si le password hashe en bdd correspoind au hashage du password saisie = renvoie true or false
                 //si enregistrerr en tant cuisinier
                 if ($value['role'] == "cuisinier") {
                     $verificationStatus = true;
                     $_SESSION['cuisinierLoggedIn'] = true;
                     $_SESSION['id'] = $value['id'];
                     $_SESSION['ateliers'] = $value['ateliers'];
-                    header('Location: ./compteCuisinier.php');
+                    // header('Location: ./compteCuisinier.php');
                 } 
                 //si enregristrer en tant user
                 if($value['role'] == "user"){
