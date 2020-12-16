@@ -18,7 +18,6 @@ if (isset($_GET['id'])) {
 
 <?php
     if(isset($_POST['modifier'])){
-        var_dump($_POST);
         if($_FILES['image_upload']['name'] == ""){
             $validationFormulaire = [false, '<div class="container alert alert-danger col-12 mb-5">Veuillez sélectionner une image !</div>', 'image_upload'];
         }else{

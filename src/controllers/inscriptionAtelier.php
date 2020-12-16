@@ -12,6 +12,7 @@ function inscriptionAtelier($id)
                     if($atelier['id'] == $id){
                         array_push($dataAtelier[$keyAtelier]['participants'], $_SESSION['id']);//on rajoute dans le tableau json de l'atelier l'id du participant
                         array_push($dataUser[$keyUser]['ateliers'], $atelier['id']);//On rajoute dans le tableau ateliers de l'utilisateur l'id de l'atelier auquel il s'inscrit
+                        array_push($_SESSION['ateliers'], $atelier['id']);
                         saveAteliersData($dataAtelier);
                         saveUserData($dataUser);
                     }

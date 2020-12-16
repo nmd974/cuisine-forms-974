@@ -7,6 +7,7 @@
 ?>
 
 <?php 
+
   if(isset($_GET['id'])){
     if(isLoggedIn()){
       inscriptionAtelier($_GET['id']);
@@ -18,7 +19,6 @@
 
 <!-- début section des Ateliers-->
 <section class="container" style="margin-top:100px">
-
     <?php $ateliers = getAteliersData();?>
     <?php if($ateliers):?>
     <?php
@@ -64,9 +64,11 @@
                 <img src="../../images/<?= $atelier['image']?>" class="card-img imageListe"
                     alt="Nos cours de cuisine">
                     <div class="duree2 d-flex position-absolute w-50 justify-content-center align-items-center font-weight-bold">
-                      <?= 
-                        htmlentities($atelier['nombre_places'], ENT_QUOTES) - count($atelier['participants']) < 0 ?
-                        "COMPLET" : (htmlentities($atelier['nombre_places'], ENT_QUOTES) - count($atelier['participants'])).' place(s) disponible(s)';
+                      <?php
+                        if((htmlentities($atelier['nombre_places'], ENT_QUOTES) - count($atelier['participants'])) <= 0){
+                          echo "COMPLET";
+                        } 
+                          echo (htmlentities($atelier['nombre_places'], ENT_QUOTES) - count($atelier['participants'])).' place(s) disponible(s)';
                       ?>
                     </div>
             </div>
