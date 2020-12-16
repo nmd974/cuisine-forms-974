@@ -314,6 +314,12 @@ footer {
 .valid{
   border: 2px solid green;
 }
+.titreCarteManager{
+  text-decoration: unset !important;
+  font-size: 30px !important;
+  color: black;
+  text-transform: capitalize;
+}
 /*responisve pour tablette (vérifier ipad et ipad pro*/
 @media (max-width: 1024px) {
   .cardListe{
@@ -325,6 +331,9 @@ footer {
   }
   .card-body-liste{
     padding: 0 !important;
+  }
+  .footer-middle {
+    text-align: center;
   }
 
 }
@@ -373,8 +382,15 @@ footer {
     padding: 0 !important;
   }
 
-  footer {
-    text-align: center;
+  .logo{
+    width: 44px;
+    height: 44px;
   }
+    .footer-middle {
+      text-align: center;
+    }
+    .titreCarteManager{
+      font-size: 18px !important;
+    }
 
 }

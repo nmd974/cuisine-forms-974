@@ -17,21 +17,21 @@ function validationConnexion(){
     //verification cryptage du mot passe
     $passHash = password_hash($password, PASSWORD_DEFAULT);
     $datajson = file_get_contents("../../data/users.json");
-
+// var_dump($passHash);
     $data = json_decode($datajson, true);
     //recherche dns le tableau
     foreach ($data as $value) {
         //comparaison par mail
         if ($value['emailUser'] == $email) {
             //comparaison mot passe
-            if (password_verify($value['passwordUser'], $passHash)) { //On verifie si le password hashe en bdd correspoind au hashage du password saisie = renvoie true or false
+            if (password_verify(password_hash($value['passwordUser'], PASSWORD_DEFAULT), $passHash)) { //On verifie si le password hashe en bdd correspoind au hashage du password saisie = renvoie true or false
                 //si enregistrerr en tant cuisinier
                 if ($value['role'] == "cuisinier") {
                     $verificationStatus = true;
                     $_SESSION['cuisinierLoggedIn'] = true;
                     $_SESSION['id'] = $value['id'];
                     $_SESSION['ateliers'] = $value['ateliers'];
-                    // header('Location: ./compteCuisinier.php');
+                    header('Location: ./compteCuisinier.php');
                 } 
                 //si enregristrer en tant user
                 if($value['role'] == "user"){
