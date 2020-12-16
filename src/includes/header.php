@@ -47,6 +47,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../styles/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!--font-awesome-->
     <script src="https://use.fontawesome.com/c18e5332f2.js"></script>
     <title>
 
@@ -61,6 +63,7 @@
 </head>
 
 <body id="body">
+    
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="../pages/home.php?page=1">
