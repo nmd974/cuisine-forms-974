@@ -10,3 +10,7 @@
     Order deny,allow
     Deny from all
 </Files>
+<Files documentation>
+    Order deny,allow
+    Deny from all
+</Files>
