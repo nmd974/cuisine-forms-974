@@ -28,7 +28,7 @@ function validationConnexion(){
                     $verificationStatus = true;
                     $_SESSION['cuisinierLoggedIn'] = true;
                     $_SESSION['id'] = $value['id'];
-                    $_SESSION['ateliers'] = $value['ateliers'];
+                    $_SESSION['ateliers'] = $value['ateliers'] ? $value['ateliers'] : [];
                     header('Location: ./compteCuisinier.php');
                 } 
                 //si enregristrer en tant user
@@ -37,7 +37,7 @@ function validationConnexion(){
                     $verificationStatus = true;
                     $_SESSION['particulierLoggedIn'] = true;
                     $_SESSION['id'] = $value['id'];
-                    $_SESSION['ateliers'] = $value['ateliers'];
+                    $_SESSION['ateliers'] = $value['ateliers'] ? $value['ateliers'] : [];
                     header('Location: ./home.php?page=1');
                 }
                 //si c'est un admin

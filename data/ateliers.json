@@ -15,9 +15,7 @@
         "proprietaire": "4e921d887356624f74c35eb0848577cd",
         "date_ajout": "16-12-2020 12:47:08",
         "etat_atelier": "Active",
-        "participants": [
-            "cd8f07ad17e078f34be3b92a79d96cf7"
-        ],
+        "participants": [],
         "modifie": false,
         "id": "512af84f3cc2a441adcd8abd35bf3e9c"
     },
@@ -55,9 +53,9 @@
         "duree": "10h00",
         "image": "7bb705e62248d77804beac0d4d7e579f.jpg",
         "proprietaire": "4e921d887356624f74c35eb0848577cd",
-        "date_ajout": "16-12-2020 12:47:29",
-        "etat_atelier": "Desactive",
         "participants": [],
+        "date_ajout": "16-12-2020 12:47:29",
+        "etat_atelier": "Active",
         "modifie": true,
         "id": "aeb02754827615776b03abd3f4b419f1"
     },

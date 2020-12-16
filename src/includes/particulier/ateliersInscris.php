@@ -1,11 +1,12 @@
 <?php 
-  require_once(__ROOT__.'/src/class/Ateliers.php');
+  require_once(__ROOT__.'/src/controllers/desinscriptionAtelier.php');
   require_once(__ROOT__.'/src/controllers/accesData.php');
   require_once(__ROOT__.'/src/controllers/controllerAtelier.php');
 ?>
 <?php 
 if(isset($_GET['id'])){
-    $modification = activerDesactiverAtelier($_GET['id']);
+    $modification = desinscrireAtelier($_GET['id']);
+    unset($_GET['id']);
 }
 ?>
 <?php if(!$_SESSION['particulierLoggedIn']){
@@ -15,6 +16,7 @@ if(isset($_GET['id'])){
 <?php if($_SESSION['particulierLoggedIn']):?>
 <div class="container" id="atelierManager">
     <div class="table-responsive">
+        <?php var_dump($_SESSION);?>
         <?php if(isset($modification)){
             echo $modification;
         }
@@ -70,7 +72,7 @@ if(isset($_GET['id'])){
                                         <?= substr($atelier['date_ajout'],11,8) ?>
                                     </small>
                                 </p>
-                                <a href="../pages/pageAtelier.php?id=<?= $atelier['id']?>"
+                                <a href="../pages/compteParticulier.php?id=<?= $atelier['id']?>"
                                     class="btn btn-primary">Se désinscrire</a>
                             </div>
                         </div>

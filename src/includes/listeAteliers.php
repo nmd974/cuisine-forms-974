@@ -10,7 +10,7 @@
 
   if(isset($_GET['id'])){
     if(isLoggedIn()){
-      inscriptionAtelier($_GET['id']);
+      $modification = inscriptionAtelier($_GET['id']);
     }else{
       header('Location: ./authentification.php');
     }
@@ -21,7 +21,10 @@
 <section class="container" style="margin-top:70px">
 
   <h1 class="text-center mb-5">Liste des Ateliers</h1>
-
+  <?php if(isset($modification)){
+            echo $modification;
+        }
+        ?>
     <?php $ateliers = getAteliersData();?>
     <?php if($ateliers):?>
     <?php
@@ -85,7 +88,6 @@
                     <?php foreach($_SESSION['ateliers'] as $indice):?>
                       <?php if($indice == $atelier['id']):?>
                       <div>
-                        
                          <i class="fa fa-check fa-3x" aria-hidden="true" style="color:green;"></i>
                         </div>
                         <?php endif;?>
@@ -112,7 +114,7 @@
                                 <?= htmlentities(substr($atelier['date_ajout'],11,8), ENT_QUOTES) ?>
                             </small>
                         </p>
-                        <a href="../pages/home.php?page=1&id=<?= $atelier['id']?>" class="btn btn-primary
+                        <a href="../pages/home.php?page=<?= $_GET['page'] ?>&id=<?= $atelier['id']?>" class="btn btn-primary
                                     <?php 
                                       if($_SESSION['particulierLoggedIn']){//Ici on vérifie si une personne est connectee afin de gérer le bouton. S'il est connecte on verifie dans session les ateliers auxquels il est connecte
                                         foreach($_SESSION['ateliers'] as $inscriptionIndice){
