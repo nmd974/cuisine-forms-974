@@ -1,10 +1,7 @@
-<!-- <div class="text-center mt-5">
-        <h1> Connexion au compte</h1>
-</div> -->
 
 <div class="card-deck m-auto">
 
-  <div class="card rounded" style="max-width: 6000px;">
+  <div class="card rounded"style="max-width: 6000px;">
     <div class="card-body">
       <h5 class="card-title">Déjà membre?</h5>
       <h5 class="card-title">Se connecter</h5>
@@ -20,7 +17,7 @@
       
       
       <!--Début identification-->       
-      <form method="POST" enctype="multipart/form-data" class="mb-3"> 
+      <form method="POST" enctype="multipart/form-data" action="" class="mb-3"> 
 
           <div class="">
               <label for="email" class="form-label">Identifiant</label>
@@ -42,27 +39,28 @@
     </div>
 </div>
 
-<div class="card rounded" style="max-width:600px;">
+<div class="card rounded" style="max-width: 600px;">
     <div class="card-body">
       <h5 class="card-title">Pas encore membre ?</h5>
       <h5 class="card-title">Créer vite votre compte</h5>
 
-       <!--appel controller SignUp positionner ici de manière à rester dans la colonne inscription-->
+       <!--Vérifie si un champs en vide avant lancer la vérifications des valeurs-->
        <?php 
        
-       $erreur="";
-       if(isset($_POST["signUp"])){
+       @$nom=$_POST["nomUser"];
+       @$prenom=$_POST["prenomUser"];
+       @$login=$_POST["emailUser"];
+       @$pass=$_POST["passwordUser"];
+       @$repass=$_POST["repass"];
+       @$valider=$_POST["signUp"];
+       @$erreur="";
+       if(isset($valider)){
 
-          if(empty($_POST["nomUser"])) $erreur='<div class="col-md-12 d-flex justify-content-center">
-          <div class="alert alert-danger">Nom laissé vide</div></div>';
-          elseif(empty($_POST["prenomUser"])) $erreur='<div class="col-md-12 d-flex justify-content-center">
-          <div class="alert alert-danger">Prénom laissé vide</div></div>';
-          elseif(empty($_POST["emailUser"])) $erreur='<div class="col-md-12 d-flex justify-content-center">
-          <div class="alert alert-danger">email laissé vide</div></div>';
-          elseif(empty($_POST["password"])) $erreur='<div class="col-md-12 d-flex justify-content-center">
-          <div class="alert alert-danger">mot passe laissé vide</div></div>';
-          elseif($pass!=$repass) $erreur='<div class="col-md-12 d-flex justify-content-center">
-          <div class="alert alert-danger">mot de passe non identique</div></div>';
+          if(empty($nom)) $erreur="Nom laissé vide!";
+          elseif(empty($prenom)) $erreur="Prénom laissé vide!";
+          elseif(empty($login)) $erreur="Email laissé vide!";
+          elseif(empty($pass)) $erreur="Mot de passe laissé vide!";
+          elseif(empty($repass)) $erreur="Retapé mot de passe laissé vide!";
           else{
             include("../controllers/signUp.php"); 
           }
@@ -70,31 +68,31 @@
         ?>
 
        <!--Début Formulaire inscription-->
-       <form class="row" method="POST" enctype="multipart/form-data">
+       <form class="row" method="POST" action="" enctype="multipart/form-data">
                     <div class="col-md-12">
                         <label for="name" class="form-label">Nom</label>
-                        <input type="text" class="form-control" name="nomUser" id="name" required>
+                        <input type="text" class="form-control" name="nomUser" value="">
                     </div>
                     <div class="col-md-12">
                         <label for="prenom" class="form-label">Prénoms</label>
-                        <input type="text" class="form-control" name="prenomUser" id="prenom" required>
+                        <input type="text" class="form-control" value="" name="prenomUser">
                     </div>
                     <div class="col-md-12">
                         <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" name="emailUser" required>
+                        <input type="email" class="form-control" id="inputEmail4" name="emailUser">
                     </div>
                     <div class="col-md-12">
                         <label for="telephone" class="form-label">Telephone</label>
-                        <input type="number" class="form-control" name="telUser" id="telephone" required>
+                        <input type="number" class="form-control" value="" name="telUser">
                     </div>
                     <div class="col-md-12">
                         <label for="inputPassword4" class="form-label">Mot de passe</label>
-                        <input type="password" class="form-control" id="inputPassword4" name="passwordUser" required>
+                        <input type="password" class="form-control" id="inputPassword4" name="passwordUser">
                     </div>
 
                     <div class="col-md-12">
-                        <label for="confirmPassword" class="form-label">Retaper Mot de passe</label>
-                        <input type="password" class="form-control" id="confirmPassword" name="repass" required>
+                        <label for="inputPassword4" class="form-label">Retaper Mot de passe</label>
+                        <input type="password" class="form-control" id="inputPassword4" name="repass">
                     </div>
 
                     <!--button validation inscription-->
