@@ -1,7 +1,7 @@
 
     <!--début Footer-->
 
-    <footer class="mainfooter">
+    <footer class="mainfooter" role="contentinfo">
       <div class="footer-middle">
       <div class="container">
         <div class="row">
@@ -53,9 +53,28 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <!--script JS-->
+<<<<<<< HEAD
     <script src="../script/jumbotron.js"></script>
     <script src="../includes/cuisinier/script.js"></script>
     <script src="../script/inputHeure.js"></script>
+=======
+    <script type="text/javascript" src="../script/jumbotron.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.accordion').on('click', 'input', function() {
+            console.log($('#labelswitch').text());
+            if($('#labelswitch').text() === "Désactivé"){
+                $('#labelswitch').text("Activé");
+                console.log(window.location);
+                window.location = window.location.pathname + '?action=activer&id=' + this.id;
+            }else{
+                $('#labelswitch').text("Désactivé");
+                window.location = window.location.pathname + '?action=desactiver&id=' + this.id;
+            }
+        })
+    });
+    </script>
+>>>>>>> parent of 9e2d4be...  branch
     </body>
 </html>
 

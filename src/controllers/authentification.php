@@ -1,60 +1,57 @@
 <?php
+    
 
-
-//Ici on contrôle le mot de passe et email de l'utilisateur
-function validationConnexion(){
-
-    $verificationStatus = false;
-    $role = null;
-    $message = '<div class="alert alert-success"> Connexion réussie</div>';
-    $email = htmlentities($_POST['email'], ENT_QUOTES);
-    $password = htmlentities($_POST['password'], ENT_QUOTES);
-    $passHash = password_hash($password, PASSWORD_DEFAULT);
-    $passwordValid = password_verify($_POST['password'], $passHash); // On crypte le mot
-
-    $datajson = file_get_contents("../../data/users.json");
-
-    $data = json_decode($datajson, true);
-
-    foreach ($data as $value) {
-        if ($value['emailUser'] == $email) {
-            if ($value['passwordUser'] == $passwordValid) {
-                if ($value['role'] == "cuisinier") {
+    //Ici on contrôle le mot de passe de l'utilisateur
+    function validationConnexion($data_entry)
+    {
+        $verificationStatus = false;
+        $role = null;
+        $message = '<div class="alert alert-success"> Connexion réussie</div>';
+        $pseudo = htmlentities($data_entry['username'], ENT_QUOTES);
+        $password = htmlentities($data_entry['password'], ENT_QUOTES);
+        $data = recupererUser();
+        foreach ($data as $key => $value) {
+            if ($value['pseudo'] == $pseudo && $value['password'] == $password){
+                if($value['role'] == "cuisinier"){
+                    $role = 'cuisinier';
                     $verificationStatus = true;
                     $_SESSION['cuisinierLoggedIn'] = true;
-                    $_SESSION['id'] = $value['id'];
-                    $_SESSION['ateliers'] = $value['ateliers'];
-                    header('Location: ./compteCuisinier.php');
-                } 
-                if($value['role'] == "user"){
+                }else{
                     $role = 'user';
                     $verificationStatus = true;
                     $_SESSION['particulierLoggedIn'] = true;
                     $_SESSION['id'] = $value['id'];
-                    $_SESSION['ateliers'] = $value['ateliers'];
-                    header('Location: ./home.php?page=1');
-                }
-                if($value['role'] == "admin"){
-                    $role = 'admin';
-                    $verificationStatus = true;
-                    $_SESSION['adminLoggedIn'] = true;
-                    $_SESSION['id'] = $value['id'];
-                    header('Location: ./home.php?page=1');
+                    //$_SESSION['solde'] = $value['solde'];
                 }
             }
         }
+        if(!$verificationStatus){
+            $message = '<div class="alert alert-danger">Compte ou mot de passe incorrects !</div>';
+        }
+        return array($verificationStatus, $role, $message);
     }
-    if (!$verificationStatus) {
-        $message = '<div class="alert alert-danger">Compte ou mot de passe incorrects !</div>';
-    }
-    return array($verificationStatus, $role, $message);
-}
 
-function isLoggedIn()
-{
-    if ($_SESSION['adminLoggedIn'] || $_SESSION['cuisinierLoggedIn'] || $_SESSION['particulierLoggedIn']) {
-        return true;
-    } else {
-        return false;
-    }
-}
+
+     //Fonction qui va recuperer le contenu du fichier data.json
+     /*function recupererData()
+     {
+         $data = json_decode(file_get_contents(__ROOT__.'data/data.json'), true);
+         if($data){
+             return $data;
+         }else{
+             return null;
+         }
+ 
+     }*/
+
+         //Fonction qui va recuperer le contenu du fichier user.json
+     function recupererUser()
+     {
+         $data = json_decode(file_get_contents(__ROOT__.'data/users.json'), true);
+         if($data){
+             return $data;
+         }else{
+             return null;
+         }
+     }
+?>

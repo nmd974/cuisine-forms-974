@@ -1,6 +1,6 @@
 <?php
     define('__ROOT__', dirname(dirname(__DIR__))); 
-    require_once(__ROOT__.'/src/controllers/accesData.php');
+    require_once(__ROOT__.'/src/class/AccesBDD.php');
 
     
     // On lance la session
@@ -17,16 +17,6 @@
     if(!isset($_SESSION['particulierLoggedIn'])){
         $_SESSION['particulierLoggedIn'] = false;
     }
-    if(!isset($_SESSION['id'])){
-        $_SESSION['id'] = "";
-    }
-    if(!isset($_SESSION['ateliers'])){
-        $_SESSION['ateliers'] = "";
-    }
-    // if(!isset($_SESSION['page'])){
-    //     $_SESSION['page'] = 1;
-    // }
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -44,11 +34,14 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="../styles/style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/loader.css">
     <script src="https://use.fontawesome.com/c18e5332f2.js"></script>
     <title>
+<<<<<<< HEAD
     
     
+=======
+>>>>>>> parent of 9e2d4be...  branch
         <?php if($title){
             echo $title;
         }else{
@@ -59,6 +52,7 @@
   </head>
 
 <body id="body">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
@@ -192,3 +186,79 @@
     </div>
     
 <?php endif ?>
+=======
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="../pages/home.php">
+    <img src="../../images/logo.png" width="30" height="30" alt="">
+  Application</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="d-flex justify-content-between align-items-center w-100">
+
+
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="../pages/home.php">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../pages/ajoutAtelier.php">Ajout atelier</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../pages/cuistoManager.php">Cuisto manager</a>
+      </li>
+    </ul>
+    <!--Ici on gere l'affichage du bouton se connecter si personne est connecte-->
+    <?php if(!$_SESSION['adminLoggedIn'] && !$_SESSION['cuisinierLoggedIn'] && !$_SESSION['particulierLoggedIn'] ):?> 
+        
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="d-flex">
+                            <span class="text-dark effect-underline font-weight-bold">Non connecté</pspan>
+                        </div>
+                        <div>
+                            <a href="../pages/authentification.php" class="text-white effect-underline font-weight-bold">
+                            <button class="btn btn-primary">Se connecter <i class="fa fa-sign-out" aria-hidden="true"></i></button></a>
+                        </div>
+                        
+                    </div>
+                <?php endif ?>
+                <?php if($_SESSION['particulierLoggedIn']):?> 
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="d-flex">
+                            <span class="text-dark effect-underline font-weight-bold">Votre solde :</pspan>
+                            <?php $data_user = getUserData();?>
+                            <?php if($data_user):?>
+                                <?php foreach($data_user as $key => $user):?>
+                                    <?php if($_SESSION['id'] == $user['id']):?>
+                                        <span class="text-dark effect-underline font-weight-bold text-center ml-2"><?= $user['solde'] ?> €</span>
+                                    <?php endif?>
+                                <?php endforeach?>
+                            <?php endif?>
+                        </div>
+                        <div>
+                            <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold">
+                            <button class="btn btn-primary">Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                        </div>
+                        
+                    </div>
+                <?php endif ?>
+                <?php if($_SESSION["adminLoggedIn"]):?> 
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="d-flex">
+                            <span class="text-dark effect-underline font-weight-bold">Mode admin active</pspan>
+                        </div>
+                        <div>
+                            <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold">
+                            <button class="btn btn-primary">Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+                        </div>
+                        
+                    </div>
+                <?php endif ?>
+    </div>
+  </div>
+</nav>
+
+>>>>>>> parent of 9e2d4be...  branch
