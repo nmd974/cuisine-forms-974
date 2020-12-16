@@ -77,10 +77,20 @@
                     </div>
             </div>
             <div class="col-lg-8">
-                <div class="card-header">
-                    <h2>
+                <div class="card-header d-flex align-items-center">
+                    <h2 class="w-100">
                         <?= $atelier['titre']?>
                     </h2>
+                    <?php if($_SESSION['particulierLoggedIn']):?>
+                    <?php foreach($_SESSION['ateliers'] as $indice):?>
+                      <?php if($indice == $atelier['id']):?>
+                      <div>
+                        
+                         <i class="fa fa-check fa-3x" aria-hidden="true" style="color:green;"></i>
+                        </div>
+                        <?php endif;?>
+                        <?php endforeach;?>
+                    <?php endif; ?>
                 </div>
                 <div class="card-body card-body-liste d-flex flex-column justify-content-around">
                     <ul class="list-group list-group-flush">
