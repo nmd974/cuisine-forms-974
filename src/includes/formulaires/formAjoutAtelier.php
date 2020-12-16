@@ -3,7 +3,7 @@
 ?>
 <?php
     if(!$_SESSION['cuisinierLoggedIn']){
-        header('Location: ./home.php');
+        header('Location: ./home.php?page=1');
     }
 ?>
 <?php

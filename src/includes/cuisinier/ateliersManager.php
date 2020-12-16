@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
 ?>
 <!--Sur cette page on ajoute en liste accordion les ateliers et la modification lance un modal-->
 <?php if(!$_SESSION['cuisinierLoggedIn']){
-        header('Location: ./home.php');
+        header('Location: ./home.php?page=1');
     }
 ?>
 

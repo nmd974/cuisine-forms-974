@@ -10,13 +10,18 @@
         
         require_once(__ROOT__.'/src/controllers/authentification.php');
         if(isset($_POST['connecter'])){
-            validationConnexion();
+            $messageValidation = validationConnexion();
         }
 
       ?>
       
       
-      <!--Début identification-->       
+      <!--Début identification-->  
+      <?php 
+        if(isset($messageValidation[2])){
+            echo $messageValidation[2];
+        }
+      ?>
       <form method="POST" enctype="multipart/form-data" action="" class="mb-3"> 
 
           <div class="">
