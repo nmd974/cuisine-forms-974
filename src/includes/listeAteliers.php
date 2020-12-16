@@ -19,8 +19,6 @@
 <!-- début section des Ateliers-->
 <section class="container">
 
-  <h1 class="text-center my-5">Liste des Cours !</h1>
-
     <?php $ateliers = getAteliersData();?>
     <?php if($ateliers):?>
     <?php
