@@ -50,22 +50,16 @@
        <!--appel controller SignUp positionner ici de manière à rester dans la colonne inscription-->
        <?php 
        
-       $nom=$_POST["nomUser"];
-       $prenom=$_POST["prenomUser"];
-       $login=$_POST["emailUser"];
-       $pass=$_POST["passwordUser"];
-       $repass=$_POST["repass"];
-       $valider=$_POST["signUp"];
        $erreur="";
-       if(isset($valider)){
+       if(isset($_POST["signUp"])){
 
-          if(empty($nom)) $erreur='<div class="col-md-12 d-flex justify-content-center">
+          if(empty($_POST["nomUser"])) $erreur='<div class="col-md-12 d-flex justify-content-center">
           <div class="alert alert-danger">Nom laissé vide</div></div>';
-          elseif(empty($prenom)) $erreur='<div class="col-md-12 d-flex justify-content-center">
+          elseif(empty($_POST["prenomUser"])) $erreur='<div class="col-md-12 d-flex justify-content-center">
           <div class="alert alert-danger">Prénom laissé vide</div></div>';
-          elseif(empty($login)) $erreur='<div class="col-md-12 d-flex justify-content-center">
+          elseif(empty($_POST["emailUser"])) $erreur='<div class="col-md-12 d-flex justify-content-center">
           <div class="alert alert-danger">email laissé vide</div></div>';
-          elseif(empty($pass)) $erreur='<div class="col-md-12 d-flex justify-content-center">
+          elseif(empty($_POST["password"])) $erreur='<div class="col-md-12 d-flex justify-content-center">
           <div class="alert alert-danger">mot passe laissé vide</div></div>';
           elseif($pass!=$repass) $erreur='<div class="col-md-12 d-flex justify-content-center">
           <div class="alert alert-danger">mot de passe non identique</div></div>';
