@@ -30,11 +30,13 @@ if(isset($_GET['id'])){
                         <?php if($participants == $_SESSION['id']):?>
             <div class="card">
                 <div class="card-header d-flex align-items-center">
-                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                        data-target="#collapse_<?= $atelier['id']?>" aria-expanded="true"
-                        aria-controls="collapse_<?= $atelier['id']?>">
-                        <h2 class="mb-0 d-flex"><?= $atelier['titre']?></h2>
+                <h2 class="mb-0 d-flex w-100">
+                    <button class="btn btn-link btn-block text-left titreCarteManager" type="button" data-toggle="collapse"
+                        data-target="#collapse_<?= $atelier['id'] ?>" aria-expanded="true"
+                        aria-controls="collapse_<?= $atelier['id'] ?>">
+                            <?= $atelier['titre'] ?>
                     </button>
+                </h2>
                 </div>
                 <div id="collapse_<?= $atelier['id']?>" class="collapse" data-parent="#ateliers">
                     <div class="card w-100 card-manager">

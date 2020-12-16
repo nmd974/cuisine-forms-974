@@ -62,9 +62,9 @@
 
 <body id="body">
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="../pages/home.php?page=1">
-            <img src="../../images/logo.png" width="64" height="64" alt="">
+            <img src="../../images/logo.png" alt="logo cuisineforms974" class="logo">
             CuisineForms974</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

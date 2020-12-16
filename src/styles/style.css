@@ -42,6 +42,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   letter-spacing: 0.1rem;
 }
+.logo{
+  width: 64px;
+  height: 64px;
+}
 /*section jumbotron*/
 .jumbotron {
   background-color:transparent;
@@ -165,7 +169,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 200px !important;
   height: 200px !important;
 }
-
+.titreCarteManager{
+  text-decoration: unset !important;
+  font-size: 30px !important;
+  color: black;
+  text-transform: capitalize;
+}
 .card-manager{
   display: flex !important;
   flex-direction: row !important;
@@ -326,6 +335,9 @@ footer {
   .card-body-liste{
     padding: 0 !important;
   }
+  .footer-middle {
+    text-align: center;
+  }
 
 }
 
@@ -372,9 +384,14 @@ footer {
   .card-body-liste{
     padding: 0 !important;
   }
-
-  footer {
+.logo{
+  width: 44px;
+  height: 44px;
+}
+  .footer-middle {
     text-align: center;
   }
-
+  .titreCarteManager{
+    font-size: 18px !important;
+  }
 }
