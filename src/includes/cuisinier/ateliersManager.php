@@ -40,13 +40,15 @@ if (isset($_GET['id'])) {
             <?php if ($atelier['proprietaire'] == $_SESSION['id']) : ?>
             <div class="card">
                 <div class="card-header d-flex align-items-center">
-                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                <h2 class="mb-0 d-flex w-100">
+                    <button class="btn btn-link btn-block text-left titreCardManager" type="button" data-toggle="collapse"
                         data-target="#collapse_<?= $atelier['id'] ?>" aria-expanded="true"
                         aria-controls="collapse_<?= $atelier['id'] ?>">
-                        <h2 class="mb-0 d-flex">
+                        
                             <?= $atelier['titre'] ?>
-                        </h2>
+                       
                     </button>
+                    </h2>
                     <div class="custom-control custom-switch" id="<?=$atelier['id']?>">
                         <input type="checkbox" class="custom-control-input" 
                             <?php 
@@ -54,8 +56,8 @@ if (isset($_GET['id'])) {
                                     echo "checked";
                                 }
                             ?>
-                            id="<?= $atelier['id'] ?>">
-                        <label class="custom-control-label" for="<?= $atelier['id'] ?>">
+                            id="switch_<?= $atelier['id'] ?>">
+                        <label class="custom-control-label" for="<?= 'switch_'.$atelier['id'] ?>">
                             <?php 
                                 if ($atelier['etat_atelier'] == "Active"){
                                     echo "Activé";
