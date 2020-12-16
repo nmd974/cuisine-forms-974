@@ -1,8 +1,15 @@
 <?php
   require_once(__ROOT__.'/src/controllers/accesData.php');
+  require_once(__ROOT__.'/src/controllers/authentification.php');
 
 function inscriptionAtelier($id)
 {
+    if(!isLoggedIn()){
+        return '<div class="alert alert-danger">Veuillez vous connecter avant !</div>';
+        // header('Location: ./authentification.php');
+        exit();
+    }
+
     foreach($_SESSION['ateliers'] as $ateliers_inscrit){
         if($ateliers_inscrit == $id){
             return '<div class="alert alert-danger">Vous vous êtes déjà inscrit à cet atelier :)</div>';

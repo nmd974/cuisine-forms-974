@@ -3,6 +3,12 @@
 
 function desinscrireAtelier($id)
 {
+    if(!isLoggedIn()){
+        return '<div class="alert alert-danger">Veuillez vous connecter avant !</div>';
+        // header('Location: ./authentification.php');
+        exit();
+    }
+
     if(!in_array($id, $_SESSION['ateliers'])){
         return '<div class="alert alert-danger">Vous n\'êtes pas inscrit à cet atelier !</div>';
         exit();
