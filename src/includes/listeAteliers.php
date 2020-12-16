@@ -39,12 +39,16 @@
                 }
                 
         ?>
-    <?php foreach ($ateliers as $key => $atelier):?>
-    <?php 
-          if($atelier['etat_atelier'] == "Active"){
-            $allInactif = false;
-          }
-        ?>
+  <?php
+  $array_valid = [];
+    foreach($ateliers as $atelier_valid){
+      if($atelier_valid['etat_atelier'] == "Active"){
+        $allInactif = false;
+        array_push($array_valid, $atelier_valid);
+      }
+    }
+  ?>
+    <?php foreach ($array_valid as $key => $atelier):?>
 
        <?php if($key + 1 == $compteur):?>
     <?php if($atelier['etat_atelier'] == "Active"):?>

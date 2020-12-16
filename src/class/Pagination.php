@@ -141,20 +141,20 @@ HTML;
 HTML;
     }
 
-    public function toHTMLGlobal()
-    {
-        //A revoir pour que l'on puisse avoir toutes les valeurs de page 
-        //J'ai essayé avec un retour de tableau mais je n'ai pas pu faire afficher chaque valeur
-        //Cette fonction ne renvoie qu'une seule page
-        $previous = $this->toHTMLPrevious();
-        $pages = $this->toHTMLPages();
-        $next = $this->toHTMLNext();
-        return <<<HTML
-            {$previous}
-            {$pages}
-            {$next}
-HTML;
-    }
+//     public function toHTMLGlobal()
+//     {
+//         //A revoir pour que l'on puisse avoir toutes les valeurs de page 
+//         //J'ai essayé avec un retour de tableau mais je n'ai pas pu faire afficher chaque valeur
+//         //Cette fonction ne renvoie qu'une seule page
+//         $previous = $this->toHTMLPrevious();
+//         $pages = $this->toHTMLPages();
+//         $next = $this->toHTMLNext();
+//         return <<<HTML
+//             {$previous}
+//             {$pages}
+//             {$next}
+// HTML;
+//     }
 
 }
 

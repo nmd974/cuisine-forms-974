@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.custom-control').on('click', function() {
+    $('.custom-switch').on('click', function() {
       window.location = window.location.pathname + '?id=' + this.id;
     })
     // console.log(window.location.search.slice(6));

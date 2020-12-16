@@ -21,7 +21,7 @@
         $_SESSION['id'] = "";
     }
     if(!isset($_SESSION['ateliers'])){
-        $_SESSION['ateliers'] = "";
+        $_SESSION['ateliers'] = [];
     }
     // if(!isset($_SESSION['page'])){
     //     $_SESSION['page'] = 1;

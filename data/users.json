@@ -1,5 +1,15 @@
 [
     {
+        "nomUser": "PAYET",
+        "prenomUser": "Jordan",
+        "emailUser": "jha.payet@gmail.com",
+        "telUser": "0693864664",
+        "passwordUser": "$2y$10$faNIFATyVHpfiw.inbt.g.\/.rrxDYY1mxE0wqghuaTch9XArjzCc6",
+        "id": "4e921d887356624f74c35eb0848577cd",
+        "role": "cuisinier",
+        "ateliers": []
+    },
+    {
         "nomUser": "team",
         "prenomUser": "rocket",
         "emailUser": "admin@admin.fr",
@@ -17,22 +27,6 @@
         "passwordUser": "$2y$10$NN92LmJ21gh8es3i1AP63OqZ4B9L5N0q2PGQHoDVm9anapY9Zmh8y",
         "id": "cd8f07ad17e078f34be3b92a79d96cf7",
         "role": "user",
-        "ateliers": [
-            "57c5867a213540fd9eb53fcabc342c5e",
-            "6a586b909144a3ab6d19a9a96a986a3f"
-        ]
-    },
-    {
-        "nomUser": "Payet",
-        "prenomUser": "Jordan",
-        "emailUser": "jha.payet@gmail.com",
-        "telUser": "",
-        "passwordUser": "1234",
-        "id": "e4ee56d7a383984c435e49df03b97bf1",
-        "role": "cuisinier",
-        "ateliers": [
-            "57c5867a213540fd9eb53fcabc342c5e",
-            "6a586b909144a3ab6d19a9a96a986a3f"
-        ]
+        "ateliers": []
     }
 ]

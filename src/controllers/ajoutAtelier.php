@@ -109,6 +109,7 @@
           $data['participants'] = []; //Il s'agit ici d'un tableau vide qui va servir d'ajouter les participants qui s'inscrivent
           $data['modifie'] = false; //Il s'agit ici d'un indice à false donc creation et true si modifié';
           $data['id'] =  md5(uniqid(rand(), true));
+          array_push($_SESSION['ateliers'], $data['id']);
           array_unshift($dataAtelier, $data);
           saveAteliersData($dataAtelier);
 

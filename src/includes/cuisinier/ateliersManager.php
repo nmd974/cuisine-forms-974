@@ -4,8 +4,10 @@ require_once(__ROOT__ . '/src/controllers/accesData.php');
 require_once(__ROOT__ . '/src/controllers/controllerAtelier.php');
 ?>
 <?php
+var_dump($_GET['id']);
 if (isset($_GET['id'])) {
     $modification = activerDesactiverAtelier($_GET['id']);
+    unset($_GET['id']);
 }
 ?>
 <!--Sur cette page on ajoute en liste accordion les ateliers et la modification lance un modal-->
