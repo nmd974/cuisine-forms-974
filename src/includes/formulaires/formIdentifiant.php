@@ -85,7 +85,7 @@
                     </div>
                     <div class="col-md-12">
                         <label for="telephone" class="form-label">Telephone</label>
-                        <input type="number" class="form-control" name="telUser" id="telephone" required>
+                        <input type="number" class="form-control" name="telUser" id="telephone">
                     </div>
                     <div class="col-md-12">
                         <label for="inputPassword4" class="form-label">Mot de passe</label>
