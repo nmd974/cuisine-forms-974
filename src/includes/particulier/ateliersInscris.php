@@ -16,7 +16,6 @@ if(isset($_GET['id'])){
 <?php if($_SESSION['particulierLoggedIn']):?>
 <div class="container" id="atelierManager">
     <div class="table-responsive">
-        <?php var_dump($_SESSION);?>
         <?php if(isset($modification)){
             echo $modification;
         }
