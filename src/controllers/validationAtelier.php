@@ -82,6 +82,7 @@
     $dataPost["prix"] = htmlentities($dataPost["prix"]);
     $dataPost["duree"] = htmlentities($dataPost["duree"]);
     $dataPost["date_debut"] =  htmlspecialchars($dataPost["date_debut"]);
+    $dataPost["minDebut"] =  htmlentities($dataPost["minDebut"]);
 
     $dataPost["nombre_places"] = htmlentities($dataPost["nombre_places"]);
     $dataPost["heure_debut"] =  htmlspecialchars($dataPost["heure_debut"]);
