@@ -100,13 +100,9 @@ if (isset($_GET['id'])) {
                                         <?= substr($atelier['date_ajout'],11,8) ?>
                                     </small>
                                 </p>
-                                <a href="../pages/pageAtelier.php?idmo=<?= $atelier['id'] ?>"
-                                    class="btn btn-primary" id="modifierAtelier">Modifier</a>
-                                <!-- Button trigger modal -->
-                                <!-- <button type="submit" class="btn btn-primary" 
-                                    >
+                                <a href="../pages/pageAtelier.php?idmo=<?= $atelier['id'] ?>" class="btn btn-primary" id="modifierAtelier">
                                     Modifier
-                                </button> -->
+                                </a>
                             </div>
                         </div>
                     </div>

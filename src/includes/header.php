@@ -166,9 +166,9 @@
                         <?php endif?>
                     </div>
                     <div>
-                        <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold">
-                            <button class="btn btn-primary">Se déconnecter <i class="fa fa-sign-in"
-                                    aria-hidden="true"></i></button></a>
+                        <a href="../controllers/logout.php" class="text-white effect-underline font-weight-bold btn btn-primary">
+                            Se déconnecter <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        </a>
                     </div>
 
                 </div>
