@@ -1,0 +1,380 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: rgb(235, 235, 235);
+    font-family: Verdana, Geneva, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;
+}
+[class*="col-"] {
+  padding: 0 !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Light', 'Roboto Medium', 'Roboto';
+}
+.imageprincipale{
+  background-size: cover;
+  background:linear-gradient(to bottom, rgba(83, 83, 83, 0.8) 0%, rgba(83, 83, 83, 0.8) 100%), url(../../images/main.jpeg);
+  height: 98vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: 55px !important;
+}
+/*Navbar*/
+.titrePage{
+  margin-top: 150px !important;
+}
+/* .navbar{
+  background-image: linear-gradient(90deg, #f3671f 30%, #ffffff 100%) !important;
+} */
+.navbar-brand{
+  font-size: 20px;
+  color: black !important;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+.nav-link{
+  font-size: 20px;
+  color: black !important;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+/*section jumbotron*/
+.jumbotron {
+  background-color:transparent;
+  color: white;
+  top: 35%;
+  height: 100vh !important;
+}
+/************** Titre Jumbottron *******************/
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+ @-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/************ Text Jumbottron *********************/
+.text-focus-in {
+	-webkit-animation: text-focus-in 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+/************ Bouton Jumbottron ********************/
+
+
+/********************************/
+.btn-primary{
+  background-color: #f3671f !important;
+  border-color: #f3671f !important;
+}
+.card-deck{
+  margin-top: 80px !important;
+}
+/*carte liste*/
+.cardListe{
+  max-height: 550px !important;
+  /* padding: 0 !important; */
+}
+.imageListe{
+  height: 450px !important;
+  width: 100% !important;
+}
+.alert{
+  padding: 17px !important;
+}
+.card-header{
+  text-transform: capitalize !important;
+}
+.card-body-liste{
+  padding: 0 1rem !important;
+  bottom: 0 !important;
+}
+.duree {
+  background: #f3671f;
+  height: 10%;
+  font-size: 1rem;
+  color: white;
+  border-top-left-radius: 4px !important;
+}
+.duree2 {
+  background: #f3671f;
+  height: 10%;
+  font-size: 1rem;
+  color: white;
+  border-top-left-radius: 4px !important;
+  bottom: 0;
+  right: 0;
+}
+
+/*image manager */
+.img-manager{
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.card-manager{
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  padding: 10px !important;
+}
+
+.checked{
+  border-color: #80bdff;
+}
+
+ /*séparateur card Atelier*/ 
+.separated hr {
+    margin: 15px 0;
+    padding: 0;
+    height: 10px;
+    font-size: 180%;
+    border: none !important;
+    background: url(../../images/iconfinder_Restaurant_restaurant_menu_chef_cook_hat_6613406.png) repeat-x left center;
+}
+
+/*FOOTER*/
+
+footer {
+  background-color: #d05c62;
+  background-image: linear-gradient(90deg, #d05c62 24%, #f3671f 100%);
+  color: white;
+  margin-top:150px !important;
+  bottom: 0;
+  }
+  
+  footer a {
+    color: #fff;
+    font-size: 14px;
+    transition-duration: 0.2s;
+  }
+  
+  footer a:hover {
+    color: #a09085;
+    text-decoration: none;
+  }
+  
+  .copy {
+    font-size: 12px;
+    padding: 10px;
+    border-top: 1px solid #FFFFFF;
+  }
+  
+  .footer-middle {
+    padding-top: 2em;
+    color: white;
+  }
+  
+  
+  /*SOCİAL İCONS*/
+  
+  /* footer social icons */
+  
+  ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left: 0 !important;
+    padding: 0;
+  }
+  
+  ul.social-network li {
+    display: inline;
+    margin: 0 5px;
+  }
+  
+  
+  /* footer social icons */
+  
+  .social-network a.icoFacebook:hover {
+    background-color: #3B5998;
+  }
+  
+  .social-network a.icoLinkedin:hover {
+    background-color: #007bb7;
+  }
+  
+  .social-network a.icoFacebook:hover i,
+  .social-network a.icoLinkedin:hover i {
+    color: #fff;
+  }
+  
+  .social-network a.socialIcon:hover,
+  .socialHoverClass {
+    color: #44BCDD;
+  }
+  
+  .social-circle li a {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 0 auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+  
+  .social-circle li i {
+    margin: 0;
+    line-height: 30px;
+    text-align: center;
+  }
+  
+  .social-circle li a:hover i,
+  .triggeredHover {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  
+  .social-circle i {
+    color: #595959;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+
+  .social-network a {
+    background-color: #F9F9F9;
+  }
+
+/*formulaire ajout*/
+
+.formulaireAjout{
+  display: flex;
+  flex-direction: row;
+}
+.invalid{
+  border: 2px solid red;
+}
+.valid{
+  border: 2px solid green;
+}
+/*responisve pour tablette (vérifier ipad et ipad pro*/
+@media (max-width: 1024px) {
+  .cardListe{
+    max-height: 100% !important;
+    /* padding: 0 !important; */
+  }
+  .basCard{
+    margin-bottom: 20px !important;
+  }
+  .card-body-liste{
+    padding: 0 !important;
+  }
+
+}
+
+
+/*responisve pour mobile*/
+@media (max-width: 375px) {
+  .card-manager{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    padding: 10px !important;
+  }
+  .formulaireAjout{
+    flex-direction: column;
+  }
+  .imageListe{
+    height: 250px !important;
+    width: 100% !important;
+  }
+  .jumbotron{
+    top: 13%;
+  }
+  .navbar-brand{
+    font-size: 18px;
+    color: black !important;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+  }
+  .nav-link{
+    font-size: 18px;
+    color: black !important;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+  }
+  .navbarClass{
+    flex-direction: column !important;
+  }
+  .basCard{
+    margin-bottom: 20px !important;
+  }
+  .duree2, .duree{
+    font-size: 0.7rem;
+  }
+  .card-body-liste{
+    padding: 0 !important;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+}
