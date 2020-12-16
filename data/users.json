@@ -30,6 +30,6 @@
         "passwordUser": "1234",
         "id": "e4ee56d7a383984c435e49df03b97bf1",
         "role": "cuisinier",
-        "ateliers": []
+        "ateliers": ["57c5867a213540fd9eb53fcabc342c5e", "6a586b909144a3ab6d19a9a96a986a3f"]
     }
 ]

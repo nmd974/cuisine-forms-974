@@ -1,0 +1,12 @@
+<Files composer.json>
+    Order deny,allow
+    Deny from all
+</Files>
+<Files composer.lock>
+    Order deny,allow
+    Deny from all
+</Files>
+<Files README.md>
+    Order deny,allow
+    Deny from all
+</Files>

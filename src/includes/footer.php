@@ -55,7 +55,7 @@
     <!--script JS-->
     <script src="../script/jumbotron.js"></script>
     <script src="../includes/cuisinier/script.js"></script>
-    <script src="../script/inputHeure.js"></script>
+    <!-- <script src="../script/inputHeure.js"></script> -->
     </body>
 </html>
 
