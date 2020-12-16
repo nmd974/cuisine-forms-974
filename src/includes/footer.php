@@ -53,6 +53,10 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <!--script JS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="../script/jumbotron.js"></script>
     <script src="../includes/cuisinier/script.js"></script>
     <!-- <script src="../script/inputHeure.js"></script> -->
