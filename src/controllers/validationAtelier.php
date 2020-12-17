@@ -17,6 +17,16 @@
       if ( !isset($data[$champ["key"]]) || $data[$champ["key"]] == "" ) {
         return array("valide" => false, "message" => 'Renseignez le champ : "'.$champ["libele"].'"');
       }
+
+      if ($champ["key"] === "titre") {
+        $newmsg = explode("<script>", $msg);
+        $newmsg2 = explode("</script>", $newmsg[1]);
+        echo $newmsg2[1];
+// $newmsg2[1] retire tout entre <script> et </script>
+ 
+ou sinon si tu veux gardé tu fais
+echo "$newmsg[0] $newmsg[1]";
+      }
       
       if ( $champ["key"] == "description" && strlen($data[$champ["key"]]) > 250 ) {
         return array("valide" => false, "message" => 'votre description est trop long');
