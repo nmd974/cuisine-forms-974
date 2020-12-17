@@ -1,4 +1,5 @@
 <?php
+   // require ("./src/includes/header.php");
     require_once(__ROOT__.'/src/controllers/validationAtelier.php'); // j'appel ma fuction validation qui se retrouve dans le fichier controlelers
     if(isset($_POST["valider"])){ // si onclik boutont on repart à la suite
         $validation = validerDonneesAtelierForm($_POST, $_FILES); // je met la valeur de ma fonction pour aller à ma validation formulair
