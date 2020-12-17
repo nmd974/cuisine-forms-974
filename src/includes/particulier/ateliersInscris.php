@@ -2,6 +2,7 @@
   require_once(__ROOT__.'/src/controllers/desinscriptionAtelier.php');
   require_once(__ROOT__.'/src/controllers/accesData.php');
   require_once(__ROOT__.'/src/controllers/controllerAtelier.php');
+  require_once(__ROOT__.'/src/controllers/authentification.php');
 ?>
 <?php 
 if(isset($_GET['id'])){
