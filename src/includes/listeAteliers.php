@@ -35,11 +35,11 @@
                 }
                 $pagination = new Pagination(
                     $ateliers,
-                    3,
+                    3, //Ici c'est le nombre d'ateliers par pages
                     $_GET['page']
                 );
                 if($_GET['page'] > 1){
-                  $compteur= 1 * 4;
+                  $compteur= ($_GET['page'] * 3) - 2; //On calcule à partir d'où il faut afficher
                 }else{
                   $compteur=1;
                 }
@@ -56,7 +56,7 @@
   ?>
     <?php foreach ($array_valid as $key => $atelier):?>
 
-       <?php if($key + 1 == $compteur):?>
+    <?php if($key + 1 == $compteur):?>
     <?php if($atelier['etat_atelier'] == "Active"):?>
     <!--Ici on gère là où on doit prendre les données selon la page actuelle-->
     <?php if($compteur > $pagination->intervalleMin() && $compteur <= $pagination->intervalleMax()):?>
