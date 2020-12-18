@@ -3,19 +3,20 @@ require_once(__ROOT__ . '/src/class/Ateliers.php');
 require_once(__ROOT__ . '/src/controllers/accesData.php');
 require_once(__ROOT__ . '/src/controllers/controllerAtelier.php');
 ?>
-<?php
-if (isset($_GET['id'])) {
-    $modification = activerDesactiverAtelier($_GET['id']);
-    unset($_GET['id']);
-}
-$indice_creation = false;
-?>
+
 <!--Sur cette page on ajoute en liste accordion les ateliers et la modification lance un modal-->
 <?php if(!$_SESSION['cuisinierLoggedIn']){
         header('Location: ./home.php?page=1');
     }
 ?>
 
+<?php
+if (isset($_GET['id'])) {
+    $modification = activerDesactiverAtelier($_GET['id']);
+    // unset($_GET['id']);
+}
+$indice_creation = false;
+?>
 
 <?php
     if(isset($_POST['modifier'])){
@@ -42,7 +43,7 @@ $indice_creation = false;
                 <?php $indice_creation = true;?>
             <div class="card">
                 <div class="card-header d-flex align-items-center">
-                <h2 class="mb-0 d-flex w-100">
+                    <h2 class="mb-0 d-flex w-100">
                     <button class="btn btn-link btn-block text-left titreCarteManager" type="button" data-toggle="collapse"
                         data-target="#collapse_<?= $atelier['id'] ?>" aria-expanded="true"
                         aria-controls="collapse_<?= $atelier['id'] ?>">
@@ -52,22 +53,15 @@ $indice_creation = false;
                     </button>
                     </h2>
                     <div class="custom-control custom-switch" id="<?=$atelier['id']?>">
-                        <input type="checkbox" class="custom-control-input" 
-                            <?php 
-                                if ($atelier['etat_atelier']=="Active"){
-                                    echo "checked";
-                                }
-                            ?>
-                            id="switch_<?= $atelier['id'] ?>">
-                        <label class="custom-control-label" for="<?= 'switch_'.$atelier['id'] ?>">
-                            <?php 
-                                if ($atelier['etat_atelier'] == "Active"){
-                                    echo "Activé";
-                                } else {
-                                    echo "Désactivé";
-                                }
-                            ?>
-                        </label>
+                    <?php if($atelier['etat_atelier'] == "Active"):?>
+                        <input type="checkbox" class="custom-control-input" checked id="switch_<?= $atelier['id'] ?>">
+                        <label class="custom-control-label" for="<?= 'switch_'.$atelier['id'] ?>"> Activé </label>
+                    <?php endif?>
+                    <?php if($atelier['etat_atelier'] == "Desactive"):?>
+                        <input type="checkbox" class="custom-control-input" id="switch_<?= $atelier['id'] ?>">
+                        <label class="custom-control-label" for="<?= 'switch_'.$atelier['id'] ?>"> Désactivé </label>
+                    <?php endif?>
+
                     </div>
                 </div>
                 <div id="collapse_<?= $atelier['id'] ?>" class="collapse" data-parent="#ateliers">
