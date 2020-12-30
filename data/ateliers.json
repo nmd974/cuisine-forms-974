@@ -1,3 +1,20 @@
 [
-    
+    {
+        "titre": "Fa aona mitsy ary ",
+        "description": "ffddf",
+        "date_debut": "2021-01-01",
+        "heure_debut": "2",
+        "minDebut": "2",
+        "nombre_places": "5",
+        "duree": "7",
+        "prix": "3",
+        "valider": "",
+        "id": "4610d6d01de4b080383872b7f8e40c83",
+        "proprietaire": 1,
+        "date_ajout": "30-12-2020 20:36:45",
+        "etat_atelier": "D\u00e9sactiv\u00e9",
+        "participants": [],
+        "modifie": false,
+        "image": "..\\..\\images\\uploadedFiles\\133027402_10217835868959108_3627931731594836570_o.jpg"
+    }
 ]

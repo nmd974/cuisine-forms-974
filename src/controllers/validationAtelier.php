@@ -22,8 +22,24 @@
         return array("valide" => false, "message" => 'votre description est trop long');
       }
 
-      if ( in_array($champ["key"], array("prix", "duree", "heure_debut", "minDebut", "nombre_places")) && !is_numeric($data[$champ["key"]])){
+      
+      // if ( $champ["key"] == "titre") {
+      //   $titre =$dataPost[];
+      //     foreach( $titre as $indice ) {
+      //       for ($i=0; $i < ; $i++) { 
+      //         if ($dataPost () != "<#>" && </"#">) {
+      //           # code...
+      //         }
+      //       }
+      //     }
+
+      //   return array("valide" => false, "message" => 'votre description est trop long');
+      // }
+
+      if ( in_array($champ["key"], array("prix", "duree", "heure_debut", "minDebut", "nombre_places")) && !is_numeric($data[$champ["key"]]) ){
+        
         return array("valide" => false, "message" => 'Le champ "'.$champ["libele"].'" n\'est pas un entier ');
+
       }
       
       if ( $champ["key"] == "date_debut"){                  // ici ma comparaison de la date de début de l'atelier si c'est bien posterieur de la data d'aujourd'hui
@@ -77,7 +93,7 @@
     $fichierDonneesAtelier = "../../data/ateliers.json"; // je definie d'abord le cemain où je veux suvgarder mes données
     $data = json_decode(file_get_contents($fichierDonneesAtelier), true); // 
       // **** à partir d'ici je recupère le données verifiées
-    $dataPost["titre"] = htmlspecialchars($dataPost["titre"]);
+    $dataPost["titre"] = htmlspecialchars($dataPost["titre"]);   
     $dataPost["description"] = htmlspecialchars($dataPost["description"]);
     $dataPost["prix"] = htmlentities($dataPost["prix"]);
     $dataPost["duree"] = htmlentities($dataPost["duree"]);
