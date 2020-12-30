@@ -119,6 +119,30 @@
     array_unshift($data, $dataPost); // je push mes données sous forme de tableau 
 
     file_put_contents($fichierDonneesAtelier, json_encode($data)); 
+
+    return $dataPost;
+  }
+
+  function enregistrerDansBase($dataPost){
+    $servername = "localhost";
+    $username = "root";
+    $password = "rootTest";
+    $dbname = "cuisine";
+
+    try {
+      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+      // set the PDO error mode to exception
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $sql = "INSERT INTO atelier (id, titre, `description`) VALUES ('" . $dataPost["id"] . "', '" . $dataPost["titre"] . "', '" . $dataPost["description"] . "')";
+      // use exec() because no results are returned
+      $conn->exec($sql);
+      $resultat = array("succes" => true);
+    } catch(PDOException $e) {
+      $resultat = array("succes" => false, "erreur" => $e->getMessage());
+    }
+
+    $conn = null;
+    return $resultat;
   }
 
 ?>

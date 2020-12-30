@@ -7,8 +7,14 @@
             $message = '<div class="alert alert-danger">'.$validation["message"].'</div>';
             echo $message;
         }else{
-            ajouterAtelier($_POST, $_FILES); // declarations de mes données dans le fichier ajout Atelier
-            header("Location:.\cuistoManager.php"); // si toule traitements son bon j'afiche dans ma page
+            $data = ajouterAtelier($_POST, $_FILES); // declarations de mes données dans le fichier ajout Atelier
+            $resultatDeSauvegarde = enregistrerDansBase($data);
+            if($resultatDeSauvegarde["succes"]){
+                header("Location:.\cuistoManager.php"); // si toule traitements son bon j'afiche dans ma page
+            }else{
+                $message = '<div class="alert alert-danger">'.$resultatDeSauvegarde["erreur"].'</div>';
+                echo $message;
+            }
         }
     }
 ?>
