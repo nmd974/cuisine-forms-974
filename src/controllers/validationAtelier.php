@@ -104,7 +104,7 @@
     $dataPost["heure_debut"] =  htmlspecialchars($dataPost["heure_debut"]);
     $dataPost["id"] = md5(uniqid(rand(), true)); // methode pour créer un id
     $dataPost["proprietaire"] = 1;
-    $dataPost["date_ajout"] = (new Datetime())->format('d-m-Y H:i:s');//sans paramettre Datetime() retourne la date et l'heure actuelle;
+    $dataPost["date_ajout"] = new Datetime(); // sans paramettre Datetime() retourne la date et l'heure actuelle;
     $dataPost["etat_atelier"] ="Désactivé";
     $dataPost["participants"] =[];
     $dataPost["modifie"] = false;
@@ -133,7 +133,11 @@
       $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
       // set the PDO error mode to exception
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = "INSERT INTO atelier (id, titre, `description`) VALUES ('" . $dataPost["id"] . "', '" . $dataPost["titre"] . "', '" . $dataPost["description"] . "')";
+      $sql = "INSERT INTO atelier (id, titre, `description`,  `image`, modifie , etat_atelier, date_ajout, proprietaire, prix, duree,
+      nombre_places, minDebut, heure_debut, date_debut  ) 
+        VALUES ('" . $dataPost["id"] . "', '" . $dataPost["titre"] . "', '" . $dataPost["description"] . "', '".$dataPost["image"] ."', '".($dataPost["modifie"] ? 1 : 0) ."',
+        '".$dataPost["etat_atelier"] ."', date('".$dataPost["date_ajout"]->format('y-m-d H:i:s')."'), '".$dataPost["proprietaire"] ."','".$dataPost["prix"] ."',
+        '".$dataPost["duree"] ."', '".$dataPost["nombre_places"] ."', '".$dataPost["minDebut"] ."', '".$dataPost["heure_debut"] ."', '".$dataPost["date_debut"] ."' )";
       // use exec() because no results are returned
       $conn->exec($sql);
       $resultat = array("succes" => true);
