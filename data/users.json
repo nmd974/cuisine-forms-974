@@ -1,1 +1,29 @@
-[{"nomUser":"landry","prenomUser":"ze","emailUser":"ethlandgrg@gmail.com","telUser":"12","passwordUser":"&\u00e9\"'","id":"a830fdc69e81ffd602589e930ef17e7a","role":"user"},{"nomUser":"Payet","prenomUser":"Jordan","emailUser":"jha.payet@gmail.com","telUser":"","passwordUser":"1234","id":"e4ee56d7a383984c435e49df03b97bf1","role":"user"},{"nomUser":"Lebon","prenomUser":"Olivier","emailUser":"Olivier@lebon.dev","telUser":"0692451594","passwordUser":"teste","id":"53d76686b5ad4c04e63460b7bb02ec85","role":"user"}]
+[
+    {
+        "nomUser": "landry",
+        "prenomUser": "ze",
+        "emailUser": "ethlandgrg@gmail.com",
+        "telUser": "12",
+        "passwordUser": "&\u00e9\"'",
+        "id": "a830fdc69e81ffd602589e930ef17e7a",
+        "role": "user"
+    },
+    {
+        "nomUser": "Payet",
+        "prenomUser": "Jordan",
+        "emailUser": "jha.payet@gmail.com",
+        "telUser": "",
+        "passwordUser": "1234",
+        "id": "e4ee56d7a383984c435e49df03b97bf1",
+        "role": "user"
+    },
+    {
+        "nomUser": "Lebon",
+        "prenomUser": "Olivier",
+        "emailUser": "Olivier@lebon.dev",
+        "telUser": "0692451594",
+        "passwordUser": "teste",
+        "id": "53d76686b5ad4c04e63460b7bb02ec85",
+        "role": "user"
+    }
+]

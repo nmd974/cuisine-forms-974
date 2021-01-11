@@ -22,8 +22,24 @@
         return array("valide" => false, "message" => 'votre description est trop long');
       }
 
-      if ( in_array($champ["key"], array("prix", "duree", "heure_debut", "minDebut", "nombre_places")) && !is_numeric($data[$champ["key"]])){
+      
+      // if ( $champ["key"] == "titre") {
+      //   $titre =$dataPost[];
+      //     foreach( $titre as $indice ) {
+      //       for ($i=0; $i < ; $i++) { 
+      //         if ($dataPost () != "<#>" && </"#">) {
+      //           # code...
+      //         }
+      //       }
+      //     }
+
+      //   return array("valide" => false, "message" => 'votre description est trop long');
+      // }
+
+      if ( in_array($champ["key"], array("prix", "duree", "heure_debut", "minDebut", "nombre_places")) && !is_numeric($data[$champ["key"]]) ){
+        
         return array("valide" => false, "message" => 'Le champ "'.$champ["libele"].'" n\'est pas un entier ');
+
       }
       
       if ( $champ["key"] == "date_debut"){                  // ici ma comparaison de la date de début de l'atelier si c'est bien posterieur de la data d'aujourd'hui
@@ -77,7 +93,7 @@
     $fichierDonneesAtelier = "../../data/ateliers.json"; // je definie d'abord le cemain où je veux suvgarder mes données
     $data = json_decode(file_get_contents($fichierDonneesAtelier), true); // 
       // **** à partir d'ici je recupère le données verifiées
-    $dataPost["titre"] = htmlspecialchars($dataPost["titre"]);
+    $dataPost["titre"] = htmlspecialchars($dataPost["titre"]);   
     $dataPost["description"] = htmlspecialchars($dataPost["description"]);
     $dataPost["prix"] = htmlentities($dataPost["prix"]);
     $dataPost["duree"] = htmlentities($dataPost["duree"]);
@@ -88,7 +104,7 @@
     $dataPost["heure_debut"] =  htmlspecialchars($dataPost["heure_debut"]);
     $dataPost["id"] = md5(uniqid(rand(), true)); // methode pour créer un id
     $dataPost["proprietaire"] = 1;
-    $dataPost["date_ajout"] = (new Datetime())->format('d-m-Y H:i:s');//sans paramettre Datetime() retourne la date et l'heure actuelle;
+    $dataPost["date_ajout"] = new Datetime(); // sans paramettre Datetime() retourne la date et l'heure actuelle;
     $dataPost["etat_atelier"] ="Désactivé";
     $dataPost["participants"] =[];
     $dataPost["modifie"] = false;
@@ -103,6 +119,34 @@
     array_unshift($data, $dataPost); // je push mes données sous forme de tableau 
 
     file_put_contents($fichierDonneesAtelier, json_encode($data)); 
+
+    return $dataPost;
+  }
+
+  function enregistrerDansBase($dataPost){
+    $servername = "localhost";
+    $username = "root";
+    $password = "rootTest";
+    $dbname = "cuisine";
+
+    try {
+      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+      // set the PDO error mode to exception
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $sql = "INSERT INTO atelier (id, titre, `description`,  `image`, modifie , etat_atelier, date_ajout, proprietaire, prix, duree,
+      nombre_places, minDebut, heure_debut, date_debut  ) 
+        VALUES ('" . $dataPost["id"] . "', '" . $dataPost["titre"] . "', '" . $dataPost["description"] . "', '".$dataPost["image"] ."', '".($dataPost["modifie"] ? 1 : 0) ."',
+        '".$dataPost["etat_atelier"] ."', date('".$dataPost["date_ajout"]->format('y-m-d H:i:s')."'), '".$dataPost["proprietaire"] ."','".$dataPost["prix"] ."',
+        '".$dataPost["duree"] ."', '".$dataPost["nombre_places"] ."', '".$dataPost["minDebut"] ."', '".$dataPost["heure_debut"] ."', '".$dataPost["date_debut"] ."' )";
+      // use exec() because no results are returned
+      $conn->exec($sql);
+      $resultat = array("succes" => true);
+    } catch(PDOException $e) {
+      $resultat = array("succes" => false, "erreur" => $e->getMessage());
+    }
+
+    $conn = null;
+    return $resultat;
   }
 
 ?>

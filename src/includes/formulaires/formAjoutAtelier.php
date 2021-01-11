@@ -1,4 +1,5 @@
 <?php
+   // require ("./src/includes/header.php");
     require_once(__ROOT__.'/src/controllers/validationAtelier.php'); // j'appel ma fuction validation qui se retrouve dans le fichier controlelers
     if(isset($_POST["valider"])){ // si onclik boutont on repart à la suite
         $validation = validerDonneesAtelierForm($_POST, $_FILES); // je met la valeur de ma fonction pour aller à ma validation formulair
@@ -6,8 +7,14 @@
             $message = '<div class="alert alert-danger">'.$validation["message"].'</div>';
             echo $message;
         }else{
-            ajouterAtelier($_POST, $_FILES); // declarations de mes données dans le fichier ajout Atelier
-            header("Location:.\cuistoManager.php"); // si toule traitements son bon j'afiche dans ma page
+            $data = ajouterAtelier($_POST, $_FILES); // declarations de mes données dans le fichier ajout Atelier
+            $resultatDeSauvegarde = enregistrerDansBase($data);
+            if($resultatDeSauvegarde["succes"]){
+                header("Location:.\cuistoManager.php"); // si toule traitements son bon j'afiche dans ma page
+            }else{
+                $message = '<div class="alert alert-danger">'.$resultatDeSauvegarde["erreur"].'</div>';
+                echo $message;
+            }
         }
     }
 ?>
