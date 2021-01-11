@@ -106,7 +106,7 @@
     $dataPost["proprietaire"] = 1;
     $dataPost["date_ajout"] = new Datetime(); // sans paramettre Datetime() retourne la date et l'heure actuelle;
     $dataPost["etat_atelier"] ="Désactivé";
-    $dataPost["participants"] =[];
+    $dataPost["participants"] =["landry"];
     $dataPost["modifie"] = false;
 
     $target_dir = "..\\..\\images\\uploadedFiles\\"; // definir le chemain du telechargemet faire attention c'est différe WIN et LINUX
@@ -126,11 +126,11 @@
   function enregistrerDansBase($dataPost){
     $servername = "localhost";
     $username = "root";
-    $password = "rootTest";
+    $password = '';
     $dbname = "cuisine";
 
     try {
-      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username,);
       // set the PDO error mode to exception
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $sql = "INSERT INTO atelier (id, titre, `description`,  `image`, modifie , etat_atelier, date_ajout, proprietaire, prix, duree,
